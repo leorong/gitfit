@@ -1,4 +1,4 @@
-lab4
+Gym Match
 ====
 
-Lab 4: Programming with Javascript
+This application helps you find new buddies to exercise with!
