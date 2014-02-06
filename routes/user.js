@@ -1,3 +1,3 @@
-exports.index = function(req, res) {
-	res.index('user');
+exports.view = function(req, res) {
+	res.render('user');
 }
