@@ -5,9 +5,11 @@
 	<title>Gym Match</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="/css/introHCI.css" rel="stylesheet">
+	<link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="/css/index.css" rel="stylesheet">
+	<script src="js/jquery-1.11.0.js"></script>
+	<script src="js/bootstrap.js"></script>
 	<!-- this is a comment in HTML -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -21,26 +23,32 @@
 <body>
 
 	{{> _navbar}}
+	<div class="alertbox">
+		<div class="alert alert-info alert-dismissable">
+			<a href="#" class="close" data-dismiss="alert">&times;</a>
+			Meet Gym Buddies near you!
+		</div>
+	</div>
 
 	<div class="container">
 		<div class="jumbotron">
 			<h1>Gym Match</h1>
 			<p>Meet your new workout buddy today!</p>
 		</div>
-	
- 		<h4>Check out Gym Matchers near you!</h4>
-<!--
-		{{#each projects}}
-	      <div class="project" id="{{id}}">
-	        <a href="project/{{name}}" class="thumbnail">
-	          <img src="images/{{image}}" ... />
-	          <p>{{name}}</p>
-	        </a>
-	      </div>
-	    {{/each}} -->
-	</div>
 
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
+		{{#each random_matches}}	
+		<div class="random_matches">
+			<div class="col-xs-4">
+				<a href="#" class="thumbnail">
+					<img src="{{prof_pic}}">
+				</a>
+			</div>
+			<a href="#"><h4 id="name">{{name}}</h3></a>
+			<p><i>{{location}}</i></p>
+			<p>{{about_me}}</p>
+			<hr width="100%">
+		</div>
+		{{/each}}
+	</div>
 </body>
 </html>
