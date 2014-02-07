@@ -2,15 +2,21 @@ body {
 	margin-top: 70px;
 }
 
-.alertbox 
-{
-position: absolute;
-width: 100%;
-top: 50px;
+.alertbox {
+	position: absolute;
+	width: 100%;
+	top: 50px;
 }
 
-.random_matches p 
-{
-margin:1px;
+.random_matches p {
+	margin:1px;
 }
 
+.btn {
+	background-color: #000000;
+	border-color: #000000;
+}
+
+.btn:hover {
+	background-color: #282828;
+}
