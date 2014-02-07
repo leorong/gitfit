@@ -5,7 +5,7 @@
 	<title>Gym Match</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="/css/bootstrap.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="/css/gym_match.css" rel="stylesheet">
 	<!-- this is a comment in HTML -->
@@ -21,12 +21,6 @@
 <body>
 
 	{{> _navbar}}
-	<div class="alertbox">
-		<div class="alert alert-info alert-dismissable">
-			<a href="#" class="close" data-dismiss="alert">&times;</a>
-			Meet Gym Buddies near you!
-		</div>
-	</div>
 
 	<div class="container">
 		<div class="jumbotron">
@@ -35,19 +29,8 @@
 			<p><a class="btn btn-primary btn-lg" role="button" href="/findbuddy">Find a Buddy</a></p>
 		</div>
 
-		{{#each random_matches}}	
-		<div class="random_matches">
-			<div class="col-xs-4">
-				<a href="#" class="thumbnail">
-					<img src="{{prof_pic}}">
-				</a>
-			</div>
-			<a href="profile?{{name}}"><h4 id="name">{{name}}</h3></a>
-			<p><i>{{location}}</i></p>
-			<p>{{about_me}}</p>
-			<hr width="100%">
-		</div>
-		{{/each}}
+		<br>
+
 	</div>
 
 	<script src="js/jquery-1.11.0.js"></script>

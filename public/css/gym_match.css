@@ -12,11 +12,3 @@ body {
 	margin:1px;
 }
 
-.btn {
-	background-color: #000000;
-	border-color: #000000;
-}
-
-.btn:hover {
-	background-color: #282828;
-}

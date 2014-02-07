@@ -25,12 +25,25 @@
 	<div class="container">
 
 		<div class="jumbotron">
-			<h1>Gym Match</h1>
-			<p>Meet your new workout buddy today!</p>
+			<h1>Find Buddy</h1>
+			<p>This is the page for you to search for your potential gym buddies!</p>
 		</div>
-	
- 		<h4>Find a Gym Buddy</h4>
+		
+		<br>
 
+ 		{{#each random_matches}}	
+		<div class="random_matches">
+			<div class="col-xs-4">
+				<a href="#" class="thumbnail">
+					<img src="{{prof_pic}}">
+				</a>
+			</div>
+			<h3 id="name">{{name}}</h3>
+			<p><i>{{location}}</i></p>
+			<p>{{about_me}}</p>
+			<hr width="100%">
+		</div>
+		{{/each}}
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>

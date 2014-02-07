@@ -25,11 +25,25 @@
 	<div class="container">
 
 		<div class="jumbotron">
-			<h1>Gym Match</h1>
-			<p>Meet your new workout buddy today!</p>
+			<h1>Buddy List</h1>
+			<p>This is your buddy list. You can communicate with them here to set up the next gym trip!</p>
 		</div>
+
+		<br>
 	
- 		<h4>My Buddy List</h4>
+ 		{{#each buddy_list}}	
+		<div class="random_matches">
+			<div class="col-xs-4">
+				<a href="#" class="thumbnail">
+					<img src="{{prof_pic}}">
+				</a>
+			</div>
+			<a href="profile?{{name}}"><h4 id="name">{{name}}</h3></a>
+			<p><i>{{location}}</i></p>
+			<p>{{about_me}}</p>
+			<hr width="100%">
+		</div>
+		{{/each}}
 
 	</div>
 

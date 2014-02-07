@@ -1,0 +1,34 @@
+{
+	"random_matches": [
+		{
+			"name": "Person 1",
+			"prof_pic": "http://lorempixel.com/500/500/people",
+			"location": "Mars",
+			"about_me": "Random Person 1"
+		},
+		{
+			"name": "Person 2",
+			"prof_pic": "http://lorempixel.com/500/500/people",
+			"location": "Wellington, New Zealand",
+			"about_me": "Moon"
+		},
+		{
+			"name": "Person 3",
+			"prof_pic": "http://lorempixel.com/500/500/people",
+			"location": "Wellington, New Zealand",
+			"about_me": "Beijing"
+		},
+		{
+			"name": "Person 4",
+			"prof_pic": "http://lorempixel.com/500/500/people",
+			"location": "Wellington, New Zealand",
+			"about_me": "Paris"
+		},
+		{
+			"name": "Person 5",
+			"prof_pic": "http://lorempixel.com/500/500/people",
+			"location": "Dallas",
+			"about_me": "Random Person 5"
+		}
+	]
+}

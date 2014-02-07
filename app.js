@@ -14,7 +14,6 @@ var buddylist = require('./routes/buddylist');
 var findbuddy = require('./routes/findbuddy');
 var message = require('./routes/message');
 var schedule = require('./routes/schedule');
-var profile = require('./routes/profile');
 
 var app = express();
 
@@ -45,7 +44,6 @@ app.get('/buddylist', buddylist.view);
 app.get('/findbuddy', findbuddy.view);
 app.get('/message', message.view);
 app.get('/schedule', schedule.view);
-app.get('/profile', profile.view);
 
 // Example route
 //app.get('/user.html', user.index);
