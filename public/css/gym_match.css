@@ -1,0 +1,16 @@
+body {
+	margin-top: 70px;
+}
+
+.alertbox 
+{
+position: absolute;
+width: 100%;
+top: 50px;
+}
+
+.random_matches p 
+{
+margin:1px;
+}
+
