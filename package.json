@@ -1,11 +1,11 @@
 {
-  "name": "IntroHCI",
+  "name": "Gym_Match",
   "version": "0.0.1",
-  "author": "Intro HCI Staff",
+  "author": "Akshay Buddiga, Leo Rong, Ricky Tran",
 
   "repository": {
     "type": "git",
-    "url": "https://github.com/IntroHCI/lab4"
+    "url": "https://github.com/leorong/gym_match"
   },
   "license": "MIT",
 
