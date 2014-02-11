@@ -12,3 +12,14 @@ body {
 	margin:1px;
 }
 
+.main {
+	padding: 30px;
+}
+
+.main .footer {
+	margin-top: 10px;
+}
+
+.main .login-facebook {
+	margin-top: 20px
+}
