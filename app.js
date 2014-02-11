@@ -7,6 +7,41 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
+var mongoose = require('mongoose')
+
+mongoose.connect('mongodb://localhost/test');
+
+var db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+	console.log('db opened');
+	var kittySchema = mongoose.Schema({
+    name: String
+	});
+	kittySchema.methods.speak = function() {
+		var greeting = this.name ? "Meow name is " + this.name : "I don't have a name";
+		console.log(greeting);
+	}
+	var Kitten = mongoose.model('Kitten', kittySchema)
+	var silence = new Kitten({ name: 'Silence' })
+	var fluffy = new Kitten()
+	fluffy.save(function (err, fluffy) {
+  	if (err) // TODO handle the error
+  	fluffy.speak();
+	});
+	silence.save(function (err, silence) {
+  	if (err) // TODO handle the error
+  	silence.speak();
+	});
+
+	Kitten.find(function (err, kittens) {
+	  if (err) console.log("error");
+	  console.log(kittens);
+	})
+	fluffy.speak();
+
+});
 
 var index = require('./routes/index');
 var user = require('./routes/user');

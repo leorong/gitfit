@@ -32,17 +32,17 @@
 		<br>
 
  		{{#each random_matches}}	
-		<div class="random_matches">
-			<div class="col-xs-4">
-				<a href="#" class="thumbnail">
-					<img src="{{prof_pic}}">
-				</a>
+			<div class="random_matches">
+				<div class="col-xs-4">
+					<a href="#" class="thumbnail">
+						<img src="{{prof_pic}}">
+					</a>
+				</div>
+				<h3 id="name">{{name}}</h3>
+				<p><i>{{location}}</i></p>
+				<p>{{about_me}}</p>
+				<hr width="100%">
 			</div>
-			<h3 id="name">{{name}}</h3>
-			<p><i>{{location}}</i></p>
-			<p>{{about_me}}</p>
-			<hr width="100%">
-		</div>
 		{{/each}}
 	</div>
 
