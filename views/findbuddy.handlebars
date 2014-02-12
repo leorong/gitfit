@@ -23,17 +23,24 @@
 	{{> _navbar}}
 
 	<div class="container">
+<<<<<<< HEAD
 		<h1 position:"center">Find a Buddy</h1>
  		{{#each random_matches}}	
+=======
+		<h1>Find a Buddy</h1>
+ 		{{#each users}}	
+>>>>>>> 7dec1ff36005102a5f568719d704d2c8b9c5d79c
 			<div class="random_matches">
 				<div class="col-md-4">
 					<a href="#" class="thumbnail">
-						<img class="img" src="{{prof_pic}}"></img>
+						<img class="img" src="{{imageURL}}"></img>
 					</a>
 				</div>
 				<div class="col-md-8">
 					<h3 id="name">{{name}}</h3>
+					<p>{{age}}</p>
 					<p><i>{{location}}</i></p>
+					<p>{{gym}}</p>
 					<p>{{about_me}}</p>
 				</div>
 				<hr width="100%">
