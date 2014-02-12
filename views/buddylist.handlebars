@@ -24,16 +24,18 @@
 
 	<div class="container">
 		<h1>Buddy List</h1>
- 		{{#each buddy_list}}	
+ 		{{#each users}}	
 		<div class="random_matches">
 			<div class="col-xs-4">
 				<a href="#" class="thumbnail">
-					<img class="img img-responsive img-rounded" src="{{prof_pic}}"></img>
+					<img class="img img-responsive img-rounded" src="{{imageURL}}"></img>
 				</a>
 			</div>
 			<div class="col-xs-8">
 				<a href="profile?{{name}}"><h3 id="name">{{name}}</h3></a>
+				<p>{{age}}</p>
 				<p><i>{{location}}</i></p>
+				<p>{{gym}}</p>
 				<p>{{about_me}}</p>
 			</div>
 			<hr width="100%">

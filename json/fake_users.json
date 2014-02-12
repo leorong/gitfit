@@ -1,0 +1,94 @@
+{
+	"users": [
+		{
+			"name": "Ricky Tran",
+			"user_name": "rtran58",
+			"age": 20,
+			"gym": "Arrillaga West",
+			"location": "Palo Alto, CA",
+			"about_me": "Ricky is a Junior studying Computer Science at Stanford. During his spare time, he likes to DJ and play video games.",
+			"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-ash3/t1/1512525_10151837587365840_1627057196_n.jpg"
+		},
+		{
+			"name": "Leo Rong",
+			"user_name": "leorong",
+			"age": 21,
+			"gym": "Arrillaga East",
+			"location": "Palo Alto, CA",
+			"about_me": "Leo is a Senior studying Computer Science. During his spare time, he likes to breakdance and hang with his bros.",
+			"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-frc3/t1/1511248_10151905176381139_647590704_n.jpg"
+		},
+		{
+			"name": "Akshay Buddiga",
+			"user_name": "abuddiga",
+			"age": 23,
+			"gym": "Arrillaga East",
+			"location": "Palo Alto, CA",
+			"about_me": "Akshay is an MS&E masters student at Stanford University. He did his undergrad at Duke University and enjoys Las Vegas and poker.",
+			"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-ash3/t1/581701_10151490899423505_1768814933_n.jpg"
+		},
+		{
+			"name": "Michael Jordan",
+			"user_name": "mj23",
+			"age": 55,
+			"gym": "Arrillaga West",
+			"location": "Palo Alto, CA",
+			"about_me": "Michael Jordan is the best basketball player of all time.",
+			"imageURL": "http://lorempixel.com/500/500/people"
+		},
+		{
+			"name": "Derrick Rose",
+			"user_name": "drose",
+			"age": 26,
+			"gym": "Arrillaga West",
+			"location": "Palo Alto, CA",
+			"about_me": "Derrick Rose will return.",
+			"imageURL": "http://lorempixel.com/500/500/people"
+		},
+		{
+			"name": "Kevin Durant",
+			"user_name": "kd35",
+			"age": 26,
+			"gym": "Arrillaga East",
+			"location": "Palo Alto, CA",
+			"about_me": "KD will be the MVP.",
+			"imageURL": "http://lorempixel.com/500/500/people"
+		},
+		{
+			"name": "LeBron James",
+			"user_name": "kingjames",
+			"age": 29,
+			"gym": "Arrillaga West",
+			"location": "Palo Alto, CA",
+			"about_me": "LeBron is going for his 3rd title.",
+			"imageURL": "http://lorempixel.com/500/500/people"
+		},
+		{
+			"name": "Kobe Bryant",
+			"user_name": "mamba",
+			"age": 35,
+			"gym": "Arrillaga East",
+			"location": "Palo Alto, CA",
+			"about_me": "Kobe is getting paid for sitting on the bench.",
+			"imageURL": "http://lorempixel.com/500/500/people"
+		},
+		{
+			"name": "Stephen Curry",
+			"user_name": "stephforthree",
+			"age": 25,
+			"gym": "Arrillaga East",
+			"location": "Palo Alto, CA",
+			"about_me": "Steph Curry drains threes.",
+			"imageURL": "http://lorempixel.com/500/500/people"
+		},
+		{
+			"name": "Carmelo Anthony",
+			"user_name": "melo",
+			"age": 30,
+			"gym": "Arrillaga West",
+			"location": "Palo Alto, CA",
+			"about_me": "Carmelo has the scoring record for MSG.",
+			"imageURL": "http://lorempixel.com/500/500/people"
+		},
+	]
+}
