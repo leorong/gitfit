@@ -10,6 +10,11 @@ var handlebars = require('express3-handlebars')
 var mongoose = require('mongoose')
 
 mongoose.connect('mongodb://localhost/test');
+var models = require('./models')(mongoose);
+
+var test_user = new models.User({'first_name':'test','last_name':'user','age':22});
+
+console.log(test_user);
 
 var db = mongoose.connection;
 
