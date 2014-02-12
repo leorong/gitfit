@@ -27,3 +27,9 @@ body {
 .form-control {
 	margin-top: 5px;
 }
+
+.img {
+
+	height: auto;
+	width: 50px;
+}

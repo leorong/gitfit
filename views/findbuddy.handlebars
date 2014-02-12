@@ -23,15 +23,15 @@
 	{{> _navbar}}
 
 	<div class="container">
-		<h1>Find a Buddy</h1>
+		<h1 position:"center">Find a Buddy</h1>
  		{{#each random_matches}}	
 			<div class="random_matches">
-				<div class="col-xs-4">
+				<div class="col-md-4">
 					<a href="#" class="thumbnail">
 						<img class="img" src="{{prof_pic}}"></img>
 					</a>
 				</div>
-				<div class="col-xs-8">
+				<div class="col-md-8">
 					<h3 id="name">{{name}}</h3>
 					<p><i>{{location}}</i></p>
 					<p>{{about_me}}</p>
