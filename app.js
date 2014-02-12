@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -10,11 +9,6 @@ var handlebars = require('express3-handlebars')
 var mongoose = require('mongoose')
 
 mongoose.connect('mongodb://localhost/test');
-var models = require('./models')(mongoose);
-
-var test_user = new models.User({'first_name':'test','last_name':'user','age':22});
-
-console.log(test_user);
 
 var db = mongoose.connection;
 
@@ -49,6 +43,8 @@ db.once('open', function() {
 });
 
 var index = require('./routes/index');
+var login = require('./routes/login');
+var signup = require('./routes/signup');
 var user = require('./routes/user');
 var buddylist = require('./routes/buddylist');
 var findbuddy = require('./routes/findbuddy');
@@ -78,7 +74,9 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
-app.get('/', index.view);
+app.get('/', login.view);
+app.get('/index', index.view);
+app.get('/signup', signup.view);
 app.get('/user', user.view);
 app.get('/buddylist', buddylist.view);
 app.get('/findbuddy', findbuddy.view);
