@@ -50,6 +50,7 @@ var buddylist = require('./routes/buddylist');
 var findbuddy = require('./routes/findbuddy');
 var message = require('./routes/message');
 var schedule = require('./routes/schedule');
+var calendar = require('./routes/calendar');
 
 var app = express();
 
@@ -82,6 +83,7 @@ app.get('/buddylist', buddylist.view);
 app.get('/findbuddy', findbuddy.view);
 app.get('/message', message.view);
 app.get('/schedule', schedule.view);
+app.get('/calendar', calendar.view);
 
 // Example route
 //app.get('/user.html', user.index);

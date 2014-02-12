@@ -26,7 +26,6 @@
 		<h1>My Profile</h1>
 
 		<div class="profile">
-			
 			<div class="col-xs-4">
 
 				<a href="#" class="thumbnail">
@@ -46,7 +45,23 @@
 				<p>Ricky is a Junior studying Computer Science at Stanford. During his spare time, he likes to DJ and play video games.</p>
 			</div>
 		</div>
-
+		<form class="newMessageForm">
+            <div class="form-group">
+                <label>To:</label>
+                <input type="text" class="form-control" id="to_user_name" placeholder="User Name">
+            </div>
+            <div class="form-group">
+                <label>Project ID Number:</label>
+                <input type="number" class="form-control" id="project_id" placeholder="Project ID #">
+            </div>
+            <div class="form-group">
+                <label>Message:</label>
+                <textarea class="form-control" rows="3" id="message_text" placeholder="Enter Message Here"></textarea>
+            </div>
+            <div class="form-group">
+                <button value="Submit" class="btn btn-lg btn-default" id="sendBtn">Send</button>
+            </div>
+        </form>
 
 	</div>
 
