@@ -23,8 +23,12 @@
 	{{> _navbar}}
 
 	<div class="container">
-
 		<h1 position:"center">Find a Buddy</h1>
+
+		{{#with users.[0]}}
+			<p>Check out everyone else who works out at {{gym}}!</p>
+		{{/with}}
+
  		{{#each users}}	
 			<div class="random_matches">
 				<div class="col-md-4">
@@ -42,6 +46,7 @@
 				<hr width="100%">
 			</div>
 		{{/each}}
+		
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
