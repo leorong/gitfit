@@ -44,6 +44,7 @@ db.once('open', function() {
 
 var index = require('./routes/index');
 var login = require('./routes/login');
+var login_check = require('./routes/login_check');
 var signup = require('./routes/signup');
 var user = require('./routes/user');
 var buddylist = require('./routes/buddylist');
@@ -67,7 +68,8 @@ app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(express.cookieParser('Intro HCI secret key'));
-app.use(express.session());
+//app.use(express.session());
+app.use(express.session({secret: '320SdF3r42fw1409LrE8d6RT3wq1oOhsl1'}));
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -78,6 +80,7 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', login.view);
+app.get('/login_check', login_check.check);
 app.get('/index', index.view);
 app.get('/signup', signup.view);
 app.get('/user', user.view);

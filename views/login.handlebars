@@ -14,11 +14,11 @@
 	<div class="main">
 		<div class="row">
 			<div class="container">
-				<form class="form-signin" method="get" action="/index">
+				<form class="form-signin" method="get" action="/login_check">
 					<h3>Login to GymMatch</h3>
 					<div class="form-group">
-						<input type="text" class="form-control login" id="username" placeholder="Username" autofous>
-						<input type="password" class="form-control login" id="password" placeholder="Password">
+						<input type="text" class="form-control login" id="username" name="username" placeholder="Username" autofous>
+						<input type="password" class="form-control login" id="password" name="password" placeholder="Password">
 					</div>
 					<div class="forgot">
 						<div class="row">
@@ -32,7 +32,7 @@
 					<div class="loginBtns">
 						<div class="row">
 							<div class="col-sm-12 col-md-12">
-								<input type="submit" class="btn btn-primary btn-block" value="Login"></input>
+								<button value="submit" class="btn btn-primary btn-block" value="Login">Login</input>
 							</div>
 						</div>
 						<hr width="100%">

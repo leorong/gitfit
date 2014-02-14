@@ -20,5 +20,6 @@ exports.newSession = function(req, res){
 };
 
 exports.view = function(req, res){
-	res.render('index', {'username': req.session.username});
+	//console.log(req.query.username);
+	res.render('index'); //{'username': req.session.username});
 };
