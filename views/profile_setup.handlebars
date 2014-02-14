@@ -17,29 +17,29 @@
 	<div class="container">
 		<h1>Profile Setup</h1>
 		<br>
-		<form class="profile_setup">
+		<form class="profile_setup" role="form" method="get" action="/profile_edit">
             <div class="form-group">
                 <label>Name:</label>
                 <div class ="row">
                     <div class = "col-md-6">
-                		<input type="text" class="form-control" id="firstname" placeholder="First Name">
+                		<input type="text" class="form-control" id="firstname" name ="firstname" placeholder="First Name">
                 	</div>
                 	<div class = "col-md-6">
-                		<input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                		<input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
                 	</div>
                 </div>
             </div>
             <div class="form-group">
                 <label>User Name:</label>
-                <input type="text" class="form-control" id="username" placeholder="Username">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
             </div>
             <div class="form-group">
                 <label>Age:</label>
-                <input type="number" class="form-control" id="age" placeholder="Age">
+                <input type="number" class="form-control" id="age" name="age"placeholder="Age">
             </div>
             <div class="form-group">
                 <label>Gym:</label>
-                <select class="form-control" id="gym">
+                <select class="form-control" id="gym" name="gym">
 					<option>Arrillaga East</option>
 				  	<option>Arrillaga West</option>
 				</select>
@@ -77,29 +77,30 @@
                 <label>Location:</label>
                 <div class ="row">
                     <div class = "col-md-6">
-                		<input type="text" class="form-control" id="city" placeholder="City">
+                		<input type="text" class="form-control" id="city" name=
+                		"city" placeholder="City">
                 	</div>
                 	<div class = "col-md-6">
-                		<input type="text" class="form-control" id="State" placeholder="State">
+                		<input type="text" class="form-control" id="State" name="state" placeholder="State">
                 	</div>
                 </div>
             </div>
             <div class="form-group">
                 <label>About Me:</label>
-                <textarea class="form-control" rows="3" id="about_me" placeholder="Write something about yourself..."></textarea>
+                <textarea class="form-control" rows="3" id="about_me" name="about_me" placeholder="Write something about yourself..."></textarea>
             </div>
             <div class="form-group">
                 <label>Image URL:</label>
-                <input type="text" class="form-control" id="image_url" placeholder="image_url">
+                <input type="text" class="form-control" id="image_url" name="image_url" placeholder="image_url">
             </div>
             <div class="form-group">
-                <a href="/user" type="submit" class="btn btn-primary" id="savebtn">Save</a>
+                <button value="Submit" class="btn btn-primary" id="savebtn">Send</button>
             </div>
         </form>
 
 	</div>
-	<script src="jquery-1.11.0.js"></script>
+	<script src="/js/jquery-1.11.0.js"></script>
 	<script src="js/bootstrap.js"></script>
-	<script src="gym_match.js"></script>
+	<script src="/js/gym_match.js"></script>
 </body>
 </html>
