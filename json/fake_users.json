@@ -40,7 +40,7 @@
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
 			"about_me": "Michael Jordan is the best basketball player of all time.",
-			"imageURL": "http://lorempixel.com/500/500/people",
+			"imageURL": "http://img.quotery.com/pictures/2013/03/michael-jordan.jpg",
 			"activities": ["basketball", "weightlifting", "climbbing"],
 			"looking": true
 		},
@@ -51,7 +51,7 @@
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
 			"about_me": "Derrick Rose will return.",
-			"imageURL": "http://lorempixel.com/500/500/people",
+			"imageURL": "http://chicagofabulousblog.com/wp-content/uploads/2011/12/derrick-rose-300x300.jpg",
 			"activities": ["basketball", "weightlifting", "running"],
 			"looking": false
 		},
@@ -62,7 +62,7 @@
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
 			"about_me": "KD will be the MVP.",
-			"imageURL": "http://lorempixel.com/500/500/people",
+			"imageURL": "http://thestartingfive.net/wp-content/uploads/2012/06/kevin_durant-27465-300x300.jpg",
 			"activities": ["basketball", "weightlifting", "cycling"],
 			"looking": false
 		},
@@ -73,7 +73,7 @@
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
 			"about_me": "LeBron is going for his 3rd title.",
-			"imageURL": "http://lorempixel.com/500/500/people",
+			"imageURL": "http://www.jacehallshow.com/wp-content/uploads/lebron_james-300x300.jpg",
 			"activities": ["basketball", "weightlifting"],
 			"looking": true
 		},
@@ -84,7 +84,7 @@
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
 			"about_me": "Kobe is getting paid for sitting on the bench.",
-			"imageURL": "http://lorempixel.com/500/500/people",
+			"imageURL": "http://leeloveshottrends.com/wp-content/uploads/2011/01/Kobe-Bryant-to-be-Honored-at-Hollywood-Landmark-300x300.jpg",
 			"activities": ["basketball", "weightlifting"],
 			"looking": false
 		},
@@ -95,7 +95,7 @@
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
 			"about_me": "Steph Curry drains threes.",
-			"imageURL": "http://lorempixel.com/500/500/people",
+			"imageURL": "http://a.espncdn.com/photo/2013/0508/nba_u_curry11_300.jpg",
 			"activities": ["basketball", "weightlifting"],
 			"looking": true
 		},
@@ -106,7 +106,7 @@
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
 			"about_me": "Carmelo has the scoring record for MSG.",
-			"imageURL": "http://lorempixel.com/500/500/people",
+			"imageURL": "http://a.espncdn.com/photo/2013/1005/ny_a_melo01jr_300x300.jpg",
 			"activities": ["basketball", "weightlifting"],
 			"looking": false
 		}
