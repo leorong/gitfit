@@ -29,7 +29,5 @@ body {
 }
 
 .img {
-
-	height: auto;
-	width: 50px;
+	max-height: 250px;
 }
