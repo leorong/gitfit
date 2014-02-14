@@ -1,0 +1,105 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Profile Setup</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.css" rel="stylesheet">
+	<link href="/css/gym_match.css" rel="stylesheet">       
+</head>
+
+<body>
+
+	{{> _navbar}}
+
+	<div class="container">
+		<h1>Profile Setup</h1>
+		<br>
+		<form class="profile_setup">
+            <div class="form-group">
+                <label>Name:</label>
+                <div class ="row">
+                    <div class = "col-md-6">
+                		<input type="text" class="form-control" id="firstname" placeholder="First Name">
+                	</div>
+                	<div class = "col-md-6">
+                		<input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                	</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>User Name:</label>
+                <input type="text" class="form-control" id="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label>Age:</label>
+                <input type="number" class="form-control" id="age" placeholder="Age">
+            </div>
+            <div class="form-group">
+                <label>Gym:</label>
+                <select class="form-control" id="gym">
+					<option>Arrillaga East</option>
+				  	<option>Arrillaga West</option>
+				</select>
+            </div>
+            <div class="form-group">
+            	<label>Exercise:</label>
+            	<div id = "checkbox">
+					<label class="checkbox-inline">
+						<input type="checkbox" value="basketball">
+						Basketball
+					</label>
+					<label class="checkbox-inline">
+						<input type="checkbox" value="weightlifting">
+						Weight Lifting
+					</label>
+					<label class="checkbox-inline">
+						<input type="checkbox" value="running">
+						Running
+					</label>
+					<label class="checkbox-inline">
+						<input type="checkbox" value="swimming">
+						Swimming
+					</label>
+					<label class="checkbox-inline">
+						<input type="checkbox" value="climbing">
+						Climbing
+					</label>
+					<label class="checkbox-inline">
+						<input type="checkbox" value="cycling">
+						Cycling
+					</label>
+				</div>
+            </div>
+            <div class="form-group">
+                <label>Location:</label>
+                <div class ="row">
+                    <div class = "col-md-6">
+                		<input type="text" class="form-control" id="city" placeholder="City">
+                	</div>
+                	<div class = "col-md-6">
+                		<input type="text" class="form-control" id="State" placeholder="State">
+                	</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>About Me:</label>
+                <textarea class="form-control" rows="3" id="about_me" placeholder="Write something about yourself..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>Image URL:</label>
+                <input type="text" class="form-control" id="image_url" placeholder="image_url">
+            </div>
+            <div class="form-group">
+                <a href="/user" type="submit" class="btn btn-primary" id="savebtn">Save</a>
+            </div>
+        </form>
+
+	</div>
+	<script src="jquery-1.11.0.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="gym_match.js"></script>
+</body>
+</html>
