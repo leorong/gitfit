@@ -15,31 +15,6 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
 	console.log('db opened');
-	var kittySchema = mongoose.Schema({
-    name: String
-	});
-	kittySchema.methods.speak = function() {
-		var greeting = this.name ? "Meow name is " + this.name : "I don't have a name";
-		console.log(greeting);
-	}
-	var Kitten = mongoose.model('Kitten', kittySchema)
-	var silence = new Kitten({ name: 'Silence' })
-	var fluffy = new Kitten()
-	fluffy.save(function (err, fluffy) {
-  	if (err) // TODO handle the error
-  	fluffy.speak();
-	});
-	silence.save(function (err, silence) {
-  	if (err) // TODO handle the error
-  	silence.speak();
-	});
-
-	Kitten.find(function (err, kittens) {
-	  if (err) console.log("error");
-	  console.log(kittens);
-	})
-	fluffy.speak();
-
 });
 
 var index = require('./routes/index');
@@ -63,10 +38,16 @@ app.use(express.logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
+app.use(express.bodyParser());
 app.use(express.cookieParser('Intro HCI secret key'));
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+
+var clientSessions = require('client-sessions');
+app.use(clientSessions({
+  secret: '320SDF3242fw1409LrE8d6RT3wq1oOhsl1' // set this to a long random string!
+}));
 
 // development only
 if ('development' == app.get('env')) {
@@ -75,6 +56,7 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 app.get('/', login.view);
+app.post('/', login.session)
 app.get('/index', index.view);
 app.get('/signup', signup.view);
 app.get('/user', user.view);
