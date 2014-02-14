@@ -26,28 +26,26 @@
 		<h3>{{name}}'s Profile</h3>
 
 		<div class="profile">
-			<div class="col-xs-4 col-md-4" >
+			<div class="col-xs-12" >
 				<a href="#" class="thumbnail">
 					<img class="img" src="{{imageURL}}"></img>
 				</a>
 
-				<div class="looking-for-friend" style="margin:0; auto;">
+				<div class="looking-for-friend">
 					{{#if looking}}
-						<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-plus">Friend</span></button>	
+						<button type="button" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-plus">Friend</span></button>	
 					{{else}}
-						<button type="button" class="btn btn-primary" disabled><span class="glyphicon glyphicon-plus">Friend</span></button>	
+						<button type="button" class="btn btn-primary btn-block" disabled><span class="glyphicon glyphicon-plus">Friend</span></button>	
 					{{/if}}
 				</div>
-			</div>
-			<div class="col-xs-8 col-md-8">
-				<p><i>{{location}}</i></p>
+                <br> 
+                <p><i>{{location}}</i></p>
 				<p>Gym: {{gym}}</p>
 				<p>Age: {{age}}</p>
 				<div class="about-me">
 					<p>{{about_me}}</p>
 				</div>
 				<div class="activities">
-					<div class="row">
 					<div class="panel panel-default">
 						<!-- Default panel contents -->
 						<div class="panel-heading">{{name}}'s Activities</div>
@@ -58,8 +56,8 @@
 						{{/each}}
 						</ul>
 						</div>
-					</div>
-				</div>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>
