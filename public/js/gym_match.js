@@ -1,12 +1,3 @@
-$("[name='find_friend_toggle']").bootstrapSwitch();
-
-$(document).ready(function() {
-	initializeUserProfile();
-
-
-})
-
-
 $('#savebtn').click(function (e) {
 	var user = {};
 	user['name'] = $('#firstname').val() + " " + $('#lastname').val();
