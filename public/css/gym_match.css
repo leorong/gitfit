@@ -8,6 +8,7 @@ body {
 	top: 50px;
 }
 
+
 .random_matches p {
 	margin:1px;
 }
@@ -29,5 +30,6 @@ body {
 }
 
 .img {
-	max-height: 250px;
+	max-height: 300px;
+    max-width: 300px;
 }
