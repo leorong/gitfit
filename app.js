@@ -51,6 +51,7 @@ var findbuddy = require('./routes/findbuddy');
 var message = require('./routes/message');
 var schedule = require('./routes/schedule');
 var profile_setup = require('./routes/profile_setup');
+var profile = require('./routes/profile');
 
 var app = express();
 
@@ -84,6 +85,8 @@ app.get('/findbuddy', findbuddy.view);
 app.get('/message', message.view);
 app.get('/schedule', schedule.view);
 app.get('/profile_setup', profile_setup.view);
+app.get('/profile/:username', profile.view);
+
 
 // Example route
 //app.get('/user.html', user.index);
