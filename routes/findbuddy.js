@@ -17,6 +17,6 @@ var filter = function(users, gym) {
 var filtered = filter(data['users'], 'Arrillaga West');
 
 exports.view = function(req, res){
-  res.render('findbuddy', filtered);
+	res.render('findbuddy', filtered);
 };
 

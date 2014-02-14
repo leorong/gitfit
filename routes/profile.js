@@ -14,6 +14,6 @@ var getUser = function(username) {
 exports.view = function(req, res) {
 	var username = req.params.username;
 	var userData = getUser(username);
-	
+
 	res.render('profile', userData);
 }
