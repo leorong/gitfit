@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
 	<link href="/css/gym_match.css" rel="stylesheet">
 	<!-- this is a comment in HTML -->
 
@@ -27,19 +28,18 @@
 
 		<div class="profile">
 			<div class="col-xs-4">
-
 				<a href="#" class="thumbnail">
 					<img class="img" src={{imageURL}}></img>
 				</a>
 			</div>
 			<div class="col-xs-8">
-				<h3>{{name}}</h3>
+				<h2><a href="#" id="name">{{name}}</a></h2>
 				<div>
 					<p>Looking for a friend:
 					<input type="checkbox" name="find_friend_toggle" class="switch-small" checked data-animated="false">
 					</p>
 				</div>
-				<p><i>{{location}}</i></p>
+				<h3>{{location}}</h3>
 				<p>Age: {{age}}</p>
 				<p>Activities: {{activities}}</p>
 				<p>{{about_me}}</p>
@@ -49,5 +49,7 @@
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+	<script src="/js/gym_match.js"></script>
 </body>
 </html>

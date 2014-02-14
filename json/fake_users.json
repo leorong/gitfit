@@ -8,7 +8,8 @@
 			"location": "Palo Alto, CA",
 			"about_me": "Ricky is a Junior studying Computer Science at Stanford. During his spare time, he likes to DJ and play video games.",
 			"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-ash3/t1/1512525_10151837587365840_1627057196_n.jpg",
-			"activities": ["basketball", "weightlifting"]
+			"activities": ["basketball", "weightlifting"],
+			"looking": true
 		},
 		{
 			"name": "Leo Rong",
@@ -18,7 +19,8 @@
 			"location": "Palo Alto, CA",
 			"about_me": "Leo is a Senior studying Computer Science. During his spare time, he likes to breakdance and hang with his bros.",
 			"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-frc3/t1/1511248_10151905176381139_647590704_n.jpg",
-			"activities": ["basketball", "weightlifting", "swimming"]
+			"activities": ["basketball", "weightlifting", "swimming"],
+			"looking": true
 		},
 		{
 			"name": "Akshay Buddiga",
@@ -28,7 +30,8 @@
 			"location": "Palo Alto, CA",
 			"about_me": "Akshay is an MS&E masters student at Stanford University. He did his undergrad at Duke University and enjoys Las Vegas and poker.",
 			"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-ash3/t1/581701_10151490899423505_1768814933_n.jpg",
-			"activities": ["basketball", "weightlifting"]
+			"activities": ["basketball", "weightlifting"],
+			"looking": false
 		},
 		{
 			"name": "Michael Jordan",
@@ -38,7 +41,8 @@
 			"location": "Palo Alto, CA",
 			"about_me": "Michael Jordan is the best basketball player of all time.",
 			"imageURL": "http://lorempixel.com/500/500/people",
-			"activities": ["basketball", "weightlifting", "climbbing"]
+			"activities": ["basketball", "weightlifting", "climbbing"],
+			"looking": true
 		},
 		{
 			"name": "Derrick Rose",
@@ -48,7 +52,8 @@
 			"location": "Palo Alto, CA",
 			"about_me": "Derrick Rose will return.",
 			"imageURL": "http://lorempixel.com/500/500/people",
-			"activities": ["basketball", "weightlifting", "running"]
+			"activities": ["basketball", "weightlifting", "running"],
+			"looking": false
 		},
 		{
 			"name": "Kevin Durant",
@@ -58,7 +63,8 @@
 			"location": "Palo Alto, CA",
 			"about_me": "KD will be the MVP.",
 			"imageURL": "http://lorempixel.com/500/500/people",
-			"activities": ["basketball", "weightlifting", "cycling"]
+			"activities": ["basketball", "weightlifting", "cycling"],
+			"looking": false
 		},
 		{
 			"name": "LeBron James",
@@ -68,7 +74,8 @@
 			"location": "Palo Alto, CA",
 			"about_me": "LeBron is going for his 3rd title.",
 			"imageURL": "http://lorempixel.com/500/500/people",
-			"activities": ["basketball", "weightlifting"]
+			"activities": ["basketball", "weightlifting"],
+			"looking": true
 		},
 		{
 			"name": "Kobe Bryant",
@@ -78,7 +85,8 @@
 			"location": "Palo Alto, CA",
 			"about_me": "Kobe is getting paid for sitting on the bench.",
 			"imageURL": "http://lorempixel.com/500/500/people",
-			"activities": ["basketball", "weightlifting"]
+			"activities": ["basketball", "weightlifting"],
+			"looking": false
 		},
 		{
 			"name": "Stephen Curry",
@@ -88,7 +96,8 @@
 			"location": "Palo Alto, CA",
 			"about_me": "Steph Curry drains threes.",
 			"imageURL": "http://lorempixel.com/500/500/people",
-			"activities": ["basketball", "weightlifting"]
+			"activities": ["basketball", "weightlifting"],
+			"looking": true
 		},
 		{
 			"name": "Carmelo Anthony",
@@ -98,7 +107,8 @@
 			"location": "Palo Alto, CA",
 			"about_me": "Carmelo has the scoring record for MSG.",
 			"imageURL": "http://lorempixel.com/500/500/people",
-			"activities": ["basketball", "weightlifting"]
+			"activities": ["basketball", "weightlifting"],
+			"looking": false
 		}
 	]
 }
