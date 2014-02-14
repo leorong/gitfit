@@ -40,9 +40,21 @@
 					</p>
 				</div>
 				<h3>{{location}}</h3>
-				<p>Age: {{age}}</p>
-				<p>Activities: {{activities}}</p>
-				<p>{{about_me}}</p>
+				<h4>Age: <a href="#" id="age">{{age}}</a></h4>
+				<h4>About Me:</h4>
+				<h4><a href="#" id="about_me">{{about_me}}</a></h4>
+				<div class="activities">
+                    <div class="row">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">{{name}}'s Activities</div>
+                            <ul class="list-group">
+                                {{#each activities}}
+                                <li class="list-group-item">{{this}}</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>
