@@ -2,5 +2,6 @@
  * GET home page.
  */
 exports.view = function(req, res){
-  res.render('index');
+  	console.log("test");
+	res.render('index');
 };

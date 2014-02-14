@@ -1,3 +1,4 @@
+
 //$("[name='find_friend_toggle']").bootstrapSwitch();
 
 $('#name').editable({
@@ -7,3 +8,4 @@ $('#name').editable({
    url:   'post.php',  
    title: 'Enter username'
 });
+
