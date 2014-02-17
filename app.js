@@ -43,6 +43,11 @@ db.once('open', function() {
 
 });
 
+/* Models */
+var user_model = require('./models/user_model');
+
+/* Routes */
+var routes = require('./routes');
 var index = require('./routes/index');
 var login = require('./routes/login');
 var login_check = require('./routes/login_check');
