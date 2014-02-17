@@ -39,6 +39,7 @@ db.once('open', function() {
 	  console.log(kittens);
 	})
 	fluffy.speak();
+	silence.speak();
 
 });
 
