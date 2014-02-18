@@ -6,7 +6,9 @@ var mongoose = require('mongoose'),
 
 /* Login form */
 exports.login = function(req, res) {
-    res.render('login');
+    res.render('login', {user: req.user ? JSON.stringify(req.user) : 'null', 
+                        message: req.session.messages || [] });
+    req.session.messages = [];
 };
 
 /* Signup form */
@@ -20,11 +22,6 @@ exports.signout = function(req, res) {
     req.logout();
     res.redirect('/'); //or Login?
 };
-
-/* New session */
-exports.session = function(req, res) {
-    res.redirect('/')
-}
 
 /* Create user */
 exports.create = function(req, res, next) {
@@ -69,6 +66,7 @@ exports.view = function(req, res) {
             res.render('index');
         } else {
             res.render('user', {
+                user: req.user ? JSON.stringify(req.user) : 'null',
                 'name': user.name.full,
                 'age': user.age,
                 'imageURL': user.imageURL,
@@ -91,7 +89,15 @@ exports.buddylist = function(req, res) {
     //         res.render('buddylist', users)
     //     }
     // });
-    res.render('buddylist', data);
+
+    var user = 'null';
+    if (req.user) {
+        user = JSON.stringify(req.user);
+    }
+    var returnObj = data;
+    returnObj['user'] = user;
+
+    res.render('buddylist', returnObj);
 };
 
 

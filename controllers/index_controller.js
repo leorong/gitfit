@@ -20,7 +20,7 @@ exports.view = function(req, res) {
 
         var newPerson = new User({
             name: {first: firstName, last: lastName},
-            username: user.user_name,
+            username: user.username,
             email: "random@email.com",
             password: "password",
             age: user.age,
@@ -35,6 +35,7 @@ exports.view = function(req, res) {
     }
 
     res.render('index', {
+        message: req.flash('info'),
         user: req.user ? JSON.stringify(req.user) : 'null'
     });
 }

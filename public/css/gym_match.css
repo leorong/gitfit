@@ -33,3 +33,7 @@ body {
 	max-height: 300px;
     max-width: 300px;
 }
+
+.flash-err {
+	height: 30px;
+}

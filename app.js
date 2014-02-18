@@ -1,13 +1,14 @@
 /**
  * Module dependencies.
  */
-
+var flash = require('connect-flash');
 var express = require('express'),
 	http = require('http'),
     path = require('path'),
     handlebars = require('express3-handlebars'),
-    mongoose = require('mongoose'),
     passport = require('passport');
+
+var mongoose = require('mongoose');
 
 mongoose.connect('mongodb://localhost/test');
 
@@ -22,6 +23,27 @@ db.once('open', function() {
 var user_model = require('./models/user');
 
 var app = express();
+
+// all environments
+app.set('port', process.env.PORT || 3000);
+app.set('views', path.join(__dirname, 'views'));
+app.engine('handlebars', handlebars());
+app.set('view engine', 'handlebars');
+app.use(express.favicon());
+app.use(express.logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded());
+app.use(express.methodOverride());
+app.use(express.cookieParser('Intro HCI secret key'));
+app.use(express.session({secret: '320SdF3r42fw1409LrE8d6RT3wq1oOhsl1'}));
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(app.router);
+app.use(express.static(path.join(__dirname, 'public')));
+
+/* Passport config */
+require('./config/passport')(passport);
 
 /* Routes */
 // var routes = require('./routes');
@@ -40,25 +62,6 @@ var profile_edit = require('./routes/profile_edit');
 
 var users = require('./routes/users')(app, passport);
 var index = require('./routes/index')(app, passport);
-
-
-// all environments
-app.set('port', process.env.PORT || 3000);
-app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', handlebars());
-app.set('view engine', 'handlebars');
-app.use(express.favicon());
-app.use(express.logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded());
-app.use(express.methodOverride());
-app.use(express.cookieParser('Intro HCI secret key'));
-//app.use(express.session());
-app.use(express.session({secret: '320SdF3r42fw1409LrE8d6RT3wq1oOhsl1'}));
-app.use(passport.initialize());
-app.use(passport.session());
-app.use(app.router);
-app.use(express.static(path.join(__dirname, 'public')));
 
 // development only
 if ('development' == app.get('env')) {
