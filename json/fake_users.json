@@ -2,7 +2,7 @@
 	"users": [
 		{
 			"name": "Ricky Tran",
-			"user_name": "rtran58",
+			"username": "rtran58",
 			"age": 20,
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
@@ -13,7 +13,7 @@
 		},
 		{
 			"name": "Leo Rong",
-			"user_name": "leorong",
+			"username": "leorong",
 			"age": 21,
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
@@ -24,7 +24,7 @@
 		},
 		{
 			"name": "Akshay Buddiga",
-			"user_name": "abuddiga",
+			"username": "abuddiga",
 			"age": 23,
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
@@ -35,7 +35,7 @@
 		},
 		{
 			"name": "Michael Jordan",
-			"user_name": "mj23",
+			"username": "mj23",
 			"age": 55,
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
@@ -46,7 +46,7 @@
 		},
 		{
 			"name": "Derrick Rose",
-			"user_name": "drose",
+			"username": "drose",
 			"age": 26,
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
@@ -57,7 +57,7 @@
 		},
 		{
 			"name": "Kevin Durant",
-			"user_name": "kd35",
+			"username": "kd35",
 			"age": 26,
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
@@ -68,7 +68,7 @@
 		},
 		{
 			"name": "LeBron James",
-			"user_name": "kingjames",
+			"username": "kingjames",
 			"age": 29,
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
@@ -79,7 +79,7 @@
 		},
 		{
 			"name": "Kobe Bryant",
-			"user_name": "mamba",
+			"username": "mamba",
 			"age": 35,
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
@@ -90,7 +90,7 @@
 		},
 		{
 			"name": "Stephen Curry",
-			"user_name": "stephforthree",
+			"username": "stephforthree",
 			"age": 25,
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
@@ -101,7 +101,7 @@
 		},
 		{
 			"name": "Carmelo Anthony",
-			"user_name": "melo",
+			"username": "melo",
 			"age": 30,
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",

@@ -2,11 +2,12 @@
  * Module dependencies.
  */
 
-var express = require('express');
-var http = require('http');
-var path = require('path');
-var handlebars = require('express3-handlebars')
-var mongoose = require('mongoose')
+var express = require('express'),
+	http = require('http'),
+    path = require('path'),
+    handlebars = require('express3-handlebars'),
+    mongoose = require('mongoose'),
+    passport = require('passport');
 
 mongoose.connect('mongodb://localhost/test');
 
@@ -15,53 +16,31 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
 	console.log('db opened');
-	var kittySchema = mongoose.Schema({
-    name: String
-	});
-	kittySchema.methods.speak = function() {
-		var greeting = this.name ? "Meow name is " + this.name : "I don't have a name";
-		console.log(greeting);
-	}
-	var Kitten = mongoose.model('Kitten', kittySchema)
-	var silence = new Kitten({ name: 'Silence' })
-	var fluffy = new Kitten()
-	fluffy.save(function (err, fluffy) {
-  	if (err) // TODO handle the error
-  	fluffy.speak();
-	});
-	silence.save(function (err, silence) {
-  	if (err) // TODO handle the error
-  	silence.speak();
-	});
-
-	Kitten.find(function (err, kittens) {
-	  if (err) console.log("error");
-	  console.log(kittens);
-	})
-	fluffy.speak();
-	silence.speak();
-
 });
 
 /* Models */
-var user_model = require('./models/user_model');
+var user_model = require('./models/user');
+
+var app = express();
 
 /* Routes */
-var routes = require('./routes');
-var index = require('./routes/index');
+// var routes = require('./routes');
+//var index = require('./routes/index');
 var login = require('./routes/login');
 var login_check = require('./routes/login_check');
-var signup = require('./routes/signup');
-var user = require('./routes/user');
-var buddylist = require('./routes/buddylist');
+//var signup = require('./routes/signup');
+//var user = require('./routes/user');
+//var buddylist = require('./routes/buddylist');
 var findbuddy = require('./routes/findbuddy');
 var message = require('./routes/message');
 var schedule = require('./routes/schedule');
 var profile_setup = require('./routes/profile_setup');
 var profile_edit = require('./routes/profile_edit');
-var profile = require('./routes/profile');
+// var profile = require('./routes/profile');
 
-var app = express();
+var users = require('./routes/users')(app, passport);
+var index = require('./routes/index')(app, passport);
+
 
 // all environments
 app.set('port', process.env.PORT || 3000);
@@ -76,6 +55,8 @@ app.use(express.methodOverride());
 app.use(express.cookieParser('Intro HCI secret key'));
 //app.use(express.session());
 app.use(express.session({secret: '320SdF3r42fw1409LrE8d6RT3wq1oOhsl1'}));
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -85,18 +66,18 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
-app.get('/', login.view);
+// app.get('/', login.view);
 app.get('/login_check', login_check.check);
-app.get('/index', index.view);
-app.get('/signup', signup.view);
-app.get('/user', user.view);
-app.get('/buddylist', buddylist.view);
+//app.get('/index', index.view);
+// app.get('/signup', signup.view);
+//app.get('/user', user.view);
+// app.get('/buddylist', buddylist.view);
 app.get('/findbuddy', findbuddy.view);
 app.get('/message', message.view);
 app.get('/schedule', schedule.view);
 app.get('/profile_setup', profile_setup.view);
 app.get('/profile_edit', profile_edit.edit);
-app.get('/profile/:username', profile.view);
+// app.get('/profile/:username', profile.view);
 
 
 // Example route
