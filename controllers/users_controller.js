@@ -97,7 +97,7 @@ exports.buddylist = function(req, res) {
     var returnObj = data;
     returnObj['user'] = user;
 
-    res.render('buddylist', returnObj);
+    res.render('buddylist', data);
 };
 
 
