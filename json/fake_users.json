@@ -3,7 +3,8 @@
 		{
 			"name": "Ricky Tran",
 			"username": "rtran58",
-			"age": 20,
+			"password": "testpassword",
+            "age": 20,
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
 			"about_me": "Ricky is a Junior studying Computer Science at Stanford. During his spare time, he likes to DJ and play video games.",
@@ -14,6 +15,7 @@
 		{
 			"name": "Leo Rong",
 			"username": "leorong",
+			"password": "testpassword",
 			"age": 21,
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
@@ -25,6 +27,7 @@
 		{
 			"name": "Akshay Buddiga",
 			"username": "abuddiga",
+			"password": "testpassword",
 			"age": 23,
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
@@ -36,6 +39,7 @@
 		{
 			"name": "Michael Jordan",
 			"username": "mj23",
+			"password": "testpassword",
 			"age": 55,
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
@@ -47,6 +51,7 @@
 		{
 			"name": "Derrick Rose",
 			"username": "drose",
+			"password": "testpassword",
 			"age": 26,
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
@@ -58,6 +63,7 @@
 		{
 			"name": "Kevin Durant",
 			"username": "kd35",
+			"password": "testpassword",
 			"age": 26,
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
@@ -69,6 +75,7 @@
 		{
 			"name": "LeBron James",
 			"username": "kingjames",
+			"password": "testpassword",
 			"age": 29,
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
@@ -80,6 +87,7 @@
 		{
 			"name": "Kobe Bryant",
 			"username": "mamba",
+			"password": "testpassword",
 			"age": 35,
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
@@ -91,6 +99,7 @@
 		{
 			"name": "Stephen Curry",
 			"username": "stephforthree",
+			"password": "testpassword",
 			"age": 25,
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
@@ -102,6 +111,7 @@
 		{
 			"name": "Carmelo Anthony",
 			"username": "melo",
+			"password": "testpassword",
 			"age": 30,
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
