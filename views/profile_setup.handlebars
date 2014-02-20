@@ -11,13 +11,10 @@
 </head>
 
 <body>
-
-	{{> _navbar}}
-
 	<div class="container">
 		<h1>Profile Setup</h1>
 		<br>
-		<form class="profile_setup" role="form" method="get" action="/profile_edit">
+		<form class="profile_setup" role="form">
             <div class="form-group">
                 <label>Name:</label>
                 <div class ="row">
@@ -28,10 +25,6 @@
                 		<input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name">
                 	</div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label>User Name:</label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
             </div>
             <div class="form-group">
                 <label>Age:</label>
@@ -81,7 +74,7 @@
                 		"city" placeholder="City">
                 	</div>
                 	<div class = "col-md-6">
-                		<input type="text" class="form-control" id="State" name="state" placeholder="State">
+                		<input type="text" class="form-control" id="state" name="state" placeholder="State">
                 	</div>
                 </div>
             </div>
@@ -91,9 +84,10 @@
             </div>
             <div class="form-group">
                 <label>Image URL:</label>
-                <input type="text" class="form-control" id="image_url" name="image_url" placeholder="image_url">
+                <input type="text" class="form-control" id="imageURL" name="imageURL" placeholder="http://lorempixel.com/technics/300/300">
             </div>
             <div class="form-group">
+<<<<<<< HEAD
                 <label>Availability:</label>
                 <ul>
                     <li><div class="monday">
@@ -204,7 +198,7 @@
                 </li>
             </div>
             <div class="form-group">
-                <button value="Submit" class="btn btn-primary" id="savebtn">Send</button>
+                <button value="Submit" class="btn btn-primary" id="saveProfileBtn">Save</button>
             </div>
         </form>
 

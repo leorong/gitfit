@@ -11,7 +11,7 @@ module.exports = function(app, passport) {
 	// });
 	app.get('/', index.view);
     //app.get('/findbuddy', findbuddy.view);
-    app.get('/message', message.view);
+  app.get('/message', message.view);
     //app.get('/schedule', schedule.view);
 };
 

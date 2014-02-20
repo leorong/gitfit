@@ -5,7 +5,6 @@ var data = require('../json/fake_users.json');
 var users = require('../controllers/users_controller');
 
 module.exports = function(app, passport) {
-	//app.get('/', users.index);
     app.get('/login', users.login);
     // app.post('/login', passport.authenticate('local',{ 
     //     successRedirect: '/',
@@ -13,10 +12,11 @@ module.exports = function(app, passport) {
     //     failureFlash: true })
     // );
     app.get('/signup', users.signup);
+    app.post('/create', users.create);
+    app.get('/profile_setup', users.setup);
+    app.post('/addprofile', users.addprofile);
     app.get('/signout', users.signout);
-    //app.get('/users/me', users.me);
     app.get('/user/:username', users.view);
-    app.post('/user', users.create);
     app.get('/buddylist', users.buddylist);
 
     app.post('/login', function(req, res, next) {
@@ -31,4 +31,8 @@ module.exports = function(app, passport) {
             });
         })(req, res, next);
     });
+
+    // app.post('/create', function(req, res, next) {
+        
+    // });
 };
