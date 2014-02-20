@@ -1,8 +1,8 @@
 'use strict';
-
+var message = require('../controllers/message_controller');
 /* GET home page. */
 
-module.exports = function(app) {
+module.exports = function(app, passport) {
 	var index = require('../controllers/index_controller');
 	// app.get('/flash', function(req, res){
 	//   // Set a flash message by passing the key, followed by the value, to req.flash().
@@ -10,6 +10,9 @@ module.exports = function(app) {
 	//   res.redirect('/');
 	// });
 	app.get('/', index.view);
+    //app.get('/findbuddy', findbuddy.view);
+    app.get('/message', message.view);
+    //app.get('/schedule', schedule.view);
 };
 
 
