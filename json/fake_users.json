@@ -41,16 +41,41 @@
 			],
 
 			"availability": {
-		        "monday": [{
-		            "start": "1:45PM",
-		            "end": "3:00PM"
-		        }],
-		        "tuesday": [],
-		        "wednesday": [],
-		        "thursday": [],
-		        "friday": [],
-		        "saturday": [],
-		        "sunday": []
+		        "monday": {
+		            "morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "tuesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "wednesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "thursday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "friday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "saturday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },	
+		        "sunday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        }	
 		    }
 		},
 		{
@@ -92,16 +117,41 @@
 				}
 			],
 			"availability": {
-		        "monday": [{
-		            "start": "1:45PM",
-		            "end": "3:00PM"
-		        }],
-		        "tuesday": [],
-		        "wednesday": [],
-		        "thursday": [],
-		        "friday": [],
-		        "saturday": [],
-		        "sunday": []
+		        "monday": {
+		            "morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "tuesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "wednesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "thursday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "friday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "saturday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },	
+		        "sunday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        }	
 		    }
 		},
 		{
@@ -143,16 +193,41 @@
 				}
 			],
 			"availability": {
-		        "monday": [{
-		            "start": "1:45PM",
-		            "end": "3:00PM"
-		        }],
-		        "tuesday": [],
-		        "wednesday": [],
-		        "thursday": [],
-		        "friday": [],
-		        "saturday": [],
-		        "sunday": []
+		        "monday": {
+		            "morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "tuesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "wednesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "thursday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "friday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "saturday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },	
+		        "sunday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        }	
 		    }
 		},
 		{
@@ -194,16 +269,41 @@
 				}
 			],
 			"availability": {
-		        "monday": [{
-		            "start": "1:45PM",
-		            "end": "3:00PM"
-		        }],
-		        "tuesday": [],
-		        "wednesday": [],
-		        "thursday": [],
-		        "friday": [],
-		        "saturday": [],
-		        "sunday": []
+		        "monday": {
+		            "morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "tuesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "wednesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "thursday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "friday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "saturday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },	
+		        "sunday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        }	
 		    }
 		},
 		{
@@ -245,16 +345,41 @@
 				}
 			],
 			"availability": {
-		        "monday": [{
-		            "start": "1:45PM",
-		            "end": "3:00PM"
-		        }],
-		        "tuesday": [],
-		        "wednesday": [],
-		        "thursday": [],
-		        "friday": [],
-		        "saturday": [],
-		        "sunday": []
+		        "monday": {
+		            "morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "tuesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "wednesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "thursday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "friday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "saturday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },	
+		        "sunday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        }	
 		    }
 		},
 		{
@@ -296,16 +421,41 @@
 				}
 			],
 			"availability": {
-		        "monday": [{
-		            "start": "1:45PM",
-		            "end": "3:00PM"
-		        }],
-		        "tuesday": [],
-		        "wednesday": [],
-		        "thursday": [],
-		        "friday": [],
-		        "saturday": [],
-		        "sunday": []
+		        "monday": {
+		            "morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "tuesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "wednesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "thursday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "friday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "saturday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },	
+		        "sunday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        }	
 		    }
 		},
 		{
@@ -347,16 +497,41 @@
 				}
 			],
 			"availability": {
-		        "monday": [{
-		            "start": "1:45PM",
-		            "end": "3:00PM"
-		        }],
-		        "tuesday": [],
-		        "wednesday": [],
-		        "thursday": [],
-		        "friday": [],
-		        "saturday": [],
-		        "sunday": []
+		        "monday": {
+		            "morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "tuesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "wednesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "thursday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "friday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "saturday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },	
+		        "sunday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        }	
 		    }
 		},
 		{
@@ -398,16 +573,41 @@
 				}
 			],
 			"availability": {
-		        "monday": [{
-		            "start": "1:45PM",
-		            "end": "3:00PM"
-		        }],
-		        "tuesday": [],
-		        "wednesday": [],
-		        "thursday": [],
-		        "friday": [],
-		        "saturday": [],
-		        "sunday": []
+		        "monday": {
+		            "morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "tuesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "wednesday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "thursday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "friday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },
+		        "saturday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        },	
+		        "sunday": {
+		        	"morning" : true,
+		            "afternoon" : false,
+		           	"evening" : false
+		        }	
 		    }
 		}
 	]
