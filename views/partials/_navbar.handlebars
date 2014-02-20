@@ -12,11 +12,19 @@
 
       <div class="collapse navbar-collapse" id="nav-collapse">
         <ul class="nav navbar-nav">
-          <li><a href="/user/{{user.username}}">My Profile</a></li>
-          <li><a href="/schedule">My Schedule</a></li>
-          <li><a href="/findbuddy">Find a Gym Buddy</a></li>
-          <li><a href="/buddylist">Buddy List</a></li>
-          <li><a href="/message">Messages</a></li>
+          {{#if user}}
+            <li><a href="/user/{{current_user}}">My Profile</a></li>
+            <li><a href="/schedule">My Schedule</a></li>
+            <li><a href="/findbuddy">Find a Gym Buddy</a></li>
+            <li><a href="/buddylist">Buddy List</a></li>
+            <li><a href="/message">Messages</a></li>
+          {{else}}
+            <li><a href="/login">My Profile</a></li>
+            <li><a href="/login">My Schedule</a></li>
+            <li><a href="/login">Find a Gym Buddy</a></li>
+            <li><a href="/login">Buddy List</a></li>
+            <li><a href="/login">Messages</a></li>
+          {{/if}}
         </ul>
 
         <ul class="nav navbar-nav navbar-right">

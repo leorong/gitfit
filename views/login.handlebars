@@ -17,9 +17,9 @@
 		<div class="row">
 			<div class="container">
 				{{#if message}}
-					<div class="warning">
+					<div class="warning-message">
 						<button class="close" data-dismiss"warning">&times;</button>
-						<p>{{message}}<p>
+						<p class="no-margin">{{message}}<p>
 					</div>
 				{{/if}}
 				<form class="form-signin" method="post" action="/login">
@@ -38,7 +38,7 @@
 							</div>
 						</div>
 					</div>
-				
+
 					<div class="loginBtns">
 						<div class="row">
 							<div class="col-sm-12 col-md-12">
