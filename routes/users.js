@@ -14,7 +14,7 @@ module.exports = function(app, passport) {
     app.get('/signup', users.signup);
     app.post('/create', users.create);
     app.get('/profile_setup', users.setup);
-    app.post('/add_profile', users.add_profile);
+    app.post('/addprofile', users.addprofile);
     app.get('/signout', users.signout);
     app.get('/user/:username', users.view);
     app.get('/buddylist', users.buddylist);

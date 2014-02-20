@@ -39,7 +39,7 @@ function initializePage() {
          'looking': true
       };
       console.log(json);
-      $.post('/add_profile', json, function() {
+      $.post('/addprofile', json, function() {
          window.location.href = '/';
       });
    });

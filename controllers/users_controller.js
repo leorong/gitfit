@@ -102,7 +102,7 @@ exports.setup = function(req, res) {
     res.render('profile_setup', {user: JSON.stringify(req.user)}); 
 }
 
-exports.add_profiles = function(req, res) {
+exports.addprofile = function(req, res, next) {
     if (!req.user) {
         console.log('Not logged in');
         res.redirect('/');
@@ -131,13 +131,25 @@ exports.add_profiles = function(req, res) {
         imageURL: userProfile['imageURL'],
         looking: userProfile['looking']
     }
-    var query = {username: req.user};
-    User.findOneAndUpdate(query, profile, afterUpdating);
+    console.log(req.user);
+    var query = {username: req.user.username};
 
-    function afterUpdating(err) {
-        if (err) {console.log(err); res.send(500);}
-        res.send(200);
-    }
+    User.update(query, profile, function(err, numAffected, raw) {
+        if (err) { 
+            console.log(err);
+            res.send(500);
+        } else {
+            console.log('The number of updated users was %d', numAffected);
+            console.log('The raw response from Mongo was ', raw);
+            res.send(200);
+        }
+    })
+    // User.findOneAndUpdate(query, profile, afterUpdating);
+
+    // function afterUpdating(err) {
+    //     if (err) {console.log(err); res.send(500);}
+    //     res.send(200);
+    // }
 
 
     // var newUser = new User(userData);
