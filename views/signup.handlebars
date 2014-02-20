@@ -14,18 +14,32 @@
 	<div class="main">
 		<div class="row">
 			<div class="container">
+				{{#if message}}
+					<div class="warning-message">
+						<button class="close" data-dismiss"warning">&times;</button>
+						<p class="no-margin">{{message}}<p>
+					</div>
+				{{/if}}
 				<form class="form-register">
 					<h3 class="heading-desc" align="center">Register</h3>
-					<input type="text" class="form-control signup" id="username" placeholder="Username" autofous>
-					<input type="email" class="form-control signup" id="email" placeholder="Email">
-					<input type="password" class="form-control signup" id="password" placeholder="Password" autofous>
-					<input type="password" class="form-control signup" id="re-password" placeholder="Confirm Password" autofous>
+					<div class="form-group">
+						<input type="text" class="form-control signup" id="username" placeholder="Username" autofous>
+					</div>
+					<div class="form-group">
+						<input type="email" class="form-control signup" id="email" placeholder="Email">
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control signup" id="password" placeholder="Password" autofous>
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control signup" id="re-password" placeholder="Confirm Password" autofous>
+					</div>
 					
 
-					<div class="footer">
+					<div class="signupBtns">
 						<div class="row">
 							<div class="col-md-12" align="center">
-								<a href="/profile_setup" type="submit" class="btn btn-primary">Submit</a>
+								<button value="submit" class="btn btn-primary" id="signUpBtn" value="Sign Up">Sign Up</button>
 								<a href="/" class="btn btn-default">Cancel</a>
 							</div>
 						</div>
@@ -37,6 +51,7 @@
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/gym_match.js"></script>
 </body>
 
 

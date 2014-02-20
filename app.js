@@ -78,7 +78,7 @@ app.get('/login_check', login_check.check);
 app.get('/findbuddy', findbuddy.view);
 app.get('/message', message.view);
 app.get('/schedule', schedule.view);
-app.get('/profile_setup', profile_setup.view);
+// app.get('/profile_setup', profile_setup.view);
 app.get('/profile_edit', profile_edit.edit);
 // app.get('/profile/:username', profile.view);
 

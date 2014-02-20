@@ -1,27 +1,48 @@
 var mongoose = require('mongoose'),
 	Schema = mongoose.Schema;
 
+function validatePresenceOf(value) {
+    return value && value.length;
+}
+
 var UserSchema = new Schema({
     name: {
         first: String,
         last: String
     },
-    email: String,
+    email: {
+        type: String,
+        validate: [validatePresenceOf, 'Username is required']
+    },
     username: {
         type: String,
+        validate: [validatePresenceOf, 'Username is required'],
         unique: true
     },
-    password: String,
+    password: {
+        type: String,
+        validate: [validatePresenceOf, 'Password is required']
+    },
     age: {
         type: Number,
         min: 10
     },
-    location: String,
-    gym: String,
-    about_me: String,
+    location: {
+        type: String
+    },
+    gym: {
+        type: String
+    },
+    about_me: {
+        type: String
+    },
     imageURL: String,
-    activities: [String],
-    looking: Boolean
+    activities: {
+        type: [String]
+    },
+    looking: {
+        type: Boolean
+    }
 });
 
 /* Virtual Methods */
