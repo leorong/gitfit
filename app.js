@@ -10,23 +10,17 @@ var express = require('express'),
 
 var mongoose = require('mongoose');
 
-var local_database_name = 'test';
-var local_database_uri = 'mongodb://localhost/' + local_database_name;
-var database_uri = process.env.MONGOLAB_URI || local_database_uri;
-mongoose.connect(database_uri);
+mongoose.connect('mongodb://localhost/test');
 
-/*
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
 	console.log('db opened');
 });
-*/
 
 /* Models */
 var user_model = require('./models/user');
-var message_model = require('./models/message');
 
 var app = express();
 
@@ -76,14 +70,14 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 // app.get('/', login.view);
-// app.get('/login_check', login_check.check);
-// app.get('/index', index.view);
+app.get('/login_check', login_check.check);
+//app.get('/index', index.view);
 // app.get('/signup', signup.view);
-// app.get('/user', user.view);
+//app.get('/user', user.view);
 // app.get('/buddylist', buddylist.view);
-// app.get('/findbuddy', findbuddy.view);
-// app.get('/message', message.view);
-// app.get('/schedule', schedule.view);
+app.get('/findbuddy', findbuddy.view);
+app.get('/message', message.view);
+app.get('/schedule', schedule.view);
 app.get('/profile_setup', profile_setup.view);
 app.get('/profile_edit', profile_edit.edit);
 // app.get('/profile/:username', profile.view);
