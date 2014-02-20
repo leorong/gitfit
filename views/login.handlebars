@@ -10,14 +10,24 @@
 
 
 <body>
-
+<!-- 	{{#if failureFlash}}
+		<p>{{failureFlash}}</p>
+	{{/if}} -->
 	<div class="main">
 		<div class="row">
 			<div class="container">
-				<form class="form-signin" method="get" action="/login_check">
+				{{#if message}}
+					<div class="warning-message">
+						<button class="close" data-dismiss"warning">&times;</button>
+						<p class="no-margin">{{message}}<p>
+					</div>
+				{{/if}}
+				<form class="form-signin" method="post" action="/login">
 					<h3>Login to GymMatch</h3>
 					<div class="form-group">
 						<input type="text" class="form-control login" id="username" name="username" placeholder="Username" autofous>
+					</div>
+					<div class="form-group">
 						<input type="password" class="form-control login" id="password" name="password" placeholder="Password">
 					</div>
 					<div class="forgot">
@@ -28,7 +38,7 @@
 							</div>
 						</div>
 					</div>
-				
+
 					<div class="loginBtns">
 						<div class="row">
 							<div class="col-md-12">

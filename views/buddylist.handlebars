@@ -27,12 +27,12 @@
  		{{#each users}}	
 		<div class="random_matches">
 			<div class="col-xs-4">
-				<a href="profile/{{user_name}}" class="thumbnail">
+				<a href="user/{{username}}" class="thumbnail">
 					<img class="img img-responsive img-rounded" src="{{imageURL}}"></img>
 			</a>
 			</div>
 			<div class="col-xs-8">
-				<a href="profile/{{user_name}}"><h3 id="name">{{name}}</h3></a>
+				<a href="user/{{username}}"><h3 id="name">{{name}}</h3></a> <!-- needs to be changed to name.full later -->
 				<p><i>{{location}}</i></p>
                 <p>{{gym}}</p>
                 <button type="button" class="btn btn-primary unfriend-btn"><span class="glyphicon glyphicon-minus">Unfriend</span></button>

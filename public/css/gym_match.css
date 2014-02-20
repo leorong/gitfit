@@ -33,3 +33,13 @@ body {
 	max-height: 300px;
     max-width: 300px;
 }
+
+.warning-message {
+	padding:15px;
+	background-color: #fcf8e3;
+	border: 1px solid #fbeed5;
+}
+
+.no-margin {
+	margin: 0px;
+}
