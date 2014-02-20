@@ -10,17 +10,23 @@ var express = require('express'),
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/test');
+var local_database_name = 'test';
+var local_database_uri = 'mongodb://localhost/' + local_database_name;
+var database_uri = process.env.MONGOLAB_URI || local_database_uri;
+mongoose.connect(database_uri);
 
+/*
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
 	console.log('db opened');
 });
+*/
 
 /* Models */
 var user_model = require('./models/user');
+var message_model = require('./models/message');
 
 var app = express();
 
@@ -49,14 +55,14 @@ require('./config/passport')(passport);
 // var routes = require('./routes');
 //var index = require('./routes/index');
 var login = require('./routes/login');
-var login_check = require('./routes/login_check');
+// var login_check = require('./routes/login_check');
 //var signup = require('./routes/signup');
 //var user = require('./routes/user');
 //var buddylist = require('./routes/buddylist');
 var findbuddy = require('./routes/findbuddy');
-var message = require('./routes/message');
+// var message = require('./routes/message');
 var schedule = require('./routes/schedule');
-var profile_setup = require('./routes/profile_setup');
+// var profile_setup = require('./routes/profile_setup');
 var profile_edit = require('./routes/profile_edit');
 // var profile = require('./routes/profile');
 
@@ -70,13 +76,13 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 // app.get('/', login.view);
-app.get('/login_check', login_check.check);
-//app.get('/index', index.view);
+// app.get('/login_check', login_check.check);
+// app.get('/index', index.view);
 // app.get('/signup', signup.view);
-//app.get('/user', user.view);
+// app.get('/user', user.view);
 // app.get('/buddylist', buddylist.view);
 app.get('/findbuddy', findbuddy.view);
-app.get('/message', message.view);
+// app.get('/message', message.view);
 app.get('/schedule', schedule.view);
 // app.get('/profile_setup', profile_setup.view);
 app.get('/profile_edit', profile_edit.edit);

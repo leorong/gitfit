@@ -1,0 +1,23 @@
+[
+    {
+        "from": "kd35",
+        "to": "leorong",
+        "message": "hey leo! whats up?",
+        "date": "February 19, 2014", 
+        "opened": false
+    }, 
+    {
+        "from": "kd35",
+        "to": "abuddiga",
+        "message": "hey akshay! i'd like to meet up with you sometime!",
+        "date": "February 20, 2014",
+        "opened": false
+    },
+    { 
+        "from": "kd35",
+        "to": "mj23",
+        "message": "Hey michael! You're a great player!",
+        "date": "February 20, 2014",
+        "opened": false
+    }
+]

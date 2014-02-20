@@ -24,8 +24,15 @@
 
 	<div class="container">
 		<h1>Messages</h1>
-		<h2>Will be using Facebook message api</h2>
-
+        {{#each messages}}
+        <p> {{from}} </p><br>
+        <p> {{to}} </p><br>
+        <p> {{message}} </p><br>
+        <p> {{ date }} </p><br>
+        <p> {{opened}} </p><br>
+        <hr width="100%">
+        {{/each}}
+        test
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
