@@ -242,6 +242,94 @@ exports.buddylist = function(req, res) {
     res.render('buddylist', data);
 };
 
+exports.findbuddy = function(req, res) {
+
+    if (!req.user) {res.redirect('login');}
+
+    var user = JSON.stringify(req.user);
+    console.log('User info');
+    console.log(user);
+    User.find({gym: user.gym}).exec(sortUsers(user));
+
+    function sortUsers(err, user, buddies) {
+        var scoresObj = {};
+        var returnList = [];
+        if (user) {
+            console.log("Current user is ", user.username);
+        } else {
+            console.log("Did not pass user");
+        }
+
+        for (i = 0; i < buddies.length; i++) {
+            var score = 0;
+
+            var buddy = buddies[i];
+            var buddyActivities = buddy.activities;
+
+            var userActivities = user.activities;
+
+            if (userActivities.length < buddyActivities) {
+                var shorter = userActivities;
+                var longer = buddyActivities;
+            } else {
+                var shorter = buddyActivities;
+                var longer = userActivities;
+            }
+
+            var activityMultiplier = 0;
+
+            for (j = 0; j < shorter.length; j++) {
+                var exercise = shorter[j];
+                if (longer.indexOf(exercise) > -1) {
+                    activityMultiplier += 1;
+                }
+            }
+
+            var buddySchedule = buddy.schedule;
+            var userSchedule = user.schedule;
+
+            var scheduleMultiplier = getOverlap(userSchedule, buddySchedule);
+
+            score = activityMultiplier * scheduleMultiplier;
+
+            returnList.push({
+                'buddy': buddy,
+                'score': score
+            });
+        }
+
+        returnList.sort(function (a,b) {
+            return (a.score > b.score) ? 1 : ((b.score > a.score) ? -1 : 0);
+        });
+
+        res.render('findbuddy', {
+            user: req.user ? JSON.stringify(req.user) : null,
+            'current_user': req.user ? req.user.username : 'null',
+            'buddies': returnList
+        });
+    }
+
+    function getOverlap(userSchedule, buddySchedule) {
+        var multiplier = 0;
+        //var dayOverlap = 0;
+        //var timeOverlap = 0;
+
+        for (day = 0; day < userSchedule.length; day++) {
+            if (userSchedule[day]['morning'] == buddySchedule[day]['morning']) {
+                multiplier += 1;
+            }
+            if (userSchedule[day]['afternoon'] == buddySchedule[day]['afternoon']) {
+                multiplier += 1;
+            }
+            if (userSchedule[day]['evening'] == buddySchedule[day]['evening']) {
+                multiplier += 1;
+            }
+        }
+
+        return multiplier;
+    }
+};
+
 
 /* Set up Schedule */
 exports.schedule_setup = function(req, res) {
