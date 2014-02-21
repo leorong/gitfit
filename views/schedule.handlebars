@@ -17,7 +17,50 @@
 
 	<div class="container">
 		<h1>My Schedule</h1>
-
+		<table class="table">
+			<tr>
+				<th>Monday</th>
+				{{#each schedule.monday}}
+					<td>{{activity}}: {{startTime}} to {{endTime}}</td>
+				{{/each}}
+			</tr>
+			</tr>
+				<th>Tuesday</th>
+				{{#each schedule.tuesday}}
+					<td>{{activity}}: {{startTime}} to {{endTime}}</td>
+				{{/each}}
+			</tr>
+			<tr>
+				<th>Wednesday</th>
+				{{#each schedule.wednesday}}
+					<td>{{activity}}: {{startTime}} to {{endTime}}</td>
+				{{/each}}
+			</tr>
+			<tr>
+				<th>Thursday</th>
+				{{#each schedule.thursday}}
+					<td>{{activity}}: {{startTime}} to {{endTime}}</td>
+				{{/each}}
+			</tr>
+			<tr>
+				<th>Friday</th>
+				{{#each schedule.friday}}
+					<td>{{activity}}: {{startTime}} to {{endTime}}</td>
+				{{/each}}
+			</tr>
+			<tr>
+				<th>Saturday</th>
+				{{#each schedule.saturday}}
+					<td>{{activity}}: {{startTime}} to {{endTime}}</td>
+				{{/each}}
+			</tr>
+			<tr>
+				<th>Sunday</th>
+				{{#each schedule.sunday}}
+					<td>{{activity}}: {{startTime}} to {{endTime}}</td>
+				{{/each}}
+			</tr>
+		</table>
 
 	</div>
 
