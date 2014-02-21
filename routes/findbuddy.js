@@ -2,11 +2,11 @@ var data = require('../json/fake_users.json');
 
 
 
-var filter = function(users, gym) {
+var filter = function(gym) {
 	var filteredUsers = {'users':[]};
 
-	for (i = 0; i < users.length; i++) {
-		var foundUser = users[i];
+	for (i = 0; i < data.length; i++) {
+		var foundUser = data[i];
 		if (foundUser['gym'] === gym) {
 			filteredUsers['users'].push(foundUser);
 		}
@@ -14,7 +14,7 @@ var filter = function(users, gym) {
 	return filteredUsers;
 }
 
-var filtered = filter(data['users'], 'Arrillaga West');
+var filtered = filter('Arrillaga West');
 
 exports.view = function(req, res){
 	var user = 'null';

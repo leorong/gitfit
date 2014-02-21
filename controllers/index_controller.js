@@ -9,7 +9,8 @@ exports.view = function(req, res) {
     //if (User.find({username: "rtran58"}) == None) {
     //    console.log("Empty db");
     //}
-
+    
+    /*
     var oldUsers = data["users"];
     for (i = 0; i < oldUsers.length; i++) {
         var user = oldUsers[i];
@@ -31,7 +32,8 @@ exports.view = function(req, res) {
             looking: user.looking
         });
         newPerson.save();
-    }
+    }   
+    */
     if (!req.user) {
         res.render('index', {user: null});
     } else {
