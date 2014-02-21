@@ -7,7 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="/css/gitfit.css" rel="stylesheet">
+	<link href="css/bootstrap-timepicker.min.css" rel="stylesheet">
+    <link href="css/gitfit.css" rel="stylesheet">
      
 </head>
 
@@ -17,54 +18,121 @@
 
 	<div class="container">
 		<h1>My Schedule</h1>
-		<table class="table">
-			<tr>
-				<th>Monday</th>
-				{{#each schedule.monday}}
-					<td>{{activity}}: {{startTime}} to {{endTime}}</td>
-				{{/each}}
-			</tr>
-			</tr>
-				<th>Tuesday</th>
-				{{#each schedule.tuesday}}
-					<td>{{activity}}: {{startTime}} to {{endTime}}</td>
-				{{/each}}
-			</tr>
-			<tr>
-				<th>Wednesday</th>
-				{{#each schedule.wednesday}}
-					<td>{{activity}}: {{startTime}} to {{endTime}}</td>
-				{{/each}}
-			</tr>
-			<tr>
-				<th>Thursday</th>
-				{{#each schedule.thursday}}
-					<td>{{activity}}: {{startTime}} to {{endTime}}</td>
-				{{/each}}
-			</tr>
-			<tr>
-				<th>Friday</th>
-				{{#each schedule.friday}}
-					<td>{{activity}}: {{startTime}} to {{endTime}}</td>
-				{{/each}}
-			</tr>
-			<tr>
-				<th>Saturday</th>
-				{{#each schedule.saturday}}
-					<td>{{activity}}: {{startTime}} to {{endTime}}</td>
-				{{/each}}
-			</tr>
-			<tr>
-				<th>Sunday</th>
-				{{#each schedule.sunday}}
-					<td>{{activity}}: {{startTime}} to {{endTime}}</td>
-				{{/each}}
-			</tr>
-		</table>
-		<h3><a href="/schedule_setup">Edit Schedule</a></h3>
+		<div class="table-responsive">
+            <table class="table table-bordered">
+            	<tr>
+            		<th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+            	</tr>
+            	<tr>
+            		<td>
+            			{{#each schedule.monday}}
+							<h5>{{activity}}</h5>
+							<h6>{{startTime}}</h6>
+							to
+							<h6>{{endTime}}</h6>
+							<hr>
+						{{/each}}
+            		</td>
+            		<td>
+            			{{#each schedule.tuesday}}
+							<h5>{{activity}}</h5>
+							<h6>{{startTime}}</h6>
+							to
+							<h6>{{endTime}}</h6>
+							<hr>
+						{{/each}}
+            		</td>
+            		<td>
+            			{{#each schedule.wednesday}}
+							<h5>{{activity}}</h5>
+							<h6>{{startTime}}</h6>
+							to
+							<h6>{{endTime}}</h6>
+							<hr>
+						{{/each}}
+            		</td>
+            		<td>
+            			{{#each schedule.thursday}}
+							<h5>{{activity}}</h5>
+							<h6>{{startTime}}</h6>
+							to
+							<h6>{{endTime}}</h6>
+							<hr>
+						{{/each}}
+            		</td>
+            		<td>
+            			{{#each schedule.friday}}
+							<h5>{{activity}}</h5>
+							<h6>{{startTime}}</h6>
+							to
+							<h6>{{endTime}}</h6>
+							<hr>
+						{{/each}}
+            		</td>
+            		<td>
+            			{{#each schedule.saturday}}
+							<h5>{{activity}}</h5>
+							<h6>{{startTime}}</h6>
+							to
+							<h6>{{endTime}}</h6>
+							<hr>
+						{{/each}}
+            		</td>
+            		<td>
+            			{{#each schedule.sunday}}
+							<h5>{{activity}}</h5>
+							<h6>{{startTime}}</h6>
+							to
+							<h6>{{endTime}}</h6>
+							<hr>
+						{{/each}}
+            		</td>
+            	</tr>
+            </table>
+		</div>
+		<div id="scheduleForm">
+			<h4>Add an Item</h4>
+			<label>Activity:</label>
+            <select class="form-control" id="activity" name="activity">
+                {{#each activities}}
+                	<option>{{this}}</option>
+                {{/each}}
+            </select>
+			<label>Day:</label>
+            <select class="form-control" id="day" name="day">
+                <option>monday</option>
+                <option>tuesday</option>
+                <option>wednesday</option>
+                <option>thursday</option>
+                <option>friday</option>
+                <option>saturday</option>
+                <option>sunday</option>
+            </select>
+            <label>Start Time:</label>
+            <div class="input-append bootstrap-timepicker">
+                <input id="start" type="text" class="input-small">
+                <span class="add-on"><i class="glyphicon glyphicon-time"></i></span>
+            </div>
+            <label>End Time:</label>
+            <div class="input-append bootstrap-timepicker">
+                <input id="end" type="text" class="input-small">
+                <span class="add-on"><i class="glyphicon glyphicon-time"></i></span>
+            </div>
+            <br>
+            <button value="Submit" class="btn btn-primary" id="addBtn">Save</button>
+            <hr>
+        </div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap-timepicker.min.js"></script>
+    <script src="/js/gitfit.js"></script>
 </body>
 </html>

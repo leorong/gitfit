@@ -20,7 +20,7 @@ module.exports = function(app, passport) {
     app.get('/buddylist', users.buddylist);
     app.get('/findbuddy', users.findbuddy);
     app.get('/schedule', users.schedule);
-    app.get('/schedule_setup', users.schedule_setup);
+    app.post('/addschedule', users.addschedule);
     // app.post('/findbuddy',);
 
     app.post('/login', function(req, res, next) {

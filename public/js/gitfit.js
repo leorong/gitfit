@@ -151,95 +151,29 @@ function initializePage() {
     // });
 }
 
+
 function hideScheduleForms() {
-    $("#show1").click(function (e) {
-        e.preventDefault();
-        if(!$("#form1").is(":visible")) {
-            $("#show1").text("Hide Item");
-            $("#form1").removeClass("hidden");
-        } else {
-            $("#show1").text("Add Item");
-            $("#form1").addClass("hidden");
-        }
-    });
-    $("#show2").click(function (e) {
-        e.preventDefault();
-        if(!$("#form2").is(":visible")) {
-            $("#show2").text("Hide Item");
-            $("#form2").removeClass("hidden");
-        } else {
-            $("#show2").text("Add Item");
-            $("#form2").addClass("hidden");
-        }
-    });
-    $("#show3").click(function (e) {
-        e.preventDefault();
-        if(!$("#form3").is(":visible")) {
-            $("#show3").text("Hide Item");
-            $("#form3").removeClass("hidden");
-        } else {
-            $("#show3").text("Add Item");
-            $("#form3").addClass("hidden");
-        }
-    });
-    $("#show4").click(function (e) {
-        e.preventDefault();
-        if(!$("#form4").is(":visible")) {
-            $("#show4").text("Hide Item");
-            $("#form4").removeClass("hidden");
-        } else {
-            $("#show4").text("Add Item");
-            $("#form4").addClass("hidden");
-        }
-    });
-    $("#show5").click(function (e) {
-        e.preventDefault();
-        if(!$("#form5").is(":visible")) {
-            $("#show5").text("Hide Item");
-            $("#form5").removeClass("hidden");
-        } else {
-            $("#show5").text("Add Item");
-            $("#form5").addClass("hidden");
-        }
-    });
-    $("#show6").click(function (e) {
-        e.preventDefault();
-        if(!$("#form6").is(":visible")) {
-            $("#show6").text("Hide Item");
-            $("#form6").removeClass("hidden");
-        } else {
-            $("#show6").text("Add Item");
-            $("#form6").addClass("hidden");
-        }
-    });
-    $("#show7").click(function (e) {
-        e.preventDefault();
-        if(!$("#form7").is(":visible")) {
-            $("#show7").text("Hide Item");
-            $("#form7").removeClass("hidden");
-        } else {
-            $("#show7").text("Add Item");
-            $("#form7").addClass("hidden");
-        }
-    });
-    $('#start1').timepicker();
-    $('#end1').timepicker();
-    $('#start2').timepicker();
-    $('#end2').timepicker();
-    $('#start3').timepicker();
-    $('#end3').timepicker();
-    $('#start4').timepicker();
-    $('#end4').timepicker();
-    $('#start5').timepicker();
-    $('#end5').timepicker();
-    $('#start6').timepicker();
-    $('#end6').timepicker();
-    $('#start7').timepicker();
-    $('#end7').timepicker();
+    
 
+    $('#start').timepicker('setTime', '8:00 AM');
+    $('#end').timepicker('setTime', '10:45 AM');
 
+    $("#addBtn").click(function (e) {
+        e.preventDefault();
+        var json = {
+            "day": $('#day').val(),
+            "activity": $('#activity').val(),
+            "startTime": $('#start').val(),
+            "endTime": $('#end').val()
+        }
 
+        console.log(json);
 
+        $.post('/addschedule', json, function () {
+            window.location.href = '/schedule';
+        });
+
+    });
 
 
 

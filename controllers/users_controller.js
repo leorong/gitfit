@@ -388,37 +388,58 @@ exports.findbuddy = function(req, res) {
 };
 
 
-/* Set up Schedule */
-exports.schedule_setup = function(req, res) {
-
-    if (!req.user) {res.redirect('login');}
-
-    var activities = req.user.activities;
-
-    res.render('schedule_setup', {
-        user: req.user ? JSON.stringify(req.user) : null,
-        'current_user': req.user ? req.user.username : 'null',
-        "activities" : activities
-    });
-    
-};
 
 /* Show My Schedule */
 exports.schedule = function(req, res) {
     if (!req.user) {res.redirect('login');}
 
+    // console.log(req.user);
+    // console.log(req.user.schedule);
+
     var schedule = req.user.schedule;
-    console.log(schedule)
+    console.log(schedule);
+    var activities = req.user.activities; 
 
     res.render('schedule', {
         user: req.user ? JSON.stringify(req.user) : null,
         'current_user': req.user ? req.user.username : 'null',
-        "schedule" : schedule
+        "schedule" : schedule,
+        "activities": activities
     });
 };
 
 
 
+exports.addschedule = function(req, res, next) {
+    if (!req.user) {
+        console.log('Not logged in');
+        res.redirect('/');
+    }
 
+    var scheduleEntry = req.body;
+
+    var day = scheduleEntry['day'];
+
+    var entry = {
+        "activity": scheduleEntry['activity'],
+        "startTime": scheduleEntry['startTime'],
+        "endTime": scheduleEntry['endTime']
+    };
+
+    var user = req.user;
+    var newSchedule = user.schedule[day].push(entry);
+
+    User
+        .find({username: user.username})
+        .update({schedule: newSchedule})
+        .exec(afterUpdating);
+
+    function afterUpdating(err) {
+        if (err) { 
+            console.log(err);
+            res.send(500);
+        }  
+    }
+}
 
 
