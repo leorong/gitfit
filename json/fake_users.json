@@ -14,29 +14,29 @@
 			"activities": [
 				{
 					"name": "basketball",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				},
 				{
 					"name": "running",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				}
 			],
 
@@ -91,29 +91,29 @@
 			"activities": [
 				{
 					"name": "basketball",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				},
 				{
 					"name": "running",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				}
 			],
 			"availability": {
@@ -167,29 +167,29 @@
 			"activities": [
 				{
 					"name": "basketball",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				},
 				{
 					"name": "running",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				}
 			],
 			"availability": {
@@ -243,29 +243,29 @@
 			"activities": [
 				{
 					"name": "basketball",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				},
 				{
 					"name": "running",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				}
 			],
 			"availability": {
@@ -319,29 +319,29 @@
 			"activities": [
 				{
 					"name": "basketball",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				},
 				{
 					"name": "running",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				}
 			],
 			"availability": {
@@ -395,29 +395,29 @@
 			"activities": [
 				{
 					"name": "basketball",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				},
 				{
 					"name": "running",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				}
 			],
 			"availability": {
@@ -471,29 +471,29 @@
 			"activities": [
 				{
 					"name": "basketball",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				},
 				{
 					"name": "running",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				}
 			],
 			"availability": {
@@ -547,29 +547,29 @@
 			"activities": [
 				{
 					"name": "basketball",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				},
 				{
 					"name": "running",
-					"monday": [{
+					"monday": {
 			            "start": "1:45PM",
 			            "end": "3:00PM"
-			        }],
-			        "tuesday": [],
-			        "wednesday": [],
-			        "thursday": [],
-			        "friday": [],
-			        "saturday": [],
-			        "sunday": []
+			        },
+			        "tuesday": {},
+			        "wednesday": {},
+			        "thursday": {},
+			        "friday": {},
+			        "saturday": {},
+			        "sunday": {}
 				}
 			],
 			"availability": {

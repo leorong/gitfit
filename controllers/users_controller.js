@@ -241,6 +241,47 @@ exports.buddylist = function(req, res) {
 };
 
 
+/* Set up Schedule */
+exports.schedule_setup = function(req, res) {
+
+    if (!req.user) {
+        res.redirect('/');
+    }
+
+    var username = req.params.username;
+
+    User.findOne({username: username}, function (err, user) {
+        if (err) { 
+            console.log("error");
+            res.redirect('/');
+        } else {
+            if (user) {
+                res.render('user', {
+                    user: req.user ? JSON.stringify(req.user) : null,
+                    'current_user': req.user ? req.user.username : 'null',
+                    'name': user.name.full,
+                    'username': user.username,
+                    'age': user.age,
+                    'imageURL': user.imageURL,
+                    'location': user.location,
+                    'about_me': user.about_me,
+                    'activities': user.activities
+                }); 
+            } else {
+                res.render('index', {
+                    user: req.user ? JSON.stringify(req.user) : null,
+                    'current_user': req.user ? req.user.username : 'null'
+                });
+            }
+        }
+    });
+};
+
+/* Show My Schedule */
+exports.schedule = function(req, res) {
+
+};
+
 
 
 

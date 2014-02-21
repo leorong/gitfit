@@ -41,34 +41,34 @@ var UserSchema = new Schema({
 
     activities: [{
         name: String,
-        monday: [{
+        monday: {
             start: String,
             end: String
-        }],
-        tuesday: [{
+        },
+        tuesday: {
             start: String,
             end: String
-        }],
-        wednesday: [{
+        },
+        wednesday: {
             start: String,
             end: String
-        }],
-        thursday: [{
+        },
+        thursday: {
             start: String,
             end: String
-        }],
-        friday: [{
+        },
+        friday: {
             start: String,
             end: String
-        }],
-        saturday: [{
+        },
+        saturday: {
             start: String,
             end: String
-        }],
-        sunday: [{
+        },
+        sunday: {
             start: String,
             end: String
-        }]
+        }
     }],
 
     availability: {
