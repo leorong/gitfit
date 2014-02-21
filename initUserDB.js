@@ -25,7 +25,7 @@ mongoose.connect(database_uri);
 // Do the initialization here
 
 // Step 1: load the JSON data
-var user_json = require('./json/fake_users.json');
+var user_json = require('./json/users.json');
 
 // Step 2: Remove all existing documents
 models.User

@@ -9,18 +9,20 @@ var UserSchema = new Mongoose.Schema({
         "first": String,
         "last": String
     },
+    /*
     "email": {
         "type": String,
-        "validate": [validatePresenceOf, 'Username is required']
+        //"validate": [validatePresenceOf, 'Username is required']
     },
+    */
     "username": {
         "type": String,
-        "validate": [validatePresenceOf, 'Username is required'],
+        //"validate": [validatePresenceOf, 'Username is required'],
         "unique": true
     },
     "password": {
         "type": String,
-        "validate": [validatePresenceOf, 'Password is required']
+        //"validate": [validatePresenceOf, 'Password is required']
     },
     "age": {
         "type": Number,
@@ -119,6 +121,7 @@ var UserSchema = new Mongoose.Schema({
 
 /* Virtual Methods */
 
+/*
 UserSchema.virtual('name.full').get(function () {
     return this.name.first + ' ' + this.name.last;
 });
@@ -128,7 +131,7 @@ UserSchema.virtual('name.full').set(function (name) {
     this.name.first = split[0];
     this.name.last = split[1];
 });
-
+*/
 // UserSchema.virtual('password').set(function (password) {
 //     this.password = String;
 // });
