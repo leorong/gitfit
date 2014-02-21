@@ -9,8 +9,10 @@ var express = require('express'),
     passport = require('passport');
 
 var mongoose = require('mongoose');
-
-mongoose.connect('mongodb://localhost/test');
+var local_database_name = 'test';
+var local_database_uri = 'mongodb://localhost/' + local_database_name;
+var database_uri = process.env.MONGOLAB_URI || local_database_uri;
+mongoose.connect(database_uri);
 
 var db = mongoose.connection;
 
