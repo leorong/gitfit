@@ -138,4 +138,4 @@ UserSchema.virtual('name.full').set(function (name) {
 //     return this.password;
 // });
 
-mongoose.model('User', UserSchema);
+exports.User = mongoose.model('User', UserSchema);
