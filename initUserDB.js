@@ -25,10 +25,10 @@ mongoose.connect(database_uri);
 // Do the initialization here
 
 // Step 1: load the JSON data
-var message_json = require('./json/messages_db.json');
+var user_json = require('./json/fake_users.json');
 
 // Step 2: Remove all existing documents
-models.Message
+models.User
   .find()
   .remove()
   .exec(onceClear); // callback to continue at
@@ -39,10 +39,10 @@ function onceClear(err) {
 
   // loop over the projects, construct and save an object from each one
   // Note that we don't care what order these saves are happening in...
-  var to_save_count = message_json.length;
-  for(var i=0; i<message_json.length; i++) {
-    var json = message_json[i];
-    var msg = new models.Message(json);
+  var to_save_count = user_json.length;
+  for(var i=0; i<user_json.length; i++) {
+    var json = user_json[i];
+    var msg = new models.User(json);
 
     msg.save(function(err, msg) {
       if(err) console.log(err);
