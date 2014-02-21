@@ -12,7 +12,7 @@ exports.view = function(req, res) {
 
     console.log("message user: " + user.username + "----");
     Message
-        .find({"from": user.username}) 
+        .find({"to": user.username}) 
         .sort('date')
         .exec(renderMessages);
 
@@ -39,7 +39,7 @@ exports.addNewMessage = function(req, res) {
 
     var form_data = req.body;
     var curDate = new Date();
-    
+
     console.log(form_data);
 
     //need to check if valid to user
@@ -50,6 +50,7 @@ exports.addNewMessage = function(req, res) {
         "message": form_data.message,
         "opened": false
     });
+
     newMessage.save(afterAdding);
 
     function afterAdding(err) {
