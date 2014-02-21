@@ -23,12 +23,12 @@
  		{{#each buddies}}	
 			<div class="random_matches">
 				<div class="col-xs-4">
-          <a href="user/{{buddy.username}}" class="thumbnail">
+          <a href="profile/{{buddy.username}}" class="thumbnail">
 						<img class="img" src="{{buddy.imageURL}}"></img>
 					</a>
 				</div>
         <div class="col-xs-8">
-          <a href="user/{{buddy.username}}">
+          <a href="profile/{{buddy.username}}">
               <h3 id="name">{{buddy.name.full}} had a match score of {{score}}!</h3>
           </a>
 					<p>{{buddy.age}}</p>
