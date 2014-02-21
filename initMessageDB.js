@@ -12,7 +12,7 @@
 */
 
 var mongoose = require('mongoose');
-var Message   = mongoose.model("Message");
+var models   = require('./models');
 
 // Connect to the Mongo database, whether locally or on Heroku
 // MAKE SURE TO CHANGE THE NAME FROM 'lab7' TO ... IN OTHER PROJECTS
@@ -28,7 +28,7 @@ mongoose.connect(database_uri);
 var message_json = require('./json/messages_db.json');
 
 // Step 2: Remove all existing documents
-Message
+models.Message
   .find()
   .remove()
   .exec(onceClear); // callback to continue at
@@ -42,7 +42,7 @@ function onceClear(err) {
   var to_save_count = message_json.length;
   for(var i=0; i<message_json.length; i++) {
     var json = message_json[i];
-    var msg = new Message(json);
+    var msg = new models.Message(json);
 
     msg.save(function(err, msg) {
       if(err) console.log(err);

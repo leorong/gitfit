@@ -12,7 +12,7 @@
 */
 
 var mongoose = require('mongoose');
-var User  = mongoose.model("User");
+var models   = require('./models');
 
 // Connect to the Mongo database, whether locally or on Heroku
 // MAKE SURE TO CHANGE THE NAME FROM 'lab7' TO ... IN OTHER PROJECTS
@@ -28,7 +28,7 @@ mongoose.connect(database_uri);
 var user_json = require('./json/fake_users.json');
 
 // Step 2: Remove all existing documents
-User
+models.User
   .find()
   .remove()
   .exec(onceClear); // callback to continue at
@@ -42,7 +42,7 @@ function onceClear(err) {
   var to_save_count = user_json.length;
   for(var i=0; i<user_json.length; i++) {
     var json = user_json[i];
-    var msg = new User(json);
+    var msg = new models.User(json);
 
     msg.save(function(err, msg) {
       if(err) console.log(err);
