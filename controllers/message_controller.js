@@ -39,6 +39,7 @@ exports.addNewMessage = function(req, res) {
 
     var form_data = req.body;
     var curDate = new Date();
+    
     console.log(form_data);
 
     //need to check if valid to user
