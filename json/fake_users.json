@@ -3,7 +3,7 @@
 		{
 			"name": "Ricky Tran",
 			"username": "rtran58",
-			"password": "testpassword",
+			"password": "password",
             "age": 20,
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
@@ -11,12 +11,12 @@
 			"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-ash3/t1/1512525_10151837587365840_1627057196_n.jpg",
 			"looking": true,
 
-			"activities": ["basketball", "weightlifting"],
+			"activities": ["weightlifting", "swimming"],
 
 			"availability": {
 		        "monday": {
 		            "morning" : true,
-		            "afternoon" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        },
 		        "tuesday": {
@@ -25,36 +25,36 @@
 		           	"evening" : false
 		        },
 		        "wednesday": {
-		        	"morning" : true,
+		        	"morning" : false,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        },
 		        "thursday": {
 		        	"morning" : true,
-		            "afternoon" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        },
 		        "friday": {
-		        	"morning" : true,
+		        	"morning" : false,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        },
 		        "saturday": {
 		        	"morning" : true,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        },	
 		        "sunday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+		        	"morning" : false,
+		            "afternoon" : true,
+		           	"evening" : true
 		        }	
 		    }
 		},
 		{
 			"name": "Leo Rong",
 			"username": "leorong",
-			"password": "testpassword",
+			"password": "password",
 			"age": 21,
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
@@ -62,42 +62,42 @@
 			"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-frc3/t1/1511248_10151905176381139_647590704_n.jpg",
 			"looking": true,
 
-			"activities": ["basketball", "weightlifting"],
+			"activities": ["weightlifting", "cycling", "climbing"],
 
 			"availability": {
 		        "monday": {
 		            "morning" : true,
-		            "afternoon" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        },
 		        "tuesday": {
 		        	"morning" : true,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        },
 		        "wednesday": {
-		        	"morning" : true,
-		            "afternoon" : false,
+		        	"morning" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        },
 		        "thursday": {
 		        	"morning" : true,
-		            "afternoon" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        },
 		        "friday": {
 		        	"morning" : true,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        },
 		        "saturday": {
-		        	"morning" : true,
+		        	"morning" : false,
 		            "afternoon" : false,
 		           	"evening" : false
 		        },	
 		        "sunday": {
 		        	"morning" : true,
-		            "afternoon" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        }	
 		    }
@@ -105,7 +105,7 @@
 		{
 			"name": "Akshay Buddiga",
 			"username": "abuddiga",
-			"password": "testpassword",
+			"password": "password",
 			"age": 23,
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
@@ -142,23 +142,23 @@
 		           	"evening" : false
 		        },
 		        "thursday": {
-		        	"morning" : true,
+		        	"morning" : false,
 		            "afternoon" : false,
 		           	"evening" : false
 		        },
 		        "friday": {
 		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+		            "afternoon" : true,
+		           	"evening" : true
 		        },
 		        "saturday": {
-		        	"morning" : true,
+		        	"morning" : false,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        },	
 		        "sunday": {
 		        	"morning" : true,
-		            "afternoon" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        }	
 		    }
@@ -166,7 +166,7 @@
 		{
 			"name": "Michael Jordan",
 			"username": "mj23",
-			"password": "testpassword",
+			"password": "password",
 			"age": 55,
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
@@ -174,7 +174,7 @@
 			"imageURL": "http://img.quotery.com/pictures/2013/03/michael-jordan.jpg",
 			"looking": true,
 			
-			"activities": ["basketball", "weightlifting"],
+			"activities": ["basketball", "weightlifting", "swimming"],
 
 			"schedule": {
 				"monday" : [],
@@ -189,45 +189,45 @@
 			"availability": {
 		        "monday": {
 		            "morning" : true,
-		            "afternoon" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        },
 		        "tuesday": {
 		        	"morning" : true,
-		            "afternoon" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        },
 		        "wednesday": {
 		        	"morning" : true,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        },
 		        "thursday": {
 		        	"morning" : true,
-		            "afternoon" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        },
 		        "friday": {
 		        	"morning" : true,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        },
 		        "saturday": {
 		        	"morning" : true,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        },	
 		        "sunday": {
 		        	"morning" : true,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        }	
 		    }
 		},
 		{
 			"name": "Derrick Rose",
 			"username": "drose",
-			"password": "testpassword",
+			"password": "password",
 			"age": 26,
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
@@ -250,36 +250,36 @@
 			"availability": {
 		        "monday": {
 		            "morning" : true,
-		            "afternoon" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        },
 		        "tuesday": {
-		        	"morning" : true,
+		        	"morning" : false,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        },
 		        "wednesday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+		        	"morning" : false,
+		            "afternoon" : true,
+		           	"evening" : true
 		        },
 		        "thursday": {
 		        	"morning" : true,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        },
 		        "friday": {
-		        	"morning" : true,
+		        	"morning" : false,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        },
 		        "saturday": {
 		        	"morning" : true,
-		            "afternoon" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        },	
 		        "sunday": {
-		        	"morning" : true,
+		        	"morning" : false,
 		            "afternoon" : false,
 		           	"evening" : false
 		        }	
@@ -288,7 +288,7 @@
 		{
 			"name": "Kevin Durant",
 			"username": "kd35",
-			"password": "testpassword",
+			"password": "password",
 			"age": 26,
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
@@ -296,7 +296,7 @@
 			"imageURL": "http://thestartingfive.net/wp-content/uploads/2012/06/kevin_durant-27465-300x300.jpg",
 			"looking": false,
 			
-			"activities": ["basketball", "weightlifting"],
+			"activities": ["basketball", "running", "climbing"],
 
 			"schedule": {
 				"monday" : [],
@@ -312,44 +312,44 @@
 		        "monday": {
 		            "morning" : true,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        },
 		        "tuesday": {
-		        	"morning" : true,
-		            "afternoon" : false,
+		        	"morning" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        },
 		        "wednesday": {
-		        	"morning" : true,
+		        	"morning" : false,
 		            "afternoon" : false,
 		           	"evening" : false
 		        },
 		        "thursday": {
 		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+		            "afternoon" : true,
+		           	"evening" : true
 		        },
 		        "friday": {
 		        	"morning" : true,
-		            "afternoon" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        },
 		        "saturday": {
 		        	"morning" : true,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        },	
 		        "sunday": {
-		        	"morning" : true,
+		        	"morning" : false,
 		            "afternoon" : false,
-		           	"evening" : false
+		           	"evening" : true
 		        }	
 		    }
 		},
 		{
 			"name": "LeBron James",
 			"username": "kingjames",
-			"password": "testpassword",
+			"password": "password",
 			"age": 29,
 			"gym": "Arrillaga West",
 			"location": "Palo Alto, CA",
@@ -357,7 +357,7 @@
 			"imageURL": "http://www.jacehallshow.com/wp-content/uploads/lebron_james-300x300.jpg",
 			"looking": true,
 			
-			"activities": ["basketball", "weightlifting"],
+			"activities": ["basketball", "weightlifting", "running", "swimming"],
 
 			"schedule": {
 				"monday" : [],
@@ -372,45 +372,45 @@
 			"availability": {
 		        "monday": {
 		            "morning" : true,
-		            "afternoon" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        },
 		        "tuesday": {
 		        	"morning" : true,
-		            "afternoon" : false,
+		            "afternoon" : true,
 		           	"evening" : false
 		        },
 		        "wednesday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+		        	"morning" : false,
+	            "afternoon" : false,
+	           	"evening" : true
 		        },
 		        "thursday": {
 		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+	            "afternoon" : true,
+	           	"evening" : false
 		        },
 		        "friday": {
 		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+	            "afternoon" : false,
+	           	"evening" : true
 		        },
 		        "saturday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+		        	"morning" : false,
+	            "afternoon" : false,
+	           	"evening" : false
 		        },	
 		        "sunday": {
 		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+	            "afternoon" : true,
+	           	"evening" : true
 		        }	
 		    }
 		},
 		{
 			"name": "Kobe Bryant",
 			"username": "mamba",
-			"password": "testpassword",
+			"password": "password",
 			"age": 35,
 			"gym": "Arrillaga East",
 			"location": "Palo Alto, CA",
@@ -418,7 +418,7 @@
 			"imageURL": "http://lahaiseslair.com/crystalh/files/2013/10/kobe24.jpg",
 			"looking": false,
 			
-			"activities": ["basketball", "weightlifting"],
+			"activities": ["basketball", "weightlifting", "cycling", "climbing"],
 			
 			"schedule": {
 				"monday" : [],
@@ -432,39 +432,39 @@
 
 			"availability": {
 		        "monday": {
-		            "morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+	            "morning" : true,
+	            "afternoon" : false,
+	           	"evening" : true
 		        },
 		        "tuesday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+		        	"morning" : false,
+		          "afternoon" : true,
+		          "evening" : false
 		        },
 		        "wednesday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+		        	"morning" : false,
+	            "afternoon" : false,
+	           	"evening" : false
 		        },
 		        "thursday": {
 		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+	            "afternoon" : true,
+	           	"evening" : false
 		        },
 		        "friday": {
 		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+	            "afternoon" : false,
+	           	"evening" : true
 		        },
 		        "saturday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+		        	"morning" : false,
+	            "afternoon" : true,
+	           	"evening" : false
 		        },	
 		        "sunday": {
 		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
+	            "afternoon" : false,
+	           	"evening" : true
 		        }	
 		    }
 		}

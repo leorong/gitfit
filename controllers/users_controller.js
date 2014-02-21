@@ -249,18 +249,26 @@ exports.findbuddy = function(req, res) {
     var user = JSON.stringify(req.user);
     console.log('User info');
     console.log(user);
-    User.find({gym: user.gym}).exec(sortUsers(user));
+    User.find({gym: user.gym}).exec(sortUsers);
 
-    function sortUsers(err, user, buddies) {
+    function sortUsers(err, buddies) {
         var scoresObj = {};
         var returnList = [];
+        var user = req.user;
         if (user) {
             console.log("Current user is ", user.username);
         } else {
             console.log("Did not pass user");
         }
 
-        for (i = 0; i < buddies.length; i++) {
+        if (buddies) {
+            console.log("Buddies: ");
+            console.log(buddies);
+        } else {
+            console.log("Did not pass buddies");
+        }
+
+        for (var i = 0; i < buddies.length; i++) {
             var score = 0;
 
             var buddy = buddies[i];
@@ -278,7 +286,7 @@ exports.findbuddy = function(req, res) {
 
             var activityMultiplier = 0;
 
-            for (j = 0; j < shorter.length; j++) {
+            for (var j = 0; j < shorter.length; j++) {
                 var exercise = shorter[j];
                 if (longer.indexOf(exercise) > -1) {
                     activityMultiplier += 1;
@@ -310,11 +318,11 @@ exports.findbuddy = function(req, res) {
     }
 
     function getOverlap(userSchedule, buddySchedule) {
-        var multiplier = 0;
+        var multiplier = 1;
         //var dayOverlap = 0;
         //var timeOverlap = 0;
 
-        for (day = 0; day < userSchedule.length; day++) {
+        for (var day = 0; day < userSchedule.length; day++) {
             if (userSchedule[day]['morning'] == buddySchedule[day]['morning']) {
                 multiplier += 1;
             }

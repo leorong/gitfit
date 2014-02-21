@@ -61,7 +61,7 @@ if ('development' == app.get('env')) {
 
 // Add routes here
 
-app.get('/findbuddy', findbuddy.view);
+// app.get('/findbuddy', findbuddy.view);
 // app.get('/message', message.view);
 // app.get('/schedule', schedule.view);
 

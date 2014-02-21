@@ -11,7 +11,7 @@ exports.view = function(req, res) {
     //}
 
     var oldUsers = data["users"];
-    for (i = 0; i < oldUsers.length; i++) {
+    for (var i = 0; i < oldUsers.length; i++) {
         var user = oldUsers[i];
         var split = user.name.split(' ');
         var firstName = split[0];
