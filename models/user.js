@@ -40,7 +40,14 @@ var UserSchema = new Mongoose.Schema({
     
     "activities": [String],
 
-    "friends":[String],
+    "friends":[{
+	"username": String,
+	"name": {
+		"first": String,
+		"last": String
+	},
+	"imageURL": String
+     }],
 
     "schedule": {
         "monday" : [{

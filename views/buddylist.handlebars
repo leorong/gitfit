@@ -24,18 +24,14 @@
 
 	<div class="container">
 		<h1>Buddy List</h1>
- 		{{#each users}}	
-		<div class="random_matches">
+ 		{{#each friends}}	
+        <div id="friends-div">
 			<div class="col-xs-4">
-				<a href="user/{{username}}" class="thumbnail">
-					<img class="img img-responsive img-rounded" src="{{imageURL}}"></img>
-			</a>
+                <a href="profile/{{username}}" class="thumbnail"><img src="{{imageURL}}" id="image_url"></img></a>
 			</div>
 			<div class="col-xs-8">
-				<a href="user/{{username}}"><h3 id="name">{{name}}</h3></a> <!-- needs to be changed to name.full later -->
-				<p><i>{{location}}</i></p>
-                <p>{{gym}}</p>
-                <button type="button" class="btn btn-primary unfriend-btn"><span class="glyphicon glyphicon-minus">Unfriend</span></button>
+                <a href="profile/{{username}}"><h3 id="name">{{name.first}} {{name.last}}</h3></a> <!-- needs to be changed to name.full later -->
+                <!--<button type="button" class="btn btn-primary" id="unfriendBtn"><span class="glyphicon glyphicon-minus">Unfriend</span></button> -->
             </div>
 			<hr width="100%">
         </div>

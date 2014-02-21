@@ -176,8 +176,6 @@ exports.addprofile = function(req, res, next) {
     //res.render('profile_setup', {user: JSON.stringify(req.user)}); 
 }
 
-/* View profiles */
-
 exports.view = function(req, res) {
     // var users = data['users'];
     // var randomIndex = Math.floor(Math.random() * users.length);
@@ -219,37 +217,79 @@ exports.view = function(req, res) {
         }
     });
 
-}
+};
+
+/* View profiles */
+
+exports.viewProfile = function(req, res) {
+    // var users = data['users'];
+    // var randomIndex = Math.floor(Math.random() * users.length);
+    // var randomUser = users[randomIndex];
+
+    if (!req.user) {
+        console.log('Not logged in');
+        res.redirect('/');
+    } else {
+        console.log('We have a user');
+    }
+
+    var username = req.params.username;
+
+    User.findOne({username: username}, function (err, user) {
+        if (err) { 
+            console.log("error");
+            res.redirect('/');
+        } else {
+            console.log(req.user);
+            if (user) {
+                res.render('profile', {
+                    user: req.user ? JSON.stringify(req.user) : null,
+                    'current_user': req.user ? req.user.username : 'null',
+                    'name': user.name.full,
+                    'username': user.username,
+                    'age': user.age,
+                    'imageURL': user.imageURL,
+                    'location': user.location,
+                    'about_me': user.about_me,
+                    'activities': user.activities
+                }); 
+            } else {
+                res.render('index', {
+                    user: req.user ? JSON.stringify(req.user) : null,
+                    'current_user': req.user ? req.user.username : 'null'
+                });
+            }
+        }
+    });
+
+};
 
 /* Show Buddy List */
 exports.buddylist = function(req, res) {
-    // User.find(function (err, users) {
-    //     if (err) {
-    //         console.log("error");
-    //         res.render('index');
-    //     } else {
-    //         res.render('buddylist', users)
-    //     }
-    // });
-
     if (!req.user) {res.redirect('login');}
     
     var user = req.user;
+   /*
     var friends = [];
 
-    for(var i = 0; i < user['friends'].length; i++) {
+    for(var i = 0; i < user.friends.length; i++) {
         User
-            .find({"username": user['friends'][i]})
+            .find({"username": user.friends[i]})
             .exec(function(err, user) {
                 if(err) {console.log(err); res.send(500);}
+            
+                var temp = function() {
+                    var u = user;
+                    return function(){return u};
+                }();
+                
                 friends.push(user);
-//                console.log(friends);
-//                console.log("-----");
             });
     }
     console.log(friends);
 
-    res.render('buddylist', friends);
+    */
+    res.render('buddylist', {'friends': user.friends});
 };
 
 exports.findbuddy = function(req, res) {
@@ -387,6 +427,41 @@ exports.findbuddy = function(req, res) {
     }
 };
 
+
+/* Unfriend a Buddy */
+exports.unfriend = function(req, res) {
+    if(!req.user) {res.redirect('login');}
+
+    var username = req.params.username;
+    console.log(username);
+    console.log(req.user.username);
+    User
+        .update({}, {$pull : { "friends" : { "username":username} } }, false, false )
+        .where({"username":req.user.username})
+        .remove()
+        .exec(afterRemoving);
+    
+    function afterRemoving(err) {
+        if(err) {console.log(err); res.send(500)};
+        console.log("removed buddy");
+        res.redirect('/buddylist');
+    }
+};
+
+/* Set up Schedule */
+exports.schedule_setup = function(req, res) {
+
+    if (!req.user) {res.redirect('login');}
+
+    var activities = req.user.activities;
+
+    res.render('schedule_setup', {
+        user: req.user ? JSON.stringify(req.user) : null,
+        'current_user': req.user ? req.user.username : 'null',
+        "activities" : activities
+    });
+    
+};
 
 
 /* Show My Schedule */
