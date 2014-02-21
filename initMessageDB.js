@@ -12,7 +12,7 @@
 */
 
 var mongoose = require('mongoose');
-var Message   = require('./models/message');
+var Message   = mongoose.model("Message");
 
 // Connect to the Mongo database, whether locally or on Heroku
 // MAKE SURE TO CHANGE THE NAME FROM 'lab7' TO ... IN OTHER PROJECTS

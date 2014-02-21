@@ -12,7 +12,7 @@
 */
 
 var mongoose = require('mongoose');
-var User  = require('./models/user');
+var User  = mongoose.model("User");
 
 // Connect to the Mongo database, whether locally or on Heroku
 // MAKE SURE TO CHANGE THE NAME FROM 'lab7' TO ... IN OTHER PROJECTS
