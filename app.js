@@ -47,7 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 require('./config/passport')(passport);
 
 /* Routes */
-var findbuddy = require('./routes/findbuddy');
+// var findbuddy = require('./routes/findbuddy');
 // var message = require('./routes/message');
 var schedule = require('./routes/schedule');
 

@@ -18,6 +18,8 @@ module.exports = function(app, passport) {
     app.get('/signout', users.signout);
     app.get('/user/:username', users.view);
     app.get('/buddylist', users.buddylist);
+    app.get('/findbuddy', users.findbuddy);
+    // app.post('/findbuddy',);
 
     app.post('/login', function(req, res, next) {
         passport.authenticate('local', function(err, user, info) {
