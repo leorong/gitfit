@@ -54,7 +54,10 @@
 	    }
 	},
 	{
-		"name": "Leo Rong",
+		"name": {
+			"first": "Leo",
+			"last": "Rong"
+		},
 		"username": "leorong",
 		"password": "password",
 		"age": 21,

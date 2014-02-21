@@ -246,11 +246,11 @@ exports.findbuddy = function(req, res) {
 
     if (!req.user) {res.redirect('login');}
 
-    var user = JSON.stringify(req.user);
+    //var user = JSON.stringify(req.user);
     console.log('User info');
-    console.log(user['gym']);
-    console.log(user);
-    User.find({gym: user.gym}).exec(sortUsers);
+    console.log(req.user.gym);
+    console.log(req.user);
+    User.find({gym: req.user.gym}).exec(sortUsers);
 
     function sortUsers(err, buddies) {
         var scoresObj = {};
