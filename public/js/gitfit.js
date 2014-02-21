@@ -101,6 +101,28 @@ function initializePage() {
       });
    });
 
+  $('#newMessageBtn').click(function(e) {
+    window.location.href = '/message/new';
+    });
+
+  $('#newMessageSubmitBtn').click(function(e) {
+    var to = $('#new-message-form #to').val();
+    var message = $('#new-message-form #messageContent').val();
+
+    var json = {
+        'to': to,
+        'message': message
+    };
+
+    $.post('/message/new', json, function() {
+        window.location.href = '/message';
+    });
+  });
+
+  $('#newMessageCancelBtn').click(function(e) {
+      window.location.href = '/message/';
+  });
+
    //$("[name='find_friend_toggle']").bootstrapSwitch();
 
    $('#name').editable({
