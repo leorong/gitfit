@@ -281,7 +281,8 @@ exports.schedule_setup = function(req, res) {
 
 /* Show My Schedule */
 exports.schedule = function(req, res) {
-
+    
+    
 };
 
 
