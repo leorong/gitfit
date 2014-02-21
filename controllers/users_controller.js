@@ -233,13 +233,23 @@ exports.buddylist = function(req, res) {
     // });
 
     if (!req.user) {res.redirect('login');}
+    
+    var user = req.user;
+    var friends = [];
 
-    var user = JSON.stringify(req.user);
+    for(var i = 0; i < user['friends'].length; i++) {
+        User
+            .find({"username": user['friends'][i]})
+            .exec(function(err, user) {
+                if(err) {console.log(err); res.send(500);}
+                friends.push(user);
+//                console.log(friends);
+//                console.log("-----");
+            });
+    }
+    console.log(friends);
 
-    var returnObj = data;
-    returnObj['user'] = user;
-
-    res.render('buddylist', data);
+    res.render('buddylist', friends);
 };
 
 exports.findbuddy = function(req, res) {

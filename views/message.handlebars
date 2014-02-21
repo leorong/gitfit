@@ -27,11 +27,15 @@
         <button id="newMessageBtn" type="button" class="btn btn-default">New Message </button>
         
         {{#each messages}}
-        <p> {{from}} </p><br>
-        <p> {{to}} </p><br>
-        <p> {{message}} </p><br>
-        <p> {{ date }} </p><br>
-        <p> {{opened}} </p><br>
+        <div class="message">
+            <div class="reflect">
+                <h5>From: {{from}} </h5>
+                <h5>To: {{to}} </h5>
+                <p>{{message}} </p>
+                <p id="replace-date">{{date}} </p>
+                <!-- <p>Seen: {{opened}} </p><br> -->
+            </div>
+        </div>
         <hr width="100%">
         {{/each}}
 	</div>
