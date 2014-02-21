@@ -18,9 +18,7 @@
 	<div class="container">
 		<h1 position:"center">Find a Buddy</h1>
 
-		{{#with user}}
-			<p>Check out everyone else who works out at {{gym}}!</p>
-		{{/with}}
+		<p>Check out the matches we found!</p>
 
  		{{#each buddies}}	
 			<div class="random_matches">
@@ -31,7 +29,7 @@
 				</div>
         <div class="col-xs-8">
           <a href="user/{{buddy.username}}">
-              <h3 id="name">{{buddy.name}} had score {{score}}.</h3>
+              <h3 id="name">{{buddy.name.full}} had a match score of {{score}}!</h3>
           </a>
 					<p>{{buddy.age}}</p>
 					<p><i>{{buddy.location}}</i></p>

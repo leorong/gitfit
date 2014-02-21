@@ -253,7 +253,7 @@ exports.findbuddy = function(req, res) {
     User.find({gym: req.user.gym}).exec(sortUsers);
 
     function sortUsers(err, buddies) {
-        var scoresObj = {};
+        //var scoresObj = {};
         var returnList = [];
         var user = req.user;
         if (user) {
@@ -294,21 +294,24 @@ exports.findbuddy = function(req, res) {
                 }
             }
 
-            var buddySchedule = buddy.schedule;
-            var userSchedule = user.schedule;
+            var buddyAvailability = buddy.availability;
+            var userAvailability = user.availability;
 
-            var scheduleMultiplier = getOverlap(userSchedule, buddySchedule);
+            var availabilityMultiplier = getOverlap(userAvailability, buddyAvailability);
 
-            score = activityMultiplier * scheduleMultiplier;
+            score = activityMultiplier * availabilityMultiplier;
 
-            returnList.push({
-                'buddy': buddy,
-                'score': score
-            });
+            if (user.username != buddy.username) {
+                returnList.push({
+                    'buddy': buddy,
+                    'score': score
+                });
+            }
+            
         }
 
         returnList.sort(function (a,b) {
-            return (a.score > b.score) ? 1 : ((b.score > a.score) ? -1 : 0);
+            return (a.score < b.score) ? 1 : ((b.score < a.score) ? -1 : 0);
         });
 
         res.render('findbuddy', {
@@ -318,22 +321,57 @@ exports.findbuddy = function(req, res) {
         });
     }
 
-    function getOverlap(userSchedule, buddySchedule) {
+    function getOverlap(userAvailability, buddyAvailability) {
         var multiplier = 1;
         //var dayOverlap = 0;
         //var timeOverlap = 0;
 
-        for (var day = 0; day < userSchedule.length; day++) {
-            if (userSchedule[day]['morning'] == buddySchedule[day]['morning']) {
-                multiplier += 1;
-            }
-            if (userSchedule[day]['afternoon'] == buddySchedule[day]['afternoon']) {
-                multiplier += 1;
-            }
-            if (userSchedule[day]['evening'] == buddySchedule[day]['evening']) {
-                multiplier += 1;
-            }
-        }
+        if (userAvailability.monday.morning && buddyAvailability.monday.morning) {multiplier += 1;}
+        if (userAvailability.monday.afternoon && buddyAvailability.monday.afternoon) {multiplier += 1;}
+        if (userAvailability.monday.evening && buddyAvailability.monday.evening) {multiplier += 1;}
+        
+        if (userAvailability.tuesday.morning && buddyAvailability.tuesday.morning) {multiplier += 1;}
+        if (userAvailability.tuesday.afternoon && buddyAvailability.tuesday.afternoon) {multiplier += 1;}
+        if (userAvailability.tuesday.evening && buddyAvailability.tuesday.evening) {multiplier += 1;}
+
+        if (userAvailability.wednesday.morning && buddyAvailability.wednesday.morning) {multiplier += 1;}
+        if (userAvailability.wednesday.afternoon && buddyAvailability.wednesday.afternoon) {multiplier += 1;}
+        if (userAvailability.wednesday.evening && buddyAvailability.wednesday.evening) {multiplier += 1;}
+
+        if (userAvailability.thursday.morning && buddyAvailability.thursday.morning) {multiplier += 1;}
+        if (userAvailability.thursday.afternoon && buddyAvailability.thursday.afternoon) {multiplier += 1;}
+        if (userAvailability.thursday.evening && buddyAvailability.thursday.evening) {multiplier += 1;}
+
+        if (userAvailability.friday.morning && buddyAvailability.friday.morning) {multiplier += 1;}
+        if (userAvailability.friday.afternoon && buddyAvailability.friday.afternoon) {multiplier += 1;}
+        if (userAvailability.friday.evening && buddyAvailability.friday.evening) {multiplier += 1;}
+
+        if (userAvailability.saturday.morning && buddyAvailability.saturday.morning) {multiplier += 1;}
+        if (userAvailability.saturday.afternoon && buddyAvailability.saturday.afternoon) {multiplier += 1;}
+        if (userAvailability.saturday.evening && buddyAvailability.saturday.evening) {multiplier += 1;}
+
+        if (userAvailability.sunday.morning && buddyAvailability.sunday.morning) {multiplier += 1;}
+        if (userAvailability.sunday.afternoon && buddyAvailability.sunday.afternoon) {multiplier += 1;}
+        if (userAvailability.sunday.evening && buddyAvailability.sunday.evening) {multiplier += 1;}
+
+        // console.log("User avail length is, ", userAvailability.length);
+        // console.log("buddy avail length is, ", buddyAvailability.length);
+
+        // for (var day = 0; day < 7; day++) {
+        //     console.log(userAvailability[day]);
+        //     if (userAvailability[day]['morning'] == buddyAvailability[day]['morning']) {
+        //         multiplier += 1;
+        //         console.log("Upped morning multiplier");
+        //     }
+        //     if (userAvailability[day]['afternoon'] == buddyAvailability[day]['afternoon']) {
+        //         multiplier += 1;
+        //         console.log("Upped afternoon multiplier");
+        //     }
+        //     if (userAvailability[day]['evening'] == buddyAvailability[day]['evening']) {
+        //         multiplier += 1;
+        //         console.log("Upped evening multiplier");
+        //     }
+        // }
 
         return multiplier;
     }
