@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-    <link href="https://github.com/jdewit/bootstrap-timepicker/blob/gh-pages/css/bootstrap-timepicker.min.css" rel="stylesheet">
-    <link href="/css/gitfit.css" rel="stylesheet">
+    <link href="css/bootstrap-timepicker.min.css" rel="stylesheet">
+    <link href="css/gitfit.css" rel="stylesheet">
     <!-- this is a comment in HTML -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -26,16 +26,133 @@
     <div class="container">
         <h1>Schedule Setup</h1>
 
-
         {{#each activities}}
-            <li class="list-group-item">{{this}}</li>
+            <li class="list-group-item"><h4>{{this}}</h4></li>
+            <table class="table table-bordered">
+                <tr>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                </tr>
+                <tr>
+                    <td>
+                        <a href="#" id="show1">Add Item</a>
+                        <div id="form1" class="hidden">
+                            <label>Start Time:</label>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="start1" type="text" class="input-small">
+                                <span class="add-on"><i class="glyphicon glyphicon-time"></i></span>
+                            </div>
+                            <label>End Time:</label>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="end1" type="text" class="input-small">
+                                <span class="add-on"><i class="glyphicon glyphicon-time"></i></span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="#" id="show2">Add Item</a>
+                        <div id="form2" class="hidden">
+                            <label>Start Time:</label>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="start2" type="text" class="input-small">
+                                <span class="add-on"><i class="icon-time"></i></span>
+                            </div>
+                            <label>End Time:</label>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="end2" type="text" class="input-small">
+                                <span class="add-on"><i class="icon-time"></i></span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="#" id="show3">Add Item</a>
+                        <div id="form3" class="hidden">
+                            <label>Start Time:</label>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="start3" type="text" class="input-small">
+                                <span class="add-on"><i class="icon-time"></i></span>
+                            </div>
+                            <label>End Time:</label>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="end3" type="text" class="input-small">
+                                <span class="add-on"><i class="icon-time"></i></span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="#" id="show4">Add Item</a>
+                        <div id="form4" class="hidden">
+                            <label>Start Time:</label>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="start4" type="text" class="input-small">
+                                <span class="add-on"><i class="icon-time"></i></span>
+                            </div>
+                            <label>End Time:</label>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="end4" type="text" class="input-small">
+                                <span class="add-on"><i class="icon-time"></i></span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="#" id="show5">Add Item</a>
+                        <div id="form5" class="hidden">
+                            <label>Start Time:</label>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="start5" type="text" class="input-small">
+                                <span class="add-on"><i class="icon-time"></i></span>
+                            </div>
+                            <label>End Time:</label>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="end5" type="text" class="input-small">
+                                <span class="add-on"><i class="icon-time"></i></span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="#" id="show6">Add Item</a>
+                        <div id="form6" class="hidden">
+                            <label>Start Time:</label>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="start6" type="text" class="input-small">
+                                <span class="add-on"><i class="icon-time"></i></span>
+                            </div>
+                            <label>End Time:</label>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="end6" type="text" class="input-small">
+                                <span class="add-on"><i class="icon-time"></i></span>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <a href="#" id="show7">Add Item</a>
+                        <div id="form7" class="hidden">
+                            <label>Start Time:</label>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="start7" type="text" class="input-small">
+                                <span class="add-on"><i class="icon-time"></i></span>
+                            </div>
+                            <label>End Time:</label>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="end7" type="text" class="input-small">
+                                <span class="add-on"><i class="icon-time"></i></span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
         {{/each}}
-
-
     </div>
 
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script type="https://github.com/jdewit/bootstrap-timepicker/blob/gh-pages/js/bootstrap-timepicker.min.js"></script>
+    <script src="/js/bootstrap-timepicker.min.js"></script>
+    <script src="/js/gitfit.js"></script>
 </body>
 </html>
