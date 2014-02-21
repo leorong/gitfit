@@ -39,37 +39,45 @@ var UserSchema = new Schema({
     imageURL: String,
     looking: Boolean,
 
-    activities: [{
-        name: String,
-        monday: {
-            start: String,
-            end: String
-        },
-        tuesday: {
-            start: String,
-            end: String
-        },
-        wednesday: {
-            start: String,
-            end: String
-        },
-        thursday: {
-            start: String,
-            end: String
-        },
-        friday: {
-            start: String,
-            end: String
-        },
-        saturday: {
-            start: String,
-            end: String
-        },
-        sunday: {
-            start: String,
-            end: String
-        }
-    }],
+    activities: [String],
+
+    schedule: {
+        monday : [{
+            activity : String,
+            startTime : String,
+            endTime : String
+        }],
+        tuesday : [{
+            activity : String,
+            startTime : String,
+            endTime : String
+        }],
+        wednesday : [{
+            activity : String,
+            startTime : String,
+            endTime : String
+        }], 
+        thursday : [{
+            activity : String,
+            startTime : String,
+            endTime : String
+        }],
+        friday : [{
+            activity : String,
+            startTime : String,
+            endTime : String
+        }],
+        saturday : [{
+            activity : String,
+            startTime : String,
+            endTime : String
+        }],
+        sunday : [{
+            activity : String,
+            startTime : String,
+            endTime : String
+        }]
+    },
 
     availability: {
         monday: {

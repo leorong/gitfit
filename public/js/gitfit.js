@@ -31,34 +31,19 @@ function initializePage() {
       var activities = [];
 
       if ($('#basketball').is(':checked')) {
-         var exercise = {
-            'name': 'basketball'
-         };
-         activities.push(exercise);
+         activities.push('basketball');
       }
       if ($('#weightlifting').is(':checked')) {
-         var exercise = {
-            'name': 'weightlifting'
-         };
-         activities.push(exercise);
+         activities.push('weightlifting');
       }
       if ($('#running').is(':checked')) {
-         var exercise = {
-            'name': 'running'
-         };
-         activities.push(exercise);
+         activities.push('running');
       }
       if ($('#swimming').is(':checked')) {
-         var exercise = {
-            'name': 'swimming'
-         };
-         activities.push(exercise);
+         activities.push('swimming');
       }
       if ($('#climbing').is(':checked')) {
-         var exercise = {
-            'name': 'climbing'
-         };
-         activities.push(exercise);
+         activities.push('climbing');
       }
 
       var json = {
