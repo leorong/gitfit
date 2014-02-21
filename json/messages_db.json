@@ -19,5 +19,26 @@
         "message": "Hey michael! You're a great player!",
         "date": "February 20, 2014",
         "opened": false
+    },
+    {
+        "from": "kd35",
+        "to": "rtran58",
+        "message": "Hey Ricky, I heard you were pretty good at basketball",
+        "date": "February 19, 2014",
+        "opened": false
+    },
+    {
+        "from": "leorong",
+        "to": "mj23",
+        "message": "You are the greatest of all time!",
+        "date": "February 18, 2014",
+        "opened": false
+    },
+    {
+        "from": "abuddiga",
+        "to": "mj23",
+        "message": "Hey Michael, want to ball sometime?",
+        "date": "February 20, 2014",
+        "opened": false
     }
 ]
