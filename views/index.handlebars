@@ -19,11 +19,13 @@
 			<h1>GitFit</h1>
 			{{#if user}}
 				<p>Welcome {{current_user}}!</p>
+				<a class="btn btn-primary btn-lg" role="button" href="/findbuddy">Find a Buddy</a>
 			{{else}}
 				<p>Meet your new workout buddy today!</p>
+				<a class="btn btn-primary btn-lg" role="button" href="/login">Login</a>
+				<a class="btn btn-primary btn-lg" role="button" href="/signup">Sign Up</a>
 			{{/if}}
-			<a class="btn btn-primary btn-lg" role="button" href="/login">Login</a>
-			<a class="btn btn-primary btn-lg" role="button" href="/signup">Sign Up</a>
+			
 		</div>
 
 		<br>
