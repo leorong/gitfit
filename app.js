@@ -49,7 +49,7 @@ require('./config/passport')(passport);
 /* Routes */
 // var findbuddy = require('./routes/findbuddy');
 // var message = require('./routes/message');
-var schedule = require('./routes/schedule');
+// var schedule = require('./routes/schedule');
 
 var users = require('./routes/users')(app, passport);
 var index = require('./routes/index')(app, passport);
@@ -63,7 +63,7 @@ if ('development' == app.get('env')) {
 
 app.get('/findbuddy', findbuddy.view);
 // app.get('/message', message.view);
-app.get('/schedule', schedule.view);
+// app.get('/schedule', schedule.view);
 
 
 
