@@ -16,8 +16,10 @@ module.exports = function(app, passport) {
     app.get('/profile_setup', users.setup);
     app.post('/addprofile', users.addprofile);
     app.get('/signout', users.signout);
+    app.get('/profile/:username', users.viewProfile);
     app.get('/user/:username', users.view);
     app.get('/buddylist', users.buddylist);
+    app.get('/buddylist/:username', users.unfriend);
     app.get('/findbuddy', users.findbuddy);
     app.get('/schedule', users.schedule);
     app.get('/schedule_setup', users.schedule_setup);

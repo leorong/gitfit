@@ -95,11 +95,17 @@ function initializePage() {
             }
          }
       };
+
       console.log(json);
       $.post('/addprofile', json, function() {
          window.location.href = '/';
       });
    });
+
+  $("#friends-div").ready(function() {
+      console.log("ready");
+      console.log($("#friends-div").val());
+  });
 
   $('#newMessageBtn').click(function(e) {
     window.location.href = '/message/new';
@@ -122,7 +128,14 @@ function initializePage() {
   $('#newMessageCancelBtn').click(function(e) {
       window.location.href = '/message/';
   });
+/*
+  $('#unfriendBtn').click(function(e) {
+      
 
+
+
+  }
+  */
    //$("[name='find_friend_toggle']").bootstrapSwitch();
 
    $('#name').editable({
