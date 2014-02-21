@@ -32,6 +32,7 @@ exports.view = function(req, res) {
     //     });
     //     newPerson.save();
     // }
+
     if (!req.user) {
         res.render('index', {user: null});
     } else {
