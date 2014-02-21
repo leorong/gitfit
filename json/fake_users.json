@@ -15,6 +15,16 @@
 
 		"activities": ["weightlifting", "swimming"],
 
+		"schedule": {
+			"monday" : [],
+			"tuesday" : [],
+			"wednesday" : [],
+			"thursday" : [],
+			"friday" : [],
+			"saturday" : [],
+			"sunday" : []
+		},
+
 		"availability": {
 	        "monday": {
 	            "morning" : true,
@@ -68,6 +78,36 @@
 		"looking": true,
 
 		"activities": ["weightlifting", "cycling", "climbing"],
+
+		"schedule": {
+			"monday" : [{
+				"activity": "basketball",
+				"startTime": "5:00PM",
+				"endTime": "6:00PM"
+			}],
+			"tuesday" : [{
+				"activity": "weightlifting",
+				"startTime": "10:00AM",
+				"endTime": "11:00AM"
+			}],
+			"wednesday" : [{
+				"activity": "basketball",
+				"startTime": "5:00PM",
+				"endTime": "6:00PM"
+			}],
+			"thursday" : [{
+				"activity": "weightlifting",
+				"startTime": "10:00AM",
+				"endTime": "11:00AM"
+			}],
+			"friday" : [{
+				"activity": "basketball",
+				"startTime": "5:00PM",
+				"endTime": "6:00PM"
+			}],
+			"saturday" : [],
+			"sunday" : []
+		},
 
 		"availability": {
 	        "monday": {
