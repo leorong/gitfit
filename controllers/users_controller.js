@@ -455,7 +455,7 @@ exports.schedule_setup = function(req, res) {
 
     var activities = req.user.activities;
 
-    res.render('schedule', {
+    res.render('schedule_setup', {
         user: req.user ? JSON.stringify(req.user) : null,
         'current_user': req.user ? req.user.username : 'null',
         "activities" : activities
