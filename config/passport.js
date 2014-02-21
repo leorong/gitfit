@@ -34,20 +34,6 @@ module.exports = function(passport) {
                 return done(null, user[0]);
             }
         }
-            
-            /*
-            User.findOne({ username: username}, function(err, user) {
-                if (err) {return done(err);}
-                if (!user) {
-                    return done(null, false, {message: 'Incorrect username.' });
-                }
-                if(password != user.password) {
-                    console.log("username: " + user.username + " password: " + user.password);
-                    return done(null, false, {message: 'Incorrect password.' });
-                }
-                return done(null, user);
-            });
-        */
     ));
 }
 

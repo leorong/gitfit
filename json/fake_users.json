@@ -14,6 +14,7 @@
 		"looking": true,
 
 		"activities": ["weightlifting", "swimming"],
+        "friends": ["leorong", "abudigga", "mj23"],
 
 		"schedule": {
 			"monday" : [],
@@ -78,6 +79,7 @@
 		"looking": true,
 
 		"activities": ["weightlifting", "cycling", "climbing"],
+        "friends": [],
 
 		"schedule": {
 			"monday" : [{
@@ -162,6 +164,7 @@
 		"looking": true,
 		
 		"activities": ["basketball", "weightlifting"],
+        "friends": [],
 
 		"schedule": {
 			"monday" : [],
@@ -226,6 +229,7 @@
 		"looking": true,
 		
 		"activities": ["basketball", "weightlifting", "swimming"],
+        "friends": [],
 
 		"schedule": {
 			"monday" : [],
@@ -290,6 +294,7 @@
 		"looking": true,
 		
 		"activities": ["basketball", "weightlifting"],
+        "friends": [],
 
 		"schedule": {
 			"monday" : [],
@@ -354,6 +359,7 @@
 		"looking": true,
 		
 		"activities": ["basketball", "running", "climbing"],
+        "friends": [],
 
 		"schedule": {
 			"monday" : [],
@@ -418,6 +424,7 @@
 		"looking": true,
 		
 		"activities": ["basketball", "weightlifting", "running", "swimming"],
+        "friends": [],
 
 		"schedule": {
 			"monday" : [],
@@ -482,6 +489,7 @@
 		"looking": true,
 		
 		"activities": ["basketball", "weightlifting", "cycling", "climbing"],
+        "friends": [],
 		
 		"schedule": {
 			"monday" : [],

@@ -9,12 +9,12 @@ var UserSchema = new Mongoose.Schema({
         "first": String,
         "last": String
     },
-    /*
+    
     "email": {
         "type": String,
         //"validate": [validatePresenceOf, 'Username is required']
     },
-    */
+    
     "username": {
         "type": String,
         //"validate": [validatePresenceOf, 'Username is required'],
@@ -41,6 +41,8 @@ var UserSchema = new Mongoose.Schema({
     "looking": Boolean,
 
     "activities": [String],
+
+    "friends":[String],
 
     "schedule": {
         "monday" : [{
