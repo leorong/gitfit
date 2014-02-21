@@ -129,7 +129,9 @@ exports.addprofile = function(req, res, next) {
         gym: userProfile['gym'],
         about_me: userProfile['about_me'],
         imageURL: userProfile['imageURL'],
-        looking: userProfile['looking']
+        looking: userProfile['looking'],
+        activities: userProfile['activities'],
+        availability: userProfile['availability']
     }
     console.log(req.user);
     var query = {username: req.user.username};
