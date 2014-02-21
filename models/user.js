@@ -140,4 +140,6 @@ UserSchema.virtual('name.full').set(function (name) {
 //     return this.password;
 // });
 
+
 exports.User = Mongoose.model('User', UserSchema);
+

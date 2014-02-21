@@ -11,6 +11,15 @@
         "looking": true,
 
         "activities": ["basketball", "weightlifting"],
+        "schedule": {
+            "monday" : [],
+            "tuesday" : [],
+            "wednesday" : [],
+            "thursday" : [],
+            "friday" : [],
+            "saturday" : [],
+            "sunday" : []
+        },
 
         "availability": {
             "monday": {
@@ -63,58 +72,8 @@
 
         "activities": ["basketball", "weightlifting"],
 
-        "availability": {
-            "monday": {
-                "morning" : true,
-                "afternoon" : false,
-                "evening" : false
-            },
-            "tuesday": {
-                "morning" : true,
-                "afternoon" : false,
-                "evening" : false
-            },
-            "wednesday": {
-                "morning" : true,
-                "afternoon" : false,
-                "evening" : false
-            },
-            "thursday": {
-                "morning" : true,
-                "afternoon" : false,
-                "evening" : false
-            },
-            "friday": {
-                "morning" : true,
-                "afternoon" : false,
-                "evening" : false
-            },
-            "saturday": {
-                "morning" : true,
-                "afternoon" : false,
-                "evening" : false
-            },	
-            "sunday": {
-                "morning" : true,
-                "afternoon" : false,
-                "evening" : false
-            }	
-        }
-    },
-    {
-        "name": "Akshay Buddiga",
-        "username": "abuddiga",
-        "password": "testpassword",
-        "age": 23,
-        "gym": "Arrillaga East",
-        "location": "Palo Alto, CA",
-        "about_me": "Akshay is an MS&E masters student at Stanford University. He did his undergrad at Duke University and enjoys Las Vegas and poker.",
-        "imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-ash3/t1/581701_10151490899423505_1768814933_n.jpg",
-        "looking": false,
-        
-        "activities": ["basketball", "weightlifting"],
-
-        "schedule": {
+		"schedule": {
+>>>>>>> d4ca3d19808e9fdd0ce5c1874747af0653874a36
             "monday" : [],
             "tuesday" : [],
             "wednesday" : [],
@@ -163,6 +122,7 @@
         }
     },
     {
+<<<<<<< HEAD
         "name": "Michael Jordan",
         "username": "mj23",
         "password": "testpassword",
@@ -172,6 +132,17 @@
         "about_me": "Michael Jordan is the best basketball player of all time.",
         "imageURL": "http://img.quotery.com/pictures/2013/03/michael-jordan.jpg",
         "looking": true,
+=======
+        "name": "Akshay Buddiga",
+        "username": "abuddiga",
+        "password": "testpassword",
+        "age": 23,
+        "gym": "Arrillaga East",
+        "location": "Palo Alto, CA",
+        "about_me": "Akshay is an MS&E masters student at Stanford University. He did his undergrad at Duke University and enjoys Las Vegas and poker.",
+        "imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-ash3/t1/581701_10151490899423505_1768814933_n.jpg",
+        "looking": false,
+>>>>>>> d4ca3d19808e9fdd0ce5c1874747af0653874a36
         
         "activities": ["basketball", "weightlifting"],
 
@@ -224,6 +195,7 @@
         }
     },
     {
+<<<<<<< HEAD
         "name": "Derrick Rose",
         "username": "drose",
         "password": "testpassword",
@@ -233,6 +205,17 @@
         "about_me": "Derrick Rose will return.",
         "imageURL": "http://chicagofabulousblog.com/wp-content/uploads/2011/12/derrick-rose-300x300.jpg",
         "looking": false,
+=======
+        "name": "Michael Jordan",
+        "username": "mj23",
+        "password": "testpassword",
+        "age": 55,
+        "gym": "Arrillaga West",
+        "location": "Palo Alto, CA",
+        "about_me": "Michael Jordan is the best basketball player of all time.",
+        "imageURL": "http://img.quotery.com/pictures/2013/03/michael-jordan.jpg",
+        "looking": true,
+>>>>>>> d4ca3d19808e9fdd0ce5c1874747af0653874a36
         
         "activities": ["basketball", "weightlifting"],
 
@@ -285,6 +268,7 @@
         }
     },
     {
+<<<<<<< HEAD
         "name": "Kevin Durant",
         "username": "kd35",
         "password": "testpassword",
@@ -293,6 +277,16 @@
         "location": "Palo Alto, CA",
         "about_me": "KD will be the MVP.",
         "imageURL": "http://thestartingfive.net/wp-content/uploads/2012/06/kevin_durant-27465-300x300.jpg",
+=======
+        "name": "Derrick Rose",
+        "username": "drose",
+        "password": "testpassword",
+        "age": 26,
+        "gym": "Arrillaga West",
+        "location": "Palo Alto, CA",
+        "about_me": "Derrick Rose will return.",
+        "imageURL": "http://chicagofabulousblog.com/wp-content/uploads/2011/12/derrick-rose-300x300.jpg",
+>>>>>>> d4ca3d19808e9fdd0ce5c1874747af0653874a36
         "looking": false,
         
         "activities": ["basketball", "weightlifting"],
@@ -346,6 +340,103 @@
         }
     },
     {
+<<<<<<< HEAD
+        "name": "LeBron James",
+        "username": "kingjames",
+        "password": "testpassword",
+        "age": 29,
+        "gym": "Arrillaga West",
+        "location": "Palo Alto, CA",
+        "about_me": "LeBron is going for his 3rd title.",
+        "imageURL": "http://www.jacehallshow.com/wp-content/uploads/lebron_james-300x300.jpg",
+        "looking": true,
+=======
+        "name": "Kevin Durant",
+        "username": "kd35",
+        "password": "testpassword",
+        "age": 26,
+        "gym": "Arrillaga East",
+        "location": "Palo Alto, CA",
+        "about_me": "KD will be the MVP.",
+        "imageURL": "http://thestartingfive.net/wp-content/uploads/2012/06/kevin_durant-27465-300x300.jpg",
+        "looking": false,
+>>>>>>> d4ca3d19808e9fdd0ce5c1874747af0653874a36
+        
+        "activities": ["basketball", "weightlifting"],
+
+        "schedule": {
+            "monday" : [],
+            "tuesday" : [],
+            "wednesday" : [],
+            "thursday" : [],
+            "friday" : [],
+            "saturday" : [],
+            "sunday" : []
+        },
+
+        "availability": {
+            "monday": {
+                "morning" : true,
+                "afternoon" : false,
+                "evening" : false
+            },
+            "tuesday": {
+                "morning" : true,
+                "afternoon" : false,
+                "evening" : false
+            },
+            "wednesday": {
+                "morning" : true,
+                "afternoon" : false,
+                "evening" : false
+            },
+            "thursday": {
+                "morning" : true,
+                "afternoon" : false,
+                "evening" : false
+            },
+            "friday": {
+                "morning" : true,
+                "afternoon" : false,
+                "evening" : false
+            },
+            "saturday": {
+                "morning" : true,
+                "afternoon" : false,
+                "evening" : false
+            },	
+            "sunday": {
+                "morning" : true,
+                "afternoon" : false,
+                "evening" : false
+            }	
+        }
+    },
+    {
+<<<<<<< HEAD
+        "name": "Kobe Bryant",
+        "username": "mamba",
+        "password": "testpassword",
+        "age": 35,
+        "gym": "Arrillaga East",
+        "location": "Palo Alto, CA",
+        "about_me": "Kobe is getting paid for sitting on the bench.",
+        "imageURL": "http://lahaiseslair.com/crystalh/files/2013/10/kobe24.jpg",
+        "looking": false,
+        
+        "activities": ["basketball", "weightlifting"],
+        
+        "schedule": {
+            "monday" : [],
+            "tuesday" : [],
+            "wednesday" : [],
+            "thursday" : [],
+            "friday" : [],
+            "saturday" : [],
+            "sunday" : []
+        },
+
+=======
         "name": "LeBron James",
         "username": "kingjames",
         "password": "testpassword",
@@ -429,6 +520,7 @@
             "sunday" : []
         },
 
+>>>>>>> d4ca3d19808e9fdd0ce5c1874747af0653874a36
         "availability": {
             "monday": {
                 "morning" : true,
