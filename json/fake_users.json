@@ -1,472 +1,491 @@
-{
-	"users": [
-		{
-			"name": "Ricky Tran",
-			"username": "rtran58",
-			"password": "password",
-            "age": 20,
-			"gym": "Arrillaga West",
-			"location": "Palo Alto, CA",
-			"about_me": "Ricky is a Junior studying Computer Science at Stanford. During his spare time, he likes to DJ and play video games.",
-			"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-ash3/t1/1512525_10151837587365840_1627057196_n.jpg",
-			"looking": true,
-
-			"activities": ["weightlifting", "swimming"],
-
-			"availability": {
-		        "monday": {
-		            "morning" : true,
-		            "afternoon" : true,
-		           	"evening" : false
-		        },
-		        "tuesday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
-		        },
-		        "wednesday": {
-		        	"morning" : false,
-		            "afternoon" : false,
-		           	"evening" : true
-		        },
-		        "thursday": {
-		        	"morning" : true,
-		            "afternoon" : true,
-		           	"evening" : false
-		        },
-		        "friday": {
-		        	"morning" : false,
-		            "afternoon" : false,
-		           	"evening" : true
-		        },
-		        "saturday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : true
-		        },	
-		        "sunday": {
-		        	"morning" : false,
-		            "afternoon" : true,
-		           	"evening" : true
-		        }	
-		    }
+[ 
+	{
+		"name": {
+			"first": "Ricky",
+			"last": "Tran"
 		},
-		{
-			"name": "Leo Rong",
-			"username": "leorong",
-			"password": "password",
-			"age": 21,
-			"gym": "Arrillaga East",
-			"location": "Palo Alto, CA",
-			"about_me": "Leo is a Senior studying Computer Science. During his spare time, he likes to breakdance and hang with his bros.",
-			"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-frc3/t1/1511248_10151905176381139_647590704_n.jpg",
-			"looking": true,
+		"username": "rtran58",
+		"password": "password",
+          "age": 20,
+		"gym": "Arrillaga West",
+		"location": "Palo Alto, CA",
+		"about_me": "Ricky is a Junior studying Computer Science at Stanford. During his spare time, he likes to DJ and play video games.",
+		"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-ash3/t1/1512525_10151837587365840_1627057196_n.jpg",
+		"looking": true,
 
-			"activities": ["weightlifting", "cycling", "climbing"],
+		"activities": ["weightlifting", "swimming"],
 
-			"availability": {
-		        "monday": {
-		            "morning" : true,
-		            "afternoon" : true,
-		           	"evening" : false
-		        },
-		        "tuesday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : true
-		        },
-		        "wednesday": {
-		        	"morning" : false,
-		            "afternoon" : true,
-		           	"evening" : false
-		        },
-		        "thursday": {
-		        	"morning" : true,
-		            "afternoon" : true,
-		           	"evening" : false
-		        },
-		        "friday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : true
-		        },
-		        "saturday": {
-		        	"morning" : false,
-		            "afternoon" : false,
-		           	"evening" : false
-		        },	
-		        "sunday": {
-		        	"morning" : true,
-		            "afternoon" : true,
-		           	"evening" : false
-		        }	
-		    }
-		},
-		{
-			"name": "Akshay Buddiga",
-			"username": "abuddiga",
-			"password": "password",
-			"age": 23,
-			"gym": "Arrillaga East",
-			"location": "Palo Alto, CA",
-			"about_me": "Akshay is an MS&E masters student at Stanford University. He did his undergrad at Duke University and enjoys Las Vegas and poker.",
-			"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-ash3/t1/581701_10151490899423505_1768814933_n.jpg",
-			"looking": false,
-			
-			"activities": ["basketball", "weightlifting"],
-
-			"schedule": {
-				"monday" : [],
-				"tuesday" : [],
-				"wednesday" : [],
-				"thursday" : [],
-				"friday" : [],
-				"saturday" : [],
-				"sunday" : []
-			},
-
-			"availability": {
-		        "monday": {
-		            "morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
-		        },
-		        "tuesday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
-		        },
-		        "wednesday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : false
-		        },
-		        "thursday": {
-		        	"morning" : false,
-		            "afternoon" : false,
-		           	"evening" : false
-		        },
-		        "friday": {
-		        	"morning" : true,
-		            "afternoon" : true,
-		           	"evening" : true
-		        },
-		        "saturday": {
-		        	"morning" : false,
-		            "afternoon" : false,
-		           	"evening" : true
-		        },	
-		        "sunday": {
-		        	"morning" : true,
-		            "afternoon" : true,
-		           	"evening" : false
-		        }	
-		    }
-		},
-		{
-			"name": "Michael Jordan",
-			"username": "mj23",
-			"password": "password",
-			"age": 55,
-			"gym": "Arrillaga West",
-			"location": "Palo Alto, CA",
-			"about_me": "Michael Jordan is the best basketball player of all time.",
-			"imageURL": "http://img.quotery.com/pictures/2013/03/michael-jordan.jpg",
-			"looking": true,
-			
-			"activities": ["basketball", "weightlifting", "swimming"],
-
-			"schedule": {
-				"monday" : [],
-				"tuesday" : [],
-				"wednesday" : [],
-				"thursday" : [],
-				"friday" : [],
-				"saturday" : [],
-				"sunday" : []
-			},
-
-			"availability": {
-		        "monday": {
-		            "morning" : true,
-		            "afternoon" : true,
-		           	"evening" : false
-		        },
-		        "tuesday": {
-		        	"morning" : true,
-		            "afternoon" : true,
-		           	"evening" : false
-		        },
-		        "wednesday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : true
-		        },
-		        "thursday": {
-		        	"morning" : true,
-		            "afternoon" : true,
-		           	"evening" : false
-		        },
-		        "friday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : true
-		        },
-		        "saturday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : true
-		        },	
-		        "sunday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : true
-		        }	
-		    }
-		},
-		{
-			"name": "Derrick Rose",
-			"username": "drose",
-			"password": "password",
-			"age": 26,
-			"gym": "Arrillaga West",
-			"location": "Palo Alto, CA",
-			"about_me": "Derrick Rose will return.",
-			"imageURL": "http://chicagofabulousblog.com/wp-content/uploads/2011/12/derrick-rose-300x300.jpg",
-			"looking": false,
-			
-			"activities": ["basketball", "weightlifting"],
-
-			"schedule": {
-				"monday" : [],
-				"tuesday" : [],
-				"wednesday" : [],
-				"thursday" : [],
-				"friday" : [],
-				"saturday" : [],
-				"sunday" : []
-			},
-
-			"availability": {
-		        "monday": {
-		            "morning" : true,
-		            "afternoon" : true,
-		           	"evening" : false
-		        },
-		        "tuesday": {
-		        	"morning" : false,
-		            "afternoon" : false,
-		           	"evening" : true
-		        },
-		        "wednesday": {
-		        	"morning" : false,
-		            "afternoon" : true,
-		           	"evening" : true
-		        },
-		        "thursday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : true
-		        },
-		        "friday": {
-		        	"morning" : false,
-		            "afternoon" : false,
-		           	"evening" : true
-		        },
-		        "saturday": {
-		        	"morning" : true,
-		            "afternoon" : true,
-		           	"evening" : false
-		        },	
-		        "sunday": {
-		        	"morning" : false,
-		            "afternoon" : false,
-		           	"evening" : false
-		        }	
-		    }
-		},
-		{
-			"name": "Kevin Durant",
-			"username": "kd35",
-			"password": "password",
-			"age": 26,
-			"gym": "Arrillaga East",
-			"location": "Palo Alto, CA",
-			"about_me": "KD will be the MVP.",
-			"imageURL": "http://thestartingfive.net/wp-content/uploads/2012/06/kevin_durant-27465-300x300.jpg",
-			"looking": false,
-			
-			"activities": ["basketball", "running", "climbing"],
-
-			"schedule": {
-				"monday" : [],
-				"tuesday" : [],
-				"wednesday" : [],
-				"thursday" : [],
-				"friday" : [],
-				"saturday" : [],
-				"sunday" : []
-			},
-
-			"availability": {
-		        "monday": {
-		            "morning" : true,
-		            "afternoon" : false,
-		           	"evening" : true
-		        },
-		        "tuesday": {
-		        	"morning" : false,
-		            "afternoon" : true,
-		           	"evening" : false
-		        },
-		        "wednesday": {
-		        	"morning" : false,
-		            "afternoon" : false,
-		           	"evening" : false
-		        },
-		        "thursday": {
-		        	"morning" : true,
-		            "afternoon" : true,
-		           	"evening" : true
-		        },
-		        "friday": {
-		        	"morning" : true,
-		            "afternoon" : true,
-		           	"evening" : false
-		        },
-		        "saturday": {
-		        	"morning" : true,
-		            "afternoon" : false,
-		           	"evening" : true
-		        },	
-		        "sunday": {
-		        	"morning" : false,
-		            "afternoon" : false,
-		           	"evening" : true
-		        }	
-		    }
-		},
-		{
-			"name": "LeBron James",
-			"username": "kingjames",
-			"password": "password",
-			"age": 29,
-			"gym": "Arrillaga West",
-			"location": "Palo Alto, CA",
-			"about_me": "LeBron is going for his 3rd title.",
-			"imageURL": "http://www.jacehallshow.com/wp-content/uploads/lebron_james-300x300.jpg",
-			"looking": true,
-			
-			"activities": ["basketball", "weightlifting", "running", "swimming"],
-
-			"schedule": {
-				"monday" : [],
-				"tuesday" : [],
-				"wednesday" : [],
-				"thursday" : [],
-				"friday" : [],
-				"saturday" : [],
-				"sunday" : []
-			},
-
-			"availability": {
-		        "monday": {
-		            "morning" : true,
-		            "afternoon" : true,
-		           	"evening" : false
-		        },
-		        "tuesday": {
-		        	"morning" : true,
-		            "afternoon" : true,
-		           	"evening" : false
-		        },
-		        "wednesday": {
-		        	"morning" : false,
-	            "afternoon" : false,
-	           	"evening" : true
-		        },
-		        "thursday": {
-		        	"morning" : true,
+		"availability": {
+	        "monday": {
+	            "morning" : true,
 	            "afternoon" : true,
 	           	"evening" : false
-		        },
-		        "friday": {
-		        	"morning" : true,
-	            "afternoon" : false,
-	           	"evening" : true
-		        },
-		        "saturday": {
-		        	"morning" : false,
+	        },
+	        "tuesday": {
+	        	"morning" : true,
 	            "afternoon" : false,
 	           	"evening" : false
-		        },	
-		        "sunday": {
-		        	"morning" : true,
+	        },
+	        "wednesday": {
+	        	"morning" : false,
+	            "afternoon" : false,
+	           	"evening" : true
+	        },
+	        "thursday": {
+	        	"morning" : true,
+	            "afternoon" : true,
+	           	"evening" : false
+	        },
+	        "friday": {
+	        	"morning" : false,
+	            "afternoon" : false,
+	           	"evening" : true
+	        },
+	        "saturday": {
+	        	"morning" : true,
+	            "afternoon" : false,
+	           	"evening" : true
+	        },	
+	        "sunday": {
+	        	"morning" : false,
 	            "afternoon" : true,
 	           	"evening" : true
-		        }	
-		    }
-		},
-		{
-			"name": "Kobe Bryant",
-			"username": "mamba",
-			"password": "password",
-			"age": 35,
-			"gym": "Arrillaga East",
-			"location": "Palo Alto, CA",
-			"about_me": "Kobe is getting paid for sitting on the bench.",
-			"imageURL": "http://lahaiseslair.com/crystalh/files/2013/10/kobe24.jpg",
-			"looking": false,
-			
-			"activities": ["basketball", "weightlifting", "cycling", "climbing"],
-			
-			"schedule": {
-				"monday" : [],
-				"tuesday" : [],
-				"wednesday" : [],
-				"thursday" : [],
-				"friday" : [],
-				"saturday" : [],
-				"sunday" : []
-			},
+	        }	
+	    }
+	},
+	{
+		"name": "Leo Rong",
+		"username": "leorong",
+		"password": "password",
+		"age": 21,
+		"gym": "Arrillaga East",
+		"location": "Palo Alto, CA",
+		"about_me": "Leo is a Senior studying Computer Science. During his spare time, he likes to breakdance and hang with his bros.",
+		"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-frc3/t1/1511248_10151905176381139_647590704_n.jpg",
+		"looking": true,
 
-			"availability": {
-		        "monday": {
+		"activities": ["weightlifting", "cycling", "climbing"],
+
+		"availability": {
+	        "monday": {
+	            "morning" : true,
+	            "afternoon" : true,
+	           	"evening" : false
+	        },
+	        "tuesday": {
+	        	"morning" : true,
+	            "afternoon" : false,
+	           	"evening" : true
+	        },
+	        "wednesday": {
+	        	"morning" : false,
+	            "afternoon" : true,
+	           	"evening" : false
+	        },
+	        "thursday": {
+	        	"morning" : true,
+	            "afternoon" : true,
+	           	"evening" : false
+	        },
+	        "friday": {
+	        	"morning" : true,
+	            "afternoon" : false,
+	           	"evening" : true
+	        },
+	        "saturday": {
+	        	"morning" : false,
+	            "afternoon" : false,
+	           	"evening" : false
+	        },	
+	        "sunday": {
+	        	"morning" : true,
+	            "afternoon" : true,
+	           	"evening" : false
+	        }	
+	    }
+	},
+	{
+		"name": {
+			"first": "Akshay",
+			"last": "Buddiga"
+		},
+		"username": "abuddiga",
+		"password": "password",
+		"age": 23,
+		"gym": "Arrillaga East",
+		"location": "Palo Alto, CA",
+		"about_me": "Akshay is an MS&E masters student at Stanford University. He did his undergrad at Duke University and enjoys Las Vegas and poker.",
+		"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-ash3/t1/581701_10151490899423505_1768814933_n.jpg",
+		"looking": true,
+		
+		"activities": ["basketball", "weightlifting"],
+
+		"schedule": {
+			"monday" : [],
+			"tuesday" : [],
+			"wednesday" : [],
+			"thursday" : [],
+			"friday" : [],
+			"saturday" : [],
+			"sunday" : []
+		},
+
+		"availability": {
+	        "monday": {
+	            "morning" : true,
+	            "afternoon" : false,
+	           	"evening" : false
+	        },
+	        "tuesday": {
+	        	"morning" : true,
+	            "afternoon" : false,
+	           	"evening" : false
+	        },
+	        "wednesday": {
+	        	"morning" : true,
+	            "afternoon" : false,
+	           	"evening" : false
+	        },
+	        "thursday": {
+	        	"morning" : false,
+	            "afternoon" : false,
+	           	"evening" : false
+	        },
+	        "friday": {
+	        	"morning" : true,
+	            "afternoon" : true,
+	           	"evening" : true
+	        },
+	        "saturday": {
+	        	"morning" : false,
+	            "afternoon" : false,
+	           	"evening" : true
+	        },	
+	        "sunday": {
+	        	"morning" : true,
+	            "afternoon" : true,
+	           	"evening" : false
+	        }	
+	    }
+	},
+	{
+		"name": {
+			"first": "Michael",
+			"last": "Jordan"
+		},
+		"username": "mj23",
+		"password": "password",
+		"age": 55,
+		"gym": "Arrillaga West",
+		"location": "Palo Alto, CA",
+		"about_me": "Michael Jordan is the best basketball player of all time.",
+		"imageURL": "http://img.quotery.com/pictures/2013/03/michael-jordan.jpg",
+		"looking": true,
+		
+		"activities": ["basketball", "weightlifting", "swimming"],
+
+		"schedule": {
+			"monday" : [],
+			"tuesday" : [],
+			"wednesday" : [],
+			"thursday" : [],
+			"friday" : [],
+			"saturday" : [],
+			"sunday" : []
+		},
+
+		"availability": {
+	        "monday": {
+	            "morning" : true,
+	            "afternoon" : true,
+	           	"evening" : false
+	        },
+	        "tuesday": {
+	        	"morning" : true,
+	            "afternoon" : true,
+	           	"evening" : false
+	        },
+	        "wednesday": {
+	        	"morning" : true,
+	            "afternoon" : false,
+	           	"evening" : true
+	        },
+	        "thursday": {
+	        	"morning" : true,
+	            "afternoon" : true,
+	           	"evening" : false
+	        },
+	        "friday": {
+	        	"morning" : true,
+	            "afternoon" : false,
+	           	"evening" : true
+	        },
+	        "saturday": {
+	        	"morning" : true,
+	            "afternoon" : false,
+	           	"evening" : true
+	        },	
+	        "sunday": {
+	        	"morning" : true,
+	            "afternoon" : false,
+	           	"evening" : true
+	        }	
+	    }
+	},
+	{
+		"name": {
+			"first": "Derrick",
+			"last": "Rose"
+		},
+		"username": "drose",
+		"password": "password",
+		"age": 26,
+		"gym": "Arrillaga West",
+		"location": "Palo Alto, CA",
+		"about_me": "Derrick Rose will return.",
+		"imageURL": "http://chicagofabulousblog.com/wp-content/uploads/2011/12/derrick-rose-300x300.jpg",
+		"looking": true,
+		
+		"activities": ["basketball", "weightlifting"],
+
+		"schedule": {
+			"monday" : [],
+			"tuesday" : [],
+			"wednesday" : [],
+			"thursday" : [],
+			"friday" : [],
+			"saturday" : [],
+			"sunday" : []
+		},
+
+		"availability": {
+	        "monday": {
+	            "morning" : true,
+	            "afternoon" : true,
+	           	"evening" : false
+	        },
+	        "tuesday": {
+	        	"morning" : false,
+	            "afternoon" : false,
+	           	"evening" : true
+	        },
+	        "wednesday": {
+	        	"morning" : false,
+	            "afternoon" : true,
+	           	"evening" : true
+	        },
+	        "thursday": {
+	        	"morning" : true,
+	            "afternoon" : false,
+	           	"evening" : true
+	        },
+	        "friday": {
+	        	"morning" : false,
+	            "afternoon" : false,
+	           	"evening" : true
+	        },
+	        "saturday": {
+	        	"morning" : true,
+	            "afternoon" : true,
+	           	"evening" : false
+	        },	
+	        "sunday": {
+	        	"morning" : false,
+	            "afternoon" : false,
+	           	"evening" : false
+	        }	
+	    }
+	},
+	{
+		"name": {
+			"first": "Kevin",
+			"last": "Durant"
+		},
+		"username": "kd35",
+		"password": "password",
+		"age": 26,
+		"gym": "Arrillaga East",
+		"location": "Palo Alto, CA",
+		"about_me": "KD will be the MVP.",
+		"imageURL": "http://thestartingfive.net/wp-content/uploads/2012/06/kevin_durant-27465-300x300.jpg",
+		"looking": true,
+		
+		"activities": ["basketball", "running", "climbing"],
+
+		"schedule": {
+			"monday" : [],
+			"tuesday" : [],
+			"wednesday" : [],
+			"thursday" : [],
+			"friday" : [],
+			"saturday" : [],
+			"sunday" : []
+		},
+
+		"availability": {
+	        "monday": {
 	            "morning" : true,
 	            "afternoon" : false,
 	           	"evening" : true
-		        },
-		        "tuesday": {
-		        	"morning" : false,
-		          "afternoon" : true,
-		          "evening" : false
-		        },
-		        "wednesday": {
-		        	"morning" : false,
-	            "afternoon" : false,
-	           	"evening" : false
-		        },
-		        "thursday": {
-		        	"morning" : true,
+	        },
+	        "tuesday": {
+	        	"morning" : false,
 	            "afternoon" : true,
 	           	"evening" : false
-		        },
-		        "friday": {
-		        	"morning" : true,
+	        },
+	        "wednesday": {
+	        	"morning" : false,
 	            "afternoon" : false,
+	           	"evening" : false
+	        },
+	        "thursday": {
+	        	"morning" : true,
+	            "afternoon" : true,
 	           	"evening" : true
-		        },
-		        "saturday": {
-		        	"morning" : false,
+	        },
+	        "friday": {
+	        	"morning" : true,
 	            "afternoon" : true,
 	           	"evening" : false
-		        },	
-		        "sunday": {
-		        	"morning" : true,
+	        },
+	        "saturday": {
+	        	"morning" : true,
 	            "afternoon" : false,
 	           	"evening" : true
-		        }	
-		    }
-		}
-	]
-}
+	        },	
+	        "sunday": {
+	        	"morning" : false,
+	            "afternoon" : false,
+	           	"evening" : true
+	        }	
+	    }
+	},
+	{
+		"name": {
+			"first": "LeBron",
+			"last": "James"
+		},
+		"username": "kingjames",
+		"password": "password",
+		"age": 29,
+		"gym": "Arrillaga West",
+		"location": "Palo Alto, CA",
+		"about_me": "LeBron is going for his 3rd title.",
+		"imageURL": "http://www.jacehallshow.com/wp-content/uploads/lebron_james-300x300.jpg",
+		"looking": true,
+		
+		"activities": ["basketball", "weightlifting", "running", "swimming"],
+
+		"schedule": {
+			"monday" : [],
+			"tuesday" : [],
+			"wednesday" : [],
+			"thursday" : [],
+			"friday" : [],
+			"saturday" : [],
+			"sunday" : []
+		},
+
+		"availability": {
+	        "monday": {
+	            "morning" : true,
+	            "afternoon" : true,
+	           	"evening" : false
+	        },
+	        "tuesday": {
+	        	"morning" : true,
+	            "afternoon" : true,
+	           	"evening" : false
+	        },
+	        "wednesday": {
+	        	"morning" : false,
+            "afternoon" : false,
+           	"evening" : true
+	        },
+	        "thursday": {
+	        	"morning" : true,
+            "afternoon" : true,
+           	"evening" : false
+	        },
+	        "friday": {
+	        	"morning" : true,
+            "afternoon" : false,
+           	"evening" : true
+	        },
+	        "saturday": {
+	        	"morning" : false,
+            "afternoon" : false,
+           	"evening" : false
+	        },	
+	        "sunday": {
+	        	"morning" : true,
+            "afternoon" : true,
+           	"evening" : true
+	        }	
+	    }
+	},
+	{
+		"name": {
+			"first": "Kobe",
+			"last": "Bryant"
+		},
+		"username": "mamba",
+		"password": "password",
+		"age": 35,
+		"gym": "Arrillaga East",
+		"location": "Palo Alto, CA",
+		"about_me": "Kobe is getting paid for sitting on the bench.",
+		"imageURL": "http://lahaiseslair.com/crystalh/files/2013/10/kobe24.jpg",
+		"looking": true,
+		
+		"activities": ["basketball", "weightlifting", "cycling", "climbing"],
+		
+		"schedule": {
+			"monday" : [],
+			"tuesday" : [],
+			"wednesday" : [],
+			"thursday" : [],
+			"friday" : [],
+			"saturday" : [],
+			"sunday" : []
+		},
+
+		"availability": {
+	        "monday": {
+            "morning" : true,
+            "afternoon" : false,
+           	"evening" : true
+	        },
+	        "tuesday": {
+	        	"morning" : false,
+	          "afternoon" : true,
+	          "evening" : false
+	        },
+	        "wednesday": {
+	        	"morning" : false,
+            "afternoon" : false,
+           	"evening" : false
+	        },
+	        "thursday": {
+	        	"morning" : true,
+            "afternoon" : true,
+           	"evening" : false
+	        },
+	        "friday": {
+	        	"morning" : true,
+            "afternoon" : false,
+           	"evening" : true
+	        },
+	        "saturday": {
+	        	"morning" : false,
+            "afternoon" : true,
+           	"evening" : false
+	        },	
+	        "sunday": {
+	        	"morning" : true,
+            "afternoon" : false,
+           	"evening" : true
+	        }	
+	    }
+	}
+]

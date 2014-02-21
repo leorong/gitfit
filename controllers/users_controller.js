@@ -248,6 +248,7 @@ exports.findbuddy = function(req, res) {
 
     var user = JSON.stringify(req.user);
     console.log('User info');
+    console.log(user['gym']);
     console.log(user);
     User.find({gym: user.gym}).exec(sortUsers);
 

@@ -121,7 +121,7 @@ var UserSchema = new Mongoose.Schema({
 
 /* Virtual Methods */
 
-/*
+
 UserSchema.virtual('name.full').get(function () {
     return this.name.first + ' ' + this.name.last;
 });
@@ -131,7 +131,7 @@ UserSchema.virtual('name.full').set(function (name) {
     this.name.first = split[0];
     this.name.last = split[1];
 });
-*/
+
 // UserSchema.virtual('password').set(function (password) {
 //     this.password = String;
 // });
