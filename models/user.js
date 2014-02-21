@@ -1,119 +1,118 @@
-var mongoose = require('mongoose'),
-	Schema = mongoose.Schema;
+var Mongoose = require('mongoose');
 
 function validatePresenceOf(value) {
     return value && value.length;
 }
 
-var UserSchema = new Schema({
-    name: {
-        first: String,
-        last: String
+var UserSchema = new Mongoose.Schema({
+    "name": {
+        "first": String,
+        "last": String
     },
-    email: {
-        type: String,
-        validate: [validatePresenceOf, 'Username is required']
+    "email": {
+        "type": String,
+        "validate": [validatePresenceOf, 'Username is required']
     },
-    username: {
-        type: String,
-        validate: [validatePresenceOf, 'Username is required'],
-        unique: true
+    "username": {
+        "type": String,
+        "validate": [validatePresenceOf, 'Username is required'],
+        "unique": true
     },
-    password: {
-        type: String,
-        validate: [validatePresenceOf, 'Password is required']
+    "password": {
+        "type": String,
+        "validate": [validatePresenceOf, 'Password is required']
     },
-    age: {
-        type: Number,
-        min: 10
+    "age": {
+        "type": Number,
+        "min": 10
     },
-    location: {
-        type: String
+    "location": {
+        "type": String
     },
-    gym: {
-        type: String
+    "gym": {
+        "type": String
     },
-    about_me: {
-        type: String
+    "about_me": {
+        "type": String
     },
-    imageURL: String,
-    looking: Boolean,
+    "imageURL": String,
+    "looking": Boolean,
 
-    activities: [String],
+    "activities": [String],
 
-    schedule: {
-        monday : [{
-            activity : String,
-            startTime : String,
-            endTime : String
+    "schedule": {
+        "monday" : [{
+            "activity": String,
+            "startTime": String,
+            "endTime": String
         }],
-        tuesday : [{
-            activity : String,
-            startTime : String,
-            endTime : String
+        "tuesday": [{
+            "activity": String,
+            "startTime": String,
+            "endTime": String
         }],
-        wednesday : [{
-            activity : String,
-            startTime : String,
-            endTime : String
+        "wednesday": [{
+            "activity": String,
+            "startTime": String,
+            "endTime": String
         }], 
-        thursday : [{
-            activity : String,
-            startTime : String,
-            endTime : String
+        "thursday": [{
+            "activity": String,
+            "startTime": String,
+            "endTime": String
         }],
-        friday : [{
-            activity : String,
-            startTime : String,
-            endTime : String
+        "friday": [{
+            "activity": String,
+            "startTime": String,
+            "endTime": String
         }],
-        saturday : [{
-            activity : String,
-            startTime : String,
-            endTime : String
+        "saturday": [{
+            "activity": String,
+            "startTime": String,
+            "endTime": String
         }],
-        sunday : [{
-            activity : String,
-            startTime : String,
-            endTime : String
+        "sunday": [{
+            "activity": String,
+            "startTime": String,
+            "endTime": String
         }]
     },
 
-    availability: {
-        monday: {
-            morning: Boolean,
-            afternoon: Boolean,
-            evening: Boolean
+    "availability": {
+        "monday": {
+            "morning": Boolean,
+            "afternoon": Boolean,
+            "evening": Boolean
         },
-        tuesday: {
-            morning: Boolean,
-            afternoon: Boolean,
-            evening: Boolean
+        "tuesday": {
+            "morning": Boolean,
+            "afternoon": Boolean,
+            "evening": Boolean
         },
-        wednesday: {
-            morning: Boolean,
-            afternoon: Boolean,
-            evening: Boolean
+        "wednesday": {
+            "morning": Boolean,
+            "afternoon": Boolean,
+            "evening": Boolean
         },
-        thursday: {
-            morning: Boolean,
-            afternoon: Boolean,
-            evening: Boolean
+        "thursday": {
+            "morning": Boolean,
+            "afternoon": Boolean,
+            "evening": Boolean
         },
-        friday: {
-            morning: Boolean,
-            afternoon: Boolean,
-            evening: Boolean
+        "friday": {
+            "morning": Boolean,
+            "afternoon": Boolean,
+            "evening": Boolean
         },
-        saturday: {
-            morning: Boolean,
-            afternoon: Boolean,
-            evening: Boolean
+        "saturday": {
+            "morning": Boolean,
+            "afternoon": Boolean,
+            "evening": Boolean
         },
-        sunday: {
-            morning: Boolean,
-            afternoon: Boolean,
-            evening: Boolean
+        "sunday": {
+            "morning": Boolean,
+            "afternoon": Boolean,
+            "evening": Boolean
         }
     }
 });
@@ -138,4 +137,4 @@ UserSchema.virtual('name.full').set(function (name) {
 //     return this.password;
 // });
 
-mongoose.model('User', UserSchema);
+exports.User = Mongoose.model('User', UserSchema);
