@@ -1,7 +1,8 @@
 var passport = require('passport'),
     mongoose = require('mongoose'),
     LocalStrategy = require('passport-local').Strategy,
-    User = mongoose.model('User');
+    User = mongoose.model('User'),
+    models = require('../models/user');
 
 module.exports = function(passport) {
     passport.serializeUser(function(user, done) {
@@ -16,6 +17,25 @@ module.exports = function(passport) {
 
     passport.use(new LocalStrategy(
         function(username, password, done) {
+            models.User
+                .find({"username": username})
+                .exec(afterQuery);
+
+            function afterQuery(err, user) {
+                if(err) {return done(err);}
+                
+                if (!user[0]) {
+                    return done(null, false, {message: 'Incorrect username.' });
+                }
+                if(password != user[0].password) {
+                    console.log("username: " + user[0].username + " password: " + user[0].password);
+                    return done(null, false, {message: 'Incorrect password.' });
+                }
+                return done(null, user[0]);
+            }
+        }
+            
+            /*
             User.findOne({ username: username}, function(err, user) {
                 if (err) {return done(err);}
                 if (!user) {
@@ -27,7 +47,7 @@ module.exports = function(passport) {
                 }
                 return done(null, user);
             });
-        }
+        */
     ));
 }
 
