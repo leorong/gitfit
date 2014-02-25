@@ -15,7 +15,6 @@
 		"looking": true,
 
 		"activities": ["weightlifting", "swimming"],
-        	"friends": [
 		{
 			"username": "leorong",
 			"name": {
@@ -105,7 +104,7 @@
 		"looking": true,
 
 		"activities": ["weightlifting", "cycling", "climbing"],
-        "friends": [],
+        
 
 		"schedule": {
 			"monday" : [{
@@ -191,7 +190,6 @@
 		"looking": true,
 		
 		"activities": ["basketball", "weightlifting"],
-        "friends": [],
 
 		"schedule": {
 			"monday" : [],
@@ -257,7 +255,6 @@
 		"looking": true,
 		
 		"activities": ["basketball", "weightlifting", "swimming"],
-        "friends": [],
 
 		"schedule": {
 			"monday" : [],
@@ -323,9 +320,8 @@
 		"looking": true,
 		
 		"activities": ["basketball", "weightlifting"],
-        "friends": [],
-
-		"schedule": {
+		
+        "schedule": {
 			"monday" : [],
 			"tuesday" : [],
 			"wednesday" : [],
@@ -389,7 +385,6 @@
 		"looking": true,
 		
 		"activities": ["basketball", "running", "climbing"],
-        "friends": [],
 
 		"schedule": {
 			"monday" : [],
@@ -455,7 +450,6 @@
 		"looking": true,
 		
 		"activities": ["basketball", "weightlifting", "running", "swimming"],
-        "friends": [],
 
 		"schedule": {
 			"monday" : [],
@@ -521,7 +515,6 @@
 		"looking": true,
 		
 		"activities": ["basketball", "weightlifting", "cycling", "climbing"],
-        "friends": [],
 		
 		"schedule": {
 			"monday" : [],
