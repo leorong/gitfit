@@ -44,3 +44,27 @@ exports.view = function(req, res) {
 
 }
 
+exports.unfriend = function(req, res) {
+    if(!req.user) {res.render('/login');}
+
+    var unfriendUsername = req.params.username;
+    var username = req.user.username;
+
+    Friend.find({"friend1":username, "friend2":unfriendUsername})
+        .remove()
+        .exec(afterRemoving);
+    function afterRemoving(err) {
+        if(err) {console.log(err); res.send(500);}
+        Friend.find({"friend1":unfriendUsername, "friend2":username})
+            .remove()
+            .exec(afterSecondRemoving);
+
+        function afterSecondRemoving(err) {
+            if(err) {console.log(err); res.send(500);}
+
+            res.redirect('/buddylist');
+        }
+    }
+}
+
+
