@@ -24,6 +24,7 @@ db.once('open', function() {
 /* Models */
 var user_model = require('./models/user');
 var message_model = require('./models/message');
+var friend_model = require('./models/friend');
 
 var app = express();
 

@@ -15,30 +15,6 @@
 		"looking": true,
 
 		"activities": ["weightlifting", "swimming"],
-		{
-			"username": "leorong",
-			"name": {
-				"first": "Leo",
-				"last": "Rong"
-			},
-			"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-frc3/t1/1511248_10151905176381139_647590704_n.jpg"
-		}, 
-		{
-			"username": "abuddiga",
-			"name": {
-				"first": "Akshay",
-				"last": "Buddiga"
-			},
-			"imageURL": "https://scontent-a-sjc.xx.fbcdn.net/hphotos-ash3/t1/581701_10151490899423505_1768814933_n.jpg"
-		},
-		{
-			"username": "mj23",
-			"name": {
-				"first": "Michael",
-				"last": "Jordan"
-			},
-			"imageURL": "http://img.quotery.com/pictures/2013/03/michael-jordan.jpg"
-		}],
 		
 		"schedule": {
 			"monday" : [],

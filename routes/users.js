@@ -4,6 +4,8 @@ var data = require('../json/fake_users.json');
 
 var users = require('../controllers/users_controller');
 
+var buddylist = require('../controllers/buddylist_controller');
+
 module.exports = function(app, passport) {
     app.get('/login', users.login);
     // app.post('/login', passport.authenticate('local',{ 
@@ -18,7 +20,7 @@ module.exports = function(app, passport) {
     app.get('/signout', users.signout);
     app.get('/profile/:username', users.viewProfile);
     app.get('/user/:username', users.view);
-    app.get('/buddylist', users.buddylist);
+    app.get('/buddylist', buddylist.view);
     app.get('/buddylist/:username', users.unfriend);
     app.get('/findbuddy', users.findbuddy);
     app.get('/schedule', users.schedule);
