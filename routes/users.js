@@ -21,8 +21,7 @@ module.exports = function(app, passport) {
     app.get('/profile/:username', users.viewProfile);
     app.get('/user/:username', users.view);
     app.get('/buddylist', buddylist.view);
-    app.get('/buddylist/:username', users.unfriend);
-    app.get('/findbuddy', users.findbuddy);
+    app.get('/buddylist/remove/:username', buddylist.unfriend);
     app.get('/schedule', users.schedule);
     app.post('/addschedule', users.addschedule);
     // app.post('/findbuddy',);

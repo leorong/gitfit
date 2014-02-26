@@ -21,23 +21,24 @@
 		<p>Check out the matches we found! Time to GitFit!</p>
 
  		{{#each buddies}}	
-			<div class="random_matches">
-				<div class="col-xs-4">
-          <a href="profile/{{buddy.username}}" class="thumbnail">
-						<img class="img" src="{{buddy.imageURL}}"></img>
-					</a>
-				</div>
-        <div class="col-xs-8">
-          <a href="profile/{{buddy.username}}">
-              <h3 id="name">{{buddy.name.full}} had a match score of {{score}}!</h3>
-          </a>
-					<p>{{buddy.age}}</p>
-					<p><i>{{buddy.location}}</i></p>
-					<p>Gym: {{buddy.gym}}</p>
-					<p>Profile: {{buddy.about_me}}</p>
-				</div>
-				<hr width="100%">
-			</div>
+        <div class="random_matches" id="{{buddy.username}}">
+            <div class="col-xs-4">
+                <a href="profile/{{buddy.username}}" class="thumbnail">
+                <img class="img" src="{{buddy.imageURL}}"></img>
+                </a>
+            </div>
+            <div class="col-xs-8">
+                <a href="profile/{{buddy.username}}">
+                <h3 id="name">{{buddy.name.full}} had a match score of {{score}}!</h3>
+                </a>
+                <p>{{buddy.age}}</p>
+                <p><i>{{buddy.location}}</i></p>
+                <p>Gym: {{buddy.gym}}</p>
+                <p>Profile: {{buddy.about_me}}</p>
+            </div>
+            <div class"friendBtn" id="{{buddy.username}}" ></div>
+            <hr width="100%">
+        </div>
 		{{/each}}
 		
 	</div>
