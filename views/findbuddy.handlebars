@@ -20,30 +20,26 @@
 
 		<p>Check out the matches we found! Time to GitFit!</p>
 
- 		{{#each buddies}}	
-        <div class="random_matches" id="{{buddy.username}}">
-            <div class="col-xs-4">
-                <a href="profile/{{buddy.username}}" class="thumbnail">
-                <img class="img" src="{{buddy.imageURL}}"></img>
-                </a>
+        <div class="matches" id="{{buddy.username}}">
+ 		    {{#each buddies}}	
+            <div class="col-xs-12">
+                <a href="profile/{{buddy.username}}"><h3 id="name">{{buddy.name.full}}</h3></a>
+                <a href="profile/{{buddy.username}}" class='thumbnail'><img src="{{buddy.imageURL}}" id="{{buddy.imageURL}}"></img></a>
+                <p><font color="ff6600"><b>Match Score:</b></font> {{score}}</font>.</p>
+                <p><font color="ff6600"><b>Age:</b></font> {{buddy.age}}</p>
+                <p><font color="ff6600"><b>Gym:</b></font> {{buddy.gym}}</p>
+                <p><font color="ff660"><b>Profile:</b></font> {{buddy.about_me}}</p>
+
+                <a type="button" id="addbuddyBtn" href="/findbuddy/add/{{buddy.username}}" class="btn btn-primary">Add Buddy</a>
+                <hr width="100%"></hr>
             </div>
-            <div class="col-xs-8">
-                <a href="profile/{{buddy.username}}">
-                <h3 id="name">{{buddy.name.full}} had a match score of {{score}}!</h3>
-                </a>
-                <p>{{buddy.age}}</p>
-                <p><i>{{buddy.location}}</i></p>
-                <p>Gym: {{buddy.gym}}</p>
-                <p>Profile: {{buddy.about_me}}</p>
-            </div>
-            <div class"friendBtn" id="{{buddy.username}}" ></div>
-            <hr width="100%">
+            {{/each}}
         </div>
-		{{/each}}
 		
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+    <script src="/js/gitfit.js"></script>
 </body>
 </html>
