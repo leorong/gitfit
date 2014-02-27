@@ -28,7 +28,10 @@ exports.view = function(req, res) {
 }
 
 exports.viewForm = function(req, res) {
-    res.render('newmessage');
+    res.render('newmessage', {
+        user: req.user ? JSON.stringify(req.user) : null,
+        'current_user': req.user.username
+    });
 }
 
 exports.addNewMessage = function(req, res) {
