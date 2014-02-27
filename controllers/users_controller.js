@@ -472,7 +472,6 @@ exports.schedule = function(req, res) {
     // console.log(req.user.schedule);
 
     var schedule = req.user.schedule;
-    console.log(schedule);
     var activities = req.user.activities; 
 
     res.render('schedule', {
@@ -492,7 +491,6 @@ exports.addschedule = function(req, res, next) {
     }
 
     var scheduleEntry = req.body;
-
     var day = scheduleEntry['day'];
 
     var entry = {
@@ -501,20 +499,32 @@ exports.addschedule = function(req, res, next) {
         "endTime": scheduleEntry['endTime']
     };
 
-    var user = req.user;
-    var newSchedule = user.schedule[day].push(entry);
-
-    User
-        .find({username: user.username})
-        .update({schedule: newSchedule})
-        .exec(afterUpdating);
-
-    function afterUpdating(err) {
-        if (err) { 
-            console.log(err);
-            res.send(500);
-        }  
+    var schedule = {
+        monday: req.user.schedule.monday,
+        tuesday: req.user.schedule.tuesday,
+        wednesday: req.user.schedule.wednesday,
+        thursday: req.user.schedule.thursday,
+        friday: req.user.schedule.friday,
+        saturday: req.user.schedule.saturday,
+        sunday: req.user.schedule.sunday
     }
+    console.log(schedule);
+    schedule[day].push(entry);
+    console.log(schedule);
+
+    var query = {username: req.user.username};
+    User.update(
+        query, 
+        { $set: { schedule: schedule } }, 
+        function(err, numAffected, raw) {
+            if (err) { 
+                console.log(err);
+                res.send(500);
+            } else {
+                console.log('The number of updated users was %d', numAffected);
+                console.log('The raw response from Mongo was ', raw);
+                res.send(200);
+            }
+        }
+    );
 }
-
-

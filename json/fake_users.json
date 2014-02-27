@@ -92,6 +92,10 @@
 				"activity": "weightlifting",
 				"startTime": "10:00AM",
 				"endTime": "11:00AM"
+			}, {
+				"activity": "basketball",
+				"startTime": "5:00PM",
+				"endTime": "6:00PM"
 			}],
 			"wednesday" : [{
 				"activity": "basketball",
