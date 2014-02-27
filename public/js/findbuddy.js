@@ -5,16 +5,10 @@ $(document).ready(function() {
 })
 
 function initializePage() {
-    var mongoose = require('mongoose');
-    var Friend = mongoose.model('Friend');
-    
-    $('.random_matches').each(function() {
+    $("#addbuddyBtn").click(function (e) {
+        `:q
 
-        var buddy = $('.random_matches').closest('.friendBtn').attr('id');
-        
-        
-            var new_html =
-                '<a href="/addfriend/"' + buddy + ' type="button" class="btn btn-primary" id="addfriendBtn-' + buddy +  '>Add Friend</a>';
 
-    
-}
+    }
+
+)};

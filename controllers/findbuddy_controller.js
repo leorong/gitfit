@@ -3,6 +3,7 @@
 var mongoose = require('mongoose');
 var Friend = mongoose.model('Friend');
 var User = mongoose.model('User');
+//var Handlebars = require('express3-handlebars');
 
 
 exports.view = function(req, res) {
@@ -72,21 +73,35 @@ exports.view = function(req, res) {
             return(a.score < b.score) ? 1 : ((b.score < a.score) ? -1 : 0);
         });
 
-        var friendsList = [];
         Friend
             .find({'friend1': user.username})
             .exec(transferFriends);
 
         function transferFriends(err, friends) {
-            friendsList = friends;
-        }
+            var friendsArr = [];
+            for(var i=0; i<friends.length; i++) {
+                
+                var friend = function returnFriend(friend) {
+                    var f = friend;
+                    return f;
+                }(friends[i]);
+                
+                var friend = {
+                    'friend1':user.username,
+                    'friend2':friend.friend2
+                }
+                friendsArr.push(friend);
+            }
 
-        res.render('findbuddy', {
-            'user': req.user ? JSON.stringify(req.user) : null,
-            'current_user': req.user ? req.user.username : null,
-            'buddies': returnList,
-            'friends': friendsList 
-        });
+
+            console.log(friendsArr);
+            res.render('findbuddy', {
+                'user': req.user ? JSON.stringify(req.user) : null,
+                'current_user': req.user ? req.user.username : null,
+                'buddies': returnList,
+                'friends': friendsArr 
+            });
+        }
     }
 
     function getOverlap(userAvailability, buddyAvailability) {
@@ -140,3 +155,44 @@ exports.view = function(req, res) {
         return multiplier;
     }
 };
+
+exports.addBuddy = function(req, res) {
+    if(!req.user) {res.redirect('/login'); res.send(500);}
+
+    var user = req.user;
+    var buddyid = req.params.buddyid;
+    var newFriendRel1 = new Friend({
+        "friend1": user.username,
+        "friend2": buddyid
+    });
+
+    var newFriendRel2 = new Friend({
+        "friend1": buddyid,
+        "friend2": user.username
+    });
+    
+    newFriendRel1.save(afterFirstAdd);
+
+    function afterFirstAdd(err) {
+        if(err) {console.log(err); res.send(500);}
+        newFriendRel2.save(afterSecondAdd);
+        
+        function afterSecondAdd(err) {
+            if(err) {console.log(err); console.log('second add relationship failed'); res.send(500);}
+            res.redirect('/findbuddy');
+        }
+    }
+};
+
+/*
+Handlebars.registerHelper("isFriend", function(userid, buddyid) {
+    Friend
+        .find()
+        .exec(afterFinding);
+
+    function afterFind(err, friends) {
+        return (friends.length > 0);
+    }
+});
+*/
+

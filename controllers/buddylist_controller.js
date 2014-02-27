@@ -38,7 +38,8 @@ exports.view = function(req, res) {
 
         var buddyUserObjArr = getBuddyUserObjArr(friends);
         res.render('buddylist', {
-            "friends": buddyUserObjArr
+            "friends": buddyUserObjArr,
+            user: req.user ? JSON.stringify(req.user) : null
         });
     }
 
