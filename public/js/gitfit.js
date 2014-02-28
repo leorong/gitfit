@@ -21,7 +21,7 @@ function initializePage() {
         };
         console.log(json);
         $.post('/create', json, function () {
-            window.location.href = '/profile_setup_basicinfo';
+            window.location.href = '/profile_setup';
         });
     });
 
