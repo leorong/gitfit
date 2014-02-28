@@ -54,36 +54,6 @@ exports.create = function(req, res, next) {
         if (err) {console.log(err); res.send(500);}
         res.send(200);
     }
-    // var user = new User({
-    //     username: req.params.username,
-    //     email: req.params.email,
-    //     password: req.params.password
-    // });
-    // var message = null;
-    // //console.log(user);
-
-    // user.provider = 'local';
-    // user.save(function(err) {
-    //     if (err) {
-    //         switch (err.code) {
-    //             case 11000:
-    //             case 11001:
-    //                 message = 'Username already exists';
-    //                 break;
-    //             default:
-    //                 message = 'Please fill all the required fields';
-    //         }
-
-    //         return res.render('signup', {
-    //             message: message,
-    //             user: user
-    //         });
-    //     }
-    //     req.logIn(user, function(err) {
-    //         if (err) return next(err);
-    //         return res.redirect('/');
-    //     });
-    // });
 };
 
 exports.setup = function(req, res) {
@@ -96,8 +66,6 @@ exports.setup = function(req, res) {
     } else {
         console.log('We have a user');
     }
-
-
 
     res.render('profile_setup', {user: JSON.stringify(req.user)}); 
 }
@@ -148,6 +116,14 @@ exports.addprofile = function(req, res, next) {
     })
 }
 
+exports.basicinfo = function(req, res) {
+    if (!req.user) {
+        res.redirect('/');
+    }
+
+    res.render('profile_setup_basicinfo', {user: JSON.stringify(req.user)}); 
+}
+
 exports.addbasicinfo = function(req, res, next) {
     if (!req.user) {
         res.redirect('/');
@@ -183,6 +159,14 @@ exports.addbasicinfo = function(req, res, next) {
     })
 }
 
+exports.gymandactivities = function(req, res) {
+    if (!req.user) {
+        res.redirect('/');
+    }
+
+    res.render('profile_setup_gymandactivities', {user: JSON.stringify(req.user)}); 
+}
+
 exports.addgymandactivities = function(req, res, next) {
     if (!req.user) {
         res.redirect('/');
@@ -207,6 +191,14 @@ exports.addgymandactivities = function(req, res, next) {
             res.send(200);
         }
     })
+}
+
+exports.availability = function(req, res) {
+    if (!req.user) {
+        res.redirect('/');
+    }
+
+    res.render('profile_setup_availability', {user: JSON.stringify(req.user)}); 
 }
 
 exports.addavailability = function(req, res, next) {

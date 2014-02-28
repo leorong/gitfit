@@ -17,8 +17,11 @@ module.exports = function(app, passport) {
     app.post('/create', users.create);
     app.get('/profile_setup', users.setup);
     app.post('/addprofile', users.addprofile);
+    app.get('/profile_setup_basicinfo', users.basicinfo);
     app.post('/addbasicinfo', users.addbasicinfo);
+    app.get('/profile_setup_gymandactivities', users.gymandactivities);
     app.post('/addgymandactivities', users.addgymandactivities);
+    app.get('/profile_setup_availability', users.availability);
     app.post('/addavailability', users.addavailability);
     app.get('/signout', users.signout);
     app.get('/profile/:username', users.viewProfile);
