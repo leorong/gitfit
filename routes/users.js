@@ -17,6 +17,9 @@ module.exports = function(app, passport) {
     app.post('/create', users.create);
     app.get('/profile_setup', users.setup);
     app.post('/addprofile', users.addprofile);
+    app.post('/addbasicinfo', users.addbasicinfo);
+    app.post('/addgymandactivities', users.addgymandactivities);
+    app.post('/addavailability', users.addavailability);
     app.get('/signout', users.signout);
     app.get('/profile/:username', users.viewProfile);
     app.get('/user/:username', users.view);

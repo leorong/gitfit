@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>Profile Setup</title>    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/gitfit.css" rel="stylesheet">       
+</head>
+
+<body>
+    <div class="container">
+        <form class="profile_setup" role="form">
+            <h3>Profile - Basic Info</h3>
+            <br>
+            <div class="form-group">
+                <label>First Name:</label>
+                <div class ="row">
+                    <div class = "col-md-12">
+                        <input type="text" class="form-control" id="firstname" name ="firstname" placeholder="Bruce">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Last Name:</label>
+                <div class="row">
+                    <div class = "col-md-12">
+                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Wayne">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Age:</label>
+                <input type="number" class="form-control" id="age" name="age"placeholder="33">
+            </div>
+            <div class="form-group">
+                <label>City:</label>
+                <div class ="row">
+                    <div class = "col-md-12">
+                        <input type="text" class="form-control" id="city" name=
+                        "city" placeholder="Gotham">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>State:</label>
+                <div class="row">
+                    <div class = "col-md-12">
+                        <input type="text" class="form-control" id="state" name="state" placeholder="NY">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>About Me:</label>
+                <textarea class="form-control" rows="3" id="about_me" name="about_me" placeholder="Write something about yourself..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>Image URL:</label>
+                <input type="text" class="form-control" id="imageURL" name="imageURL" placeholder="http://lorempixel.com/technics/300/300">
+            </div>
+            
+            <div class="form-group">
+                <button value="Submit" class="btn btn-primary" id="addbasicinfo">Next</button>
+            </div>
+        </form>
+
+    </div>
+    <script src="/js/jquery-1.11.0.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="/js/gitfit.js"></script>
+</body>
+</html>

@@ -148,6 +148,92 @@ exports.addprofile = function(req, res, next) {
     })
 }
 
+exports.addbasicinfo = function(req, res, next) {
+    if (!req.user) {
+        res.redirect('/');
+    }
+
+    var basicinfo = req.body;
+
+    var location = basicinfo['city'] + ", " + basicinfo['state'];
+
+    var profile = {
+        name: {
+            first: basicinfo['firstName'],
+            last: basicinfo['lastName'],
+        },
+        age: basicinfo['age'],
+        location: location,
+        about_me: basicinfo['about_me'],
+        imageURL: basicinfo['imageURL'],
+        looking: basicinfo['looking']
+    }
+
+    var query = {username: req.user.username};
+
+    User.update(query, profile, function(err, numAffected, raw) {
+        if (err) { 
+            console.log(err);
+            res.send(500);
+        } else {
+            console.log('The number of updated users was %d', numAffected);
+            console.log('The raw response from Mongo was ', raw);
+            res.send(200);
+        }
+    })
+}
+
+exports.addgymandactivities = function(req, res, next) {
+    if (!req.user) {
+        res.redirect('/');
+    }
+
+    var gymandactivities = req.body;
+
+    var profile = {
+        gym: gymandactivities['gym'],
+        activities: gymandactivities['activities']
+    }
+
+    var query = {username: req.user.username};
+
+    User.update(query, profile, function(err, numAffected, raw) {
+        if (err) { 
+            console.log(err);
+            res.send(500);
+        } else {
+            console.log('The number of updated users was %d', numAffected);
+            console.log('The raw response from Mongo was ', raw);
+            res.send(200);
+        }
+    })
+}
+
+exports.addavailability = function(req, res, next) {
+     if (!req.user) {
+        res.redirect('/');
+    }
+
+    var availability = req.body;
+
+    var profile = {
+        availability: availability['availability']
+    }
+
+    var query = {username: req.user.username};
+
+    User.update(query, profile, function(err, numAffected, raw) {
+        if (err) { 
+            console.log(err);
+            res.send(500);
+        } else {
+            console.log('The number of updated users was %d', numAffected);
+            console.log('The raw response from Mongo was ', raw);
+            res.send(200);
+        }
+    })
+}
+
 exports.view = function(req, res) {
     // var users = data['users'];
     // var randomIndex = Math.floor(Math.random() * users.length);

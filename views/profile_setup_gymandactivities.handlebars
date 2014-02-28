@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>Profile Setup</title>    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/gitfit.css" rel="stylesheet">       
+</head>
+
+<body>
+    <div class="container">
+        <form class="profile_setup" role="form">
+            <h3>Profile - Gym and Activities</h3>
+            <br>
+            <div class="form-group">
+                <label>Gym:</label>
+                <select class="form-control" id="gym" name="gym">
+                    <option>Arrillaga East</option>
+                    <option>Arrillaga West</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>What exercises do you like to do?</label>
+                <div id = "checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" id="basketball" value="basketball">
+                        Basketball
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" id="weightlifting" value="weightlifting">
+                        Weight Lifting
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" id="running" value="running">
+                        Running
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" id="swimming" value="swimming">
+                        Swimming
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" id="climbing" value="climbing">
+                        Climbing
+                    </label>
+                    <label class="checkbox">
+                        <input type="checkbox" id="cycling" value="cycling">
+                        Cycling
+                    </label>
+                </div>
+            </div>          
+            <div class="form-group">
+                <button value="Submit" class="btn btn-primary" id="addgymandactivities">Next</button>
+            </div>
+        </form>
+
+    </div>
+    <script src="/js/jquery-1.11.0.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="/js/gitfit.js"></script>
+</body>
+</html>
