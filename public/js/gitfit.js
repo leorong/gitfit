@@ -128,36 +128,11 @@ function initializePage() {
   $('#newMessageCancelBtn').click(function(e) {
       window.location.href = '/message/';
   });
-
-     // $('#name').editable({
-     //     type: 'text',
-     //     pk: 1,
-     //     name: 'name',
-     //     url: '#',
-     //     title: 'Edit Name'
-     // });
-
-     // $('#age').editable({
-     //     type: 'text',
-     //     pk: 1,
-     //     name: 'age',
-     //     url: '#',
-     //     title: 'Edit Age'
-     // });
-
-     // $('#about_me').editable({
-     //     type: 'textarea',
-     //     pk: 1,
-     //     name: 'comments',
-     //     url: '#',
-     //     title: 'Edit About Me'
-     // });
 }
 
 
 function hideScheduleForms() {
     
-
     $('#start').timepicker('setTime', '8:00 AM');
     $('#end').timepicker('setTime', '10:45 AM');
 

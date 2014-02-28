@@ -206,7 +206,9 @@ exports.view = function(req, res) {
                     'imageURL': user.imageURL,
                     'location': user.location,
                     'about_me': user.about_me,
-                    'activities': user.activities
+                    'activities': user.activities,
+                    'availability': user.availability,
+                    'schedule': user.schedule
                 }); 
             } else {
                 res.render('index', {
@@ -251,7 +253,9 @@ exports.viewProfile = function(req, res) {
                     'imageURL': user.imageURL,
                     'location': user.location,
                     'about_me': user.about_me,
-                    'activities': user.activities
+                    'activities': user.activities,
+                    'availability': user.availability,
+                    'schedule': user.schedule
                 }); 
             } else {
                 res.render('index', {

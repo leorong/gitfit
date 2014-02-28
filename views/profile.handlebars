@@ -25,10 +25,10 @@
 				</a>
 				<div>
 					<p>Looking for a friend:
-					<input disabled type="checkbox" name="find_friend_toggle" class="switch-small" checked data-animated="false">
+						<input disabled type="checkbox" name="find_friend_toggle" class="switch-small" checked data-animated="false">
 					</p>
 				</div>
-				<h3>{{location}}</h3>
+				<h4>{{location}}</h4>
 				<h4>Age: {{age}}</h4>
 				<h4>About Me:</h4>
 				<p>{{about_me}}</p>
@@ -44,6 +44,85 @@
                         </div>
                     </div>
                 </div>
+                <h4>Schedule</h4>
+                <div class="table-responsive">
+		            <table class="table table-bordered">
+		            	<tr>
+		            		<th>Monday</th>
+		                    <th>Tuesday</th>
+		                    <th>Wednesday</th>
+		                    <th>Thursday</th>
+		                    <th>Friday</th>
+		                    <th>Saturday</th>
+		                    <th>Sunday</th>
+		            	</tr>
+		            	<tr>
+		            		<td>
+		            			{{#each schedule.monday}}
+									<h5>{{activity}}</h5>
+									<h6>{{startTime}}</h6>
+									to
+									<h6>{{endTime}}</h6>
+									<hr>
+								{{/each}}
+		            		</td>
+		            		<td>
+		            			{{#each schedule.tuesday}}
+									<h5>{{activity}}</h5>
+									<h6>{{startTime}}</h6>
+									to
+									<h6>{{endTime}}</h6>
+									<hr>
+								{{/each}}
+		            		</td>
+		            		<td>
+		            			{{#each schedule.wednesday}}
+									<h5>{{activity}}</h5>
+									<h6>{{startTime}}</h6>
+									to
+									<h6>{{endTime}}</h6>
+									<hr>
+								{{/each}}
+		            		</td>
+		            		<td>
+		            			{{#each schedule.thursday}}
+									<h5>{{activity}}</h5>
+									<h6>{{startTime}}</h6>
+									to
+									<h6>{{endTime}}</h6>
+									<hr>
+								{{/each}}
+		            		</td>
+		            		<td>
+		            			{{#each schedule.friday}}
+									<h5>{{activity}}</h5>
+									<h6>{{startTime}}</h6>
+									to
+									<h6>{{endTime}}</h6>
+									<hr>
+								{{/each}}
+		            		</td>
+		            		<td>
+		            			{{#each schedule.saturday}}
+									<h5>{{activity}}</h5>
+									<h6>{{startTime}}</h6>
+									to
+									<h6>{{endTime}}</h6>
+									<hr>
+								{{/each}}
+		            		</td>
+		            		<td>
+		            			{{#each schedule.sunday}}
+									<h5>{{activity}}</h5>
+									<h6>{{startTime}}</h6>
+									to
+									<h6>{{endTime}}</h6>
+									<hr>
+								{{/each}}
+		            		</td>
+		            	</tr>
+		            </table>
+				</div>
 			</div>
 		</div>
 	</div>
