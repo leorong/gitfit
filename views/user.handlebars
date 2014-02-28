@@ -28,9 +28,10 @@
 					</p>
 				</div>
 				<h4>{{location}}</h4>
+				<h4>Gym: {{gym}}</h4>
 				<h4>Age: {{age}}</h4>
 				<h4>About Me:</h4>
-				<p>{{about_me}}</p>
+				<h5>{{about_me}}</h5>
 				<div class="activities">
                     <div class="row">
                         <div class="panel panel-default">
@@ -43,6 +44,99 @@
                         </div>
                     </div>
                 </div>
+                <h4>Availability</h4>
+                <div class="table-responsive">
+		            <table class="table table-bordered">
+		            	<tr>
+		            		<th>Monday</th>
+		                    <th>Tuesday</th>
+		                    <th>Wednesday</th>
+		                    <th>Thursday</th>
+		                    <th>Friday</th>
+		                    <th>Saturday</th>
+		                    <th>Sunday</th>
+		            	</tr>
+		            	<tr>
+		            		<td>
+		            			{{#if availability.monday.morning}}
+		            				<h5>Morning</h5>
+		            			{{/if}}
+		            			{{#if availability.monday.afternoon}}
+		            				<h5>Afternoon</h5>
+		            			{{/if}}
+		            			{{#if availability.monday.evening}}
+		            				<h5>Evening</h5>
+		            			{{/if}}
+		            		</td>
+		            		<td>
+		            			{{#if availability.tuesday.morning}}
+		            				<h5>Morning</h5>
+		            			{{/if}}
+		            			{{#if availability.tuesday.afternoon}}
+		            				<h5>Afternoon</h5>
+		            			{{/if}}
+		            			{{#if availability.tuesday.evening}}
+		            				<h5>Evening</h5>
+		            			{{/if}}
+		            		</td>
+		            		<td>
+		            			{{#if availability.wednesday.morning}}
+		            				<h5>Morning</h5>
+		            			{{/if}}
+		            			{{#if availability.wednesday.afternoon}}
+		            				<h5>Afternoon</h5>
+		            			{{/if}}
+		            			{{#if availability.wednesday.evening}}
+		            				<h5>Evening</h5>
+		            			{{/if}}
+		            		</td>
+		            		<td>
+		            			{{#if availability.thursday.morning}}
+		            				<h5>Morning</h5>
+		            			{{/if}}
+		            			{{#if availability.thursday.afternoon}}
+		            				<h5>Afternoon</h5>
+		            			{{/if}}
+		            			{{#if availability.thursday.evening}}
+		            				<h5>Evening</h5>
+		            			{{/if}}
+		            		</td>
+		            		<td>
+		            			{{#if availability.friday.morning}}
+		            				<h5>Morning</h5>
+		            			{{/if}}
+		            			{{#if availability.friday.afternoon}}
+		            				<h5>Afternoon</h5>
+		            			{{/if}}
+		            			{{#if availability.friday.evening}}
+		            				<h5>Evening</h5>
+		            			{{/if}}
+		            		</td>
+		            		<td>
+		            			{{#if availability.saturday.morning}}
+		            				<h5>Morning</h5>
+		            			{{/if}}
+		            			{{#if availability.saturday.afternoon}}
+		            				<h5>Afternoon</h5>
+		            			{{/if}}
+		            			{{#if availability.saturday.evening}}
+		            				<h5>Evening</h5>
+		            			{{/if}}
+		            		</td>
+		            		<td>
+		            			{{#if availability.sunday.morning}}
+		            				<h5>Morning</h5>
+		            			{{/if}}
+		            			{{#if availability.sunday.afternoon}}
+		            				<h5>Afternoon</h5>
+		            			{{/if}}
+		            			{{#if availability.sunday.evening}}
+		            				<h5>Evening</h5>
+		            			{{/if}}
+		            		</td>
+		            	</tr>
+		            </table>
+				</div>
 			</div>
 		</div>
 	</div>

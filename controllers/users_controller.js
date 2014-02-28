@@ -146,34 +146,6 @@ exports.addprofile = function(req, res, next) {
             res.send(200);
         }
     })
-    // User.findOneAndUpdate(query, profile, afterUpdating);
-
-    // function afterUpdating(err) {
-    //     if (err) {console.log(err); res.send(500);}
-    //     res.send(200);
-    // }
-
-
-    // var newUser = new User(userData);
-    // newUser['username'] = userData['username'];
-    // newUser['email'] = userData['email'];
-    // newUser['password'] = userData['password'];
-
-    // console.log(newUser);
-    // req.logIn(newUser, function(err) {
-    //     if (err) { console.log(err);}
-    // });
-
-    // console.log(req.user);
-
-    // newUser.save(afterSaving);
-
-    // function afterSaving(err) {
-    //     if (err) {console.log(err); res.send(500);}
-    //     res.send(200);
-    // }
-
-    //res.render('profile_setup', {user: JSON.stringify(req.user)}); 
 }
 
 exports.view = function(req, res) {
@@ -205,6 +177,7 @@ exports.view = function(req, res) {
                     'age': user.age,
                     'imageURL': user.imageURL,
                     'location': user.location,
+                    'gym': user.gym,
                     'about_me': user.about_me,
                     'activities': user.activities,
                     'availability': user.availability,
@@ -252,6 +225,7 @@ exports.viewProfile = function(req, res) {
                     'age': user.age,
                     'imageURL': user.imageURL,
                     'location': user.location,
+                    'gym': user.gym,
                     'about_me': user.about_me,
                     'activities': user.activities,
                     'availability': user.availability,
