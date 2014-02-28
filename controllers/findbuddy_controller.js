@@ -9,101 +9,91 @@ var User = mongoose.model('User');
 exports.view = function(req, res) {
     if(!req.user) {res.redirect('login');}
 
-    User.find({gym: req.user.gym}).exec(sortUsers);
+        User.find({gym: req.user.gym}).exec(sortUsers);
 
-    function sortUsers(err, buddies) {
-        var returnList = [];
-        var user = req.user;
-        
-        /*
-        if(user) {
-            console.log("Current user is ", user.username);
-        } else {
-            console.log("Did not pass user");
-        }
+        function sortUsers(err, buddies) {
+            var returnList = [];
+            var user = req.user;
+            for(var i = 0; i < buddies.length; i++) {
+                var score = 0;
+                var buddy = buddies[i];
+                var buddyActivities = buddy.activities;
+                var userActivities = user.activities;
 
-        if(buddies) {
-            console.log("Buddies: ");
-            console.log(buddies);
-        } else {
-            console.log("Did not pass buddies");
-        }
-        */
-
-        for(var i = 0; i < buddies.length; i++) {
-            var score = 0;
-
-            var buddy = buddies[i];
-            var buddyActivities = buddy.activities;
-            var userActivities = user.activities;
-
-            if(userActivities.length < buddyActivities) {
-                var short = userActivities;
-                var longer = buddyActivities;
-            } else {
-                var short = buddyActivities;
-                var longer = buddyActivities;
-            }
-
-            var activityMultiplier = 0;
-
-            for(var j = 0; j < short.length; j++) {
-                var exercise = short[j];
-                if(longer.indexOf(exercise) > -1) {
-                    activityMultiplier += 1;
+                if(userActivities.length < buddyActivities) {
+                    var short = userActivities;
+                    var longer = buddyActivities;
+                } else {
+                    var short = buddyActivities;
+                    var longer = buddyActivities;
                 }
+
+                var activityMultiplier = 0;
+                for(var j = 0; j < short.length; j++) {
+                    var exercise = short[j];
+                    if(longer.indexOf(exercise) > -1) {
+                        activityMultiplier += 1;
+                    }
+                }
+
+                var buddyAvailability = buddy.availability;
+                var userAvailability = user.availability;
+                var availabilityMultiplier = getOverlap(userAvailability, buddyAvailability);
+                score = activityMultiplier * availabilityMultiplier;
+
+
+                    if(user.username != buddy.username) {
+                        returnList.push({
+                            'buddy': buddy,
+                            'score': score,
+                        });
+                    }
             }
+   
+            Friend.find({'friend1': user.username}).exec(function(err, friends) {        
+                var isFriendsTbl = [];
+                
+                function getBuddyObj(username) {
+                    for(var i = 0; i < returnList.length; i++) {
+                        if(username === returnList[i].buddy.username) return returnList[i];
+                    } 
+                    return false;
+                }
+                
+                function isFriends(buddyname) {
+                    for(var i = 0; i < friends.length; i++) {
+                        console.log('buddyname');
+                        console.log(buddyname);
+                        console.log('friend2');
+                        console.log(friends[i].friend2);
+                        if(buddyname === friends[i].friend2) return true;
+                    }
+                    return false;
+                }
 
-            var buddyAvailability = buddy.availability;
-            var userAvailability = user.availability;
+                for(var i = 0; i < returnList.length; i++) {
+                    var buddyObj = getBuddyObj(returnList[i].buddy.username);
 
-            var availabilityMultiplier = getOverlap(userAvailability, buddyAvailability);
-
-            score = activityMultiplier * availabilityMultiplier;
-
-            if(user.username != buddy.username) {
-                returnList.push({
-                    'buddy': buddy,
-                    'score': score,
+                    if(isFriends(buddyObj.buddy.username)) {
+                        buddyObj['isFriend'] = true;
+                    } else {
+                        buddyObj['isFriend'] = false;
+                    }
+                }
+                    
+                returnList.sort(function (a,b) {
+                    return(a.score < b.score) ? 1 : ((b.score < a.score) ? -1 : 0);
                 });
-            }
-        }
-        
-        returnList.sort(function (a,b) {
-            return(a.score < b.score) ? 1 : ((b.score < a.score) ? -1 : 0);
-        });
 
-        Friend
-            .find({'friend1': user.username})
-            .exec(transferFriends);
-
-        function transferFriends(err, friends) {
-            var friendsArr = [];
-            for(var i=0; i<friends.length; i++) {
-                
-                var friend = function returnFriend(friend) {
-                    var f = friend;
-                    return f;
-                }(friends[i]);
-                
-                var friend = {
-                    'friend1':user.username,
-                    'friend2':friend.friend2
-                }
-                friendsArr.push(friend);
-            }
-
-
-            console.log(friendsArr);
-            res.render('findbuddy', {
-                'user': req.user ? JSON.stringify(req.user) : null,
-                'current_user': req.user ? req.user.username : null,
-                'buddies': returnList,
-                'friends': friendsArr 
+                console.log(returnList);
+                res.render('findbuddy', {
+                    'user': req.user ? JSON.stringify(req.user) : null,
+                    'current_user': req.user ? req.user.username : null,
+                    'buddies': returnList
+                });
             });
         }
-    }
-
+    
     function getOverlap(userAvailability, buddyAvailability) {
         var multiplier = 1;
         //var dayOverlap = 0;

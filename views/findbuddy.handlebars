@@ -30,7 +30,9 @@
                 <p><font color="ff6600"><b>Gym:</b></font> {{buddy.gym}}</p>
                 <p><font color="ff660"><b>Profile:</b></font> {{buddy.about_me}}</p>
 
+                {{#unless isFriend}}
                 <a type="button" id="addbuddyBtn" href="/findbuddy/add/{{buddy.username}}" class="btn btn-primary">Add Buddy</a>
+                {{/unless}}
                 <hr width="100%"></hr>
             </div>
             {{/each}}
