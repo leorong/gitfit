@@ -3,10 +3,33 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function () {
     initializePage();
-    hideScheduleForms();
 });
 
 function initializePage() {
+    $('.addButton').click(function (e) {
+        var addButtonID = $(this).closest('.addButton').attr('id');
+
+        var buddyID = addButtonID.substr('add'.length);
+    
+        var newHTML =
+            '<div class="alert-primary block-message">'+
+            '<p><font color="ff6600"><b>Would you like to:</b></font></p>'+
+            '<div class="alert-actions">'+
+            '<a class="btn btn-primary small" href="profile/'+buddyID+'">Visit Profile</a>  '+
+            '<a class="btn btn-primary small" href="#">Message</a></div>'+
+            '</div>';
+
+        var addButtonDiv = $('#add'+buddyID + ' .buttonDiv');
+        
+
+        addButtonDiv.html(newHTML);
+        $.get('/findbuddy/add/'+buddyID);
+    });
+
+    $('.close').click(function (e) {
+        $(this).closest('.alert').html("");
+    });    
+        
     $('#signUpBtn').click(function (e) {
         e.preventDefault();
         console.log('clicked');
@@ -220,17 +243,13 @@ function initializePage() {
         window.location.href = '/message/';
     });
 
-  $('#newMessageCancelBtn').click(function(e) {
+    $('#newMessageCancelBtn').click(function(e) {
       window.location.href = '/message/';
-  });
-}
-
-
-function hideScheduleForms() {
-
+    });
+/*
     $('#start').timepicker('setTime', '8:00 AM');
     $('#end').timepicker('setTime', '10:45 AM');
-
+*/
     $("#addBtn").click(function (e) {
         e.preventDefault();
         var json = {
@@ -245,10 +264,6 @@ function hideScheduleForms() {
         $.post('/addschedule', json, function () {
             window.location.href = '/schedule';
         });
-
     });
-
-
-
-
 }
+    
