@@ -27,7 +27,7 @@ function initializePage() {
 
     $('#saveProfileBtn').click(function (e) {
         e.preventDefault();
-
+        ga('send', 'event', 'submit', 'click');
         var activities = [];
 
         if ($('#basketball').is(':checked')) {
