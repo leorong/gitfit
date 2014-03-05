@@ -152,7 +152,7 @@ function initializePage() {
 
     $('#addavailability').click(function (e){
         e.preventDefault();
-
+        ga('send', 'event', 'submit', 'click');
         var json = {
             'availability': {
                 'monday': {
