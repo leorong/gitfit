@@ -16,19 +16,27 @@
 	{{> _navbar}}
 
 	<div class="container">
-		<h1>New Message</h1>
-        <form id="new-message-form" role="form">
-        <div class="form-group">
-            <label for="to">To:</label>
-            <input type="text" class="form-control" id="to" placeholder="User">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Reply</h3>
+            </div> 
+            <div class="panel-body">
+                <form id="new-message-form" role="form">
+                    <div class="form-group">
+                        <label for="to">To:</label>
+                        <input type="text" class="form-control" id="to" value="{{to}}" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="messageSubject">Subject:</label>
+                        <input type="text" class="form-control" id="messageSubject" placeholder="Subject">
+                        <label for="messageContent">Message:</label>
+                        <textarea type="text" class="form-control" rows="3" id="messageContent"></textarea>
+                    </div>
+                    <button id="newMessageSubmitBtn" type="button" class="btn btn-default">Send</button>
+                    <button id="newMessageCancelBtn" type="button" class="btn btn-default">Cancel</button>
+                </form>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="messageContent">Message:</label>
-            <textarea type="text" class="form-control" rows="3" id="messageContent"></textarea>
-        </div>
-        <button id="newMessageSubmitBtn" type="button" class="btn btn-default">Send</button>
-        <button id="newMessageCancelBtn" type="button" class="btn btn-default">Cancel</button>
-    </form>
     </div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>

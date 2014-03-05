@@ -57,6 +57,7 @@ require('./config/passport')(passport);
 var users = require('./routes/users')(app, passport);
 var index = require('./routes/index')(app, passport);
 var findbuddy = require('./routes/findbuddy')(app, passport);
+var message = require('./routes/message')(app, passport);
 
 // development only
 if ('development' == app.get('env')) {

@@ -16,7 +16,7 @@ function initializePage() {
             '<p><font color="ff6600"><b>Would you like to:</b></font></p>'+
             '<div class="alert-actions">'+
             '<a class="btn btn-primary small" href="profile/'+buddyID+'">Visit Profile</a>  '+
-            '<a class="btn btn-primary small" href="#">Message</a></div>'+
+            '<a class="btn btn-primary small" href="/message/reply/'+buddyID+'">Message</a></div>'+
             '</div>';
 
         var addButtonDiv = $('#add'+buddyID + ' .buttonDiv');
@@ -29,7 +29,8 @@ function initializePage() {
     $('.close').click(function (e) {
         $(this).closest('.alert').html("");
     });    
-        
+       
+
     $('#signUpBtn').click(function (e) {
         e.preventDefault();
         console.log('clicked');
@@ -221,16 +222,69 @@ function initializePage() {
         });
     });
 
-    $('#newMessageBtn').click(function (e) {
-        window.location.href = '/message/new';
+    $('#composeBtn').click(function (e) {
+        var newNavBarHTML =
+            '<ul class="nav nav-tabs nav-justified">'+
+            '<li><a href="/message" type="btn btn-primary">All Messages</a></li>'+
+            '<li class="active"><a href="#" id="composeBtn" type="btn btn-primary">Compose</a></li>'+
+            '</ul>';
+        
+        var newBodyHTML = 
+            '<div class="panel panel-default">'+
+                '<div class="panel-heading">'+
+                    '<h3 class="panel-title">Send Message</h3>'+
+                '</div>'+
+                '<div class="panel-body">'+
+                    '<form id="new-message-form" role="form">'+
+                        '<div class="form-group">'+
+                            '<label for="to">To:</label>'+
+                            '<input type="text" class="form-control" id="to" placeholder="User\'s Name">'+
+                        '</div>'+
+                        '<div class="form-group">'+
+                            '<label for="messageSubject">Subject:</label>'+
+                            '<input type="text" class="form-control" id="messageSubject" placeholder="Subject">'+
+                            '<label for="messageContent">Message:</label>'+
+                            '<textarea type="text" class="form-control" rows="3" id="messageContent"></textarea>'+
+                        '</div>'+
+                        '<button id="newMessageSubmitBtn" type="button" class="btn btn-default">Send</button> '+
+                        '<button id="newMessageCancelBtn" type="button" class="btn btn-default">Cancel</button>'+
+                    '</form>'+
+                '</div>'+
+            '</div>';
+            
+            $('.messages').html(newBodyHTML);
+            $('.message_navbar').html(newNavBarHTML);
+
+        $('#newMessageSubmitBtn').click(function (e) {
+            var to = $('#new-message-form #to').val();
+            var subject = $('#new-message-form #messageSubject').val();
+            var message = $('#new-message-form #messageContent').val();
+
+            var json = {
+                'to': to,
+                'subject': subject,
+                'message': message
+            };
+
+            $.post('/message/new', json, function () {
+                window.location.href = '/message';
+            });
+        });
+
+        $('#newMessageCancelBtn').click(function (e) {
+            window.location.href = '/message/';
+        });
+    
     });
 
     $('#newMessageSubmitBtn').click(function (e) {
         var to = $('#new-message-form #to').val();
+        var subject = $('#new-message-form #messageSubject').val();
         var message = $('#new-message-form #messageContent').val();
 
         var json = {
             'to': to,
+            'subject': subject,
             'message': message
         };
 
@@ -243,9 +297,6 @@ function initializePage() {
         window.location.href = '/message/';
     });
 
-    $('#newMessageCancelBtn').click(function(e) {
-      window.location.href = '/message/';
-    });
 /*
     $('#start').timepicker('setTime', '8:00 AM');
     $('#end').timepicker('setTime', '10:45 AM');

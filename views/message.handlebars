@@ -16,21 +16,31 @@
 	{{> _navbar}}
 
 	<div class="container">
-		<h1>Messages</h1>
-        <button id="newMessageBtn" type="button" class="btn btn-default">New Message </button>
-        
-        {{#each messages}}
-        <div class="message">
-            <div class="reflect">
-                <h5>From: {{from}} </h5>
-                <h5>To: {{to}} </h5>
-                <p>{{message}} </p>
-                <p id="replace-date">{{date}} </p>
-                <!-- <p>Seen: {{opened}} </p><br> -->
-            </div>
+        <h2>Messages</h2>
+
+        <div class="message_navbar">
+            <ul class="nav nav-tabs nav-justified">
+                    <li class="active"><a type="btn btn-primary" href="#">All Messages</a></li>
+                    <li><a href="#" id="composeBtn" type="btn btn-primary">Compose</a></li>
+            </ul>
+        </div>    
+
+        <div class="messages">
+            {{#each messages}}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{subject}}
+                </div>
+                <div class="panel-body">
+                    <h5>Date: {{date}}</h5>
+                    <h5>From: {{from}} </h5>
+                    <h5>To: {{to}} </h5>
+                    <p>{{message}} </p>
+                    <a type="button" class="btn btn-primary" href="/message/reply/{{from}}">Reply</a>
+                </div>
+            </div>    
+            {{/each}}
         </div>
-        <hr width="100%">
-        {{/each}}
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>

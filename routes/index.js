@@ -1,5 +1,4 @@
 'use strict';
-var message = require('../controllers/message_controller');
 var index = require('../controllers/index_controller');
 /* GET home page. */
 
@@ -12,9 +11,6 @@ module.exports = function(app, passport) {
 	// });
 	app.get('/', index.view);
     //app.get('/findbuddy', findbuddy.view);
-    app.get('/message', message.view);
-    app.get('/message/new', message.viewForm);
-    app.post('/message/new', message.addNewMessage);
     //app.get('/schedule', schedule.view);
 };
 

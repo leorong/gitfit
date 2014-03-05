@@ -3,6 +3,7 @@
 
 var mongoose = require('mongoose'),
     Message = mongoose.model('Message');
+var moment = require('moment');
 
 exports.view = function(req, res) {
     var user = req.user;
@@ -27,11 +28,18 @@ exports.view = function(req, res) {
     }
 }
 
-exports.viewForm = function(req, res) {
+exports.reply = function(req, res) {
+    var user = req.user;
+
+    if(!user) {res.render('login')};
+
     res.render('newmessage', {
         user: req.user ? JSON.stringify(req.user) : null,
-        'current_user': req.user.username
+        'current_user': req.user.username,
+        'to': req.params.username
     });
+
+
 }
 
 exports.addNewMessage = function(req, res) {
@@ -41,7 +49,7 @@ exports.addNewMessage = function(req, res) {
     if(!user) {res.render('/login');}
 
     var form_data = req.body;
-    var curDate = new Date();
+    var curDate = moment().format('MMM Do YYYY, h:mm:ss a');
 
     console.log(form_data);
 
@@ -50,6 +58,7 @@ exports.addNewMessage = function(req, res) {
         "to": form_data.to,
         "from": user.username,
         "date": curDate,
+        "subject": form_data.subject,
         "message": form_data.message,
         "opened": false
     });
