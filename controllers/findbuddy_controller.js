@@ -62,10 +62,6 @@ exports.view = function(req, res) {
                 
                 function isFriends(buddyname) {
                     for(var i = 0; i < friends.length; i++) {
-                        console.log('buddyname');
-                        console.log(buddyname);
-                        console.log('friend2');
-                        console.log(friends[i].friend2);
                         if(buddyname === friends[i].friend2) return true;
                     }
                     return false;
@@ -85,7 +81,6 @@ exports.view = function(req, res) {
                     return(a.score < b.score) ? 1 : ((b.score < a.score) ? -1 : 0);
                 });
 
-                console.log(returnList);
                 res.render('findbuddy', {
                     'user': req.user ? JSON.stringify(req.user) : null,
                     'current_user': req.user ? req.user.username : null,
@@ -169,7 +164,6 @@ exports.addBuddy = function(req, res) {
         
         function afterSecondAdd(err) {
             if(err) {console.log(err); console.log('second add relationship failed'); res.send(500);}
-            res.redirect('/findbuddy');
         }
     }
 };

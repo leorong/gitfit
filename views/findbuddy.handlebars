@@ -5,11 +5,10 @@
 	<title>Find a Gym Buddy</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="/css/gitfit.css" rel="stylesheet">
-   
-</head>
+	<link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+	<link href="/bootstrap/dist/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/gitfit.css" rel="stylesheet">
+    </head>
 
 <body>
 
@@ -28,11 +27,13 @@
                 <p><font color="ff6600"><b>Match Score:</b></font> {{score}}</font>.</p>
                 <p><font color="ff6600"><b>Age:</b></font> {{buddy.age}}</p>
                 <p><font color="ff6600"><b>Gym:</b></font> {{buddy.gym}}</p>
-                <p><font color="ff660"><b>Profile:</b></font> {{buddy.about_me}}</p>
+                <p><font color="ff6600"><b>Profile:</b></font> {{buddy.about_me}}</p>
 
+                <div class="addButton" id="add{{buddy.username}}">
                 {{#unless isFriend}}
-                <a type="button" id="addbuddyBtn" href="/findbuddy/add/{{buddy.username}}" class="btn btn-primary">Add Buddy</a>
+                <div class='buttonDiv'><a type="button" class="btn btn-primary">Add Buddy</a></div>
                 {{/unless}}
+                </div>
                 <hr width="100%"></hr>
             </div>
             {{/each}}
@@ -42,6 +43,7 @@
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/alert.js"></script>
     <script src="/js/gitfit.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
