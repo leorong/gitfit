@@ -17,19 +17,26 @@
 
 	<div class="container">
 		<h1>Buddy List</h1>
- 		{{#each friends}}	
-        <div id="friends-div">
-			<div class="col-xs-4">
-                <a href="profile/{{username}}" class="thumbnail"><img src="{{imageURL}}" id="image_url"></img></a>
+		{{#if friends}}
+	 		{{#each friends}}	
+	      <div id="friends-div">
+					<div class="col-xs-4">
+		        <a href="profile/{{username}}" class="thumbnail"><img src="{{imageURL}}" id="image_url"></img></a>
+					</div>
+					<div class="col-xs-8">
+		        <a href="profile/{{username}}"><h3 id="name">{{name.first}} {{name.last}}</h3></a> 
+		        <a href="/buddylist/remove/{{username}}" type="button" class="btn btn-primary" id="unfriendBtn"><span class="glyphicon glyphicon-minus">Unfriend</span></a>
+		      </div>
+					<hr width="100%">
+	      </div>
+	      <br>
+			{{/each}}
+		{{else}}
+			<div>
+				<p>You don't have any buddies yet!</p>
+				<a href="/findbuddy" type="button" class="btn btn-primary">Find a Buddy</a>
 			</div>
-			<div class="col-xs-8">
-                <a href="profile/{{username}}"><h3 id="name">{{name.first}} {{name.last}}</h3></a> 
-                <a href="/buddylist/remove/{{username}}" type="button" class="btn btn-primary" id="unfriendBtn"><span class="glyphicon glyphicon-minus">Unfriend</span></a>
-            </div>
-			<hr width="100%">
-        </div>
-        <br>
-		{{/each}}
+		{{/if}}
 
 	</div>
 
