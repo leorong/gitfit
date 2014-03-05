@@ -297,10 +297,10 @@ function initializePage() {
         window.location.href = '/message/';
     });
 
-/*
+
     $('#start').timepicker('setTime', '8:00 AM');
     $('#end').timepicker('setTime', '10:45 AM');
-*/
+
     $("#addBtn").click(function (e) {
         e.preventDefault();
         var json = {
