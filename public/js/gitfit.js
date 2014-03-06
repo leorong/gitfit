@@ -38,15 +38,18 @@ function initializePage() {
         var email = $('#email').val();
         var password = $('#password').val();
         var re_password = $('#re-password').val();
-        var json = {
-            'username': username,
-            'password': password,
-            'email': email
-        };
-        console.log(json);
-        $.post('/create', json, function () {
-            window.location.href = '/profile_setup';
-        });
+        
+        if(password === re_password) {
+            var json = {
+                'username': username,
+                'password': password,
+                'email': email
+            };
+            console.log(json);
+            $.post('/create', json, function () {
+                window.location.href = '/profile_setup';
+            });
+        }
     });
 
     $('#saveProfileBtn').click(function (e) {
@@ -70,6 +73,13 @@ function initializePage() {
             activities.push('climbing');
         }
 
+        var imageURL = "";
+        if($('#imageURL').val() != "") {
+            imageURL = $('#imageURL').val();
+        } else {
+            imageURL = "/images/anonymous-user.jpg";
+        }
+        
         var json = {
             'firstName': $('#firstname').val(),
             'lastName': $('#lastname').val(),
@@ -78,7 +88,7 @@ function initializePage() {
             'city': $('#city').val(),
             'state': $('#state').val(),
             'about_me': $('#about_me').val(),
-            'imageURL': $('#imageURL').val(),
+            'imageURL': imageURL,
             'looking': true,
             'activities': activities,
             'availability': {
@@ -119,6 +129,9 @@ function initializePage() {
                 }
             }
         };
+
+        console.log("json");
+        console.log(json);
 
         $.post('/addprofile', json, function () {
             window.location.href = '/';
@@ -297,10 +310,10 @@ function initializePage() {
         window.location.href = '/message/';
     });
 
-/*
+
     $('#start').timepicker('setTime', '8:00 AM');
     $('#end').timepicker('setTime', '10:45 AM');
-*/
+
     $("#addBtn").click(function (e) {
         e.preventDefault();
         var json = {
