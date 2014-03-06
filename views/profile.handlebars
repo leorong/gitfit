@@ -8,6 +8,9 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
+    <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
 	<link href="/css/gitfit.css" rel="stylesheet">
        
 </head>
@@ -18,29 +21,43 @@
 
 	<div class="container">
 		<div class="profile">
-			<div class="col-xs-12">
-                <h2>{{name}}</h2>
+			<div class="card col-xs-12">
+                
 				<a href="#" class="thumbnail">
 					<img class="img" src={{imageURL}}></img>
 				</a>
-                <a type="button" class="btn btn-primary" href="/message/reply/{{username}}">Message</a>
+
+                <!-- <div class="panel panel-default userInfo">
+                    <div class="panel-heading">{{name}}, {{age}}</div>
+                    <ul class="list-group">
+                        <li class="list-group-item">{{gym}} Gym</li>
+                        <li class="list-group-item">{{location}}</li>
+                        <li class="list-group-item">{{about_me}}/li>
+                    </ul>
+                </div> -->
+                <div class="userInfo">
+                    <h3 class="nameInfo">{{name}}, {{age}}</h3>
+                    <p class="profileInfo">
+                        {{gym}} Gym</br>
+                        {{location}}</br>
+                        {{about_me}}
+                    </p>
+    				<!-- <p class="light">{{location}}</p>
+    				<p class="light">{{about_me}}</p> -->
+                </div>
                 <div>
-					<p>Looking for a friend:
-						<input disabled type="checkbox" name="find_friend_toggle" class="switch-small" checked data-animated="false">
-					</p>
-				</div>
-				<h4>{{location}}</h4>
-				<h4>Gym: {{gym}}</h4>
-				<h4>Age: {{age}}</h4>
-				<h4>About Me:</h4>
-				<h5>{{about_me}}</h5>
+                    <p>Looking for a friend:
+                        <input disabled type="checkbox" name="find_friend_toggle" class="switch-small" checked data-animated="false">
+                    </p>
+                </div>
+                <a type="button" class="btn btn-custom" href="/message/reply/{{username}}">Message</a>
 				<div class="activities">
                     <div class="row">
                         <div class="panel panel-default">
                             <div class="panel-heading">{{name}}'s Activities</div>
                             <ul class="list-group">
                                 {{#each activities}}
-                                	<li class="list-group-item">{{this}}</li>
+                          	        <li class="list-group-item">{{this}}</li>
                                 {{/each}}
                             </ul>
                         </div>
