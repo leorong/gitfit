@@ -273,16 +273,3 @@ exports.addBuddy = function(req, res) {
         }
     }
 };
-
-/*
-Handlebars.registerHelper("isFriend", function(userid, buddyid) {
-    Friend
-        .find()
-        .exec(afterFinding);
-
-    function afterFind(err, friends) {
-        return (friends.length > 0);
-    }
-});
-*/
-

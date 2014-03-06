@@ -6,4 +6,5 @@ module.exports = function(app, passport){
     app.get('/message', message.view);
     app.get('/message/reply/:username', message.reply);
     app.post('/message/new', message.addNewMessage);
+	app.get('/message/delete/:id', message.deleteMessage);
 };

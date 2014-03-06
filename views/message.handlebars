@@ -32,15 +32,18 @@
             {{#each messages}}
             <div class="panel panel-default">
                 <div class="panel-heading">
-					<b>{{subject}}</b>
+					<b>{{message.subject}}</b>
                 </div>
                 <div class="panel-body">
-                    <p>Date: {{date}}</p>
-                    <p>From: {{from}} </p>
-                    <p>To: {{to}} </p>
-                    <p>{{message}} </p>
-                    <a type="button" class="btn btn-custom" href="/message/reply/{{from}}">Reply</a>
-                </div>
+                    <p>Date: {{message.date}}</p>
+                    <p>From: {{message.from}} </p>
+                    <p>To: {{message.to}} </p>
+                    <p>{{message.message}} </p>
+					<a type="button" class="btn btn-warning" href="/message/delete/{{message._id}}">Delete</a>
+					{{#if reply}}
+						<a type="button" class="btn btn-custom" href="/message/reply/{{from}}">Reply</a>
+					{{/if}}
+				</div>
             </div>    
             {{/each}}
         </div>

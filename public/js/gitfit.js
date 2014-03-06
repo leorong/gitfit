@@ -282,30 +282,9 @@ function initializePage() {
             
             $('.messages').html(newBodyHTML);
             $('.message_navbar').html(newNavBarHTML);
+	});
 
-        $('#newMessageSubmitBtn').click(function (e) {
-            var to = $('#new-message-form #to').val();
-            var subject = $('#new-message-form #messageSubject').val();
-            var message = $('#new-message-form #messageContent').val();
-
-            var json = {
-                'to': to,
-                'subject': subject,
-                'message': message
-            };
-
-            $.post('/message/new', json, function () {
-                window.location.href = '/message';
-            });
-        });
-
-        $('#newMessageCancelBtn').click(function (e) {
-            window.location.href = '/message/';
-        });
-    
-    });
-
-    $(document).on("click", ".newMessageSubmitBtn", (function (e) {
+    $(".newMessageSubmitBtn").click(function (e) {
 		console.log('send button clicked');
 		
 		var buddyID = $(this).closest(".newMessageSubmitBtn").attr('id');
@@ -326,7 +305,7 @@ function initializePage() {
         $.post('/message/new', json, function () {
             window.location.href = '/message';
         });
-    }));
+    });
 
     /*
     $('#start').timepicker('setTime', '8:00 AM');
