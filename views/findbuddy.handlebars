@@ -66,7 +66,7 @@
                                     </label>
                                 </div>
                             </div>
-                            <button id="searchBuddiesBtn" type="button" class="btn btn-primary">Search</button>
+                            <button id="searchBuddiesBtn" type="button" class="btn btn-custom">Search</button>
                         </form>
                     </div>
                 </div>
@@ -85,7 +85,7 @@
 
                 <div class="addButton" id="add{{buddy.username}}">
                 {{#unless isFriend}}
-                    <div class='buttonDiv'><button type="button" id="{{buddy.username}}" href="/findbuddy/add/{{buddy.username}}" data-toggle="modal" data-target="#myOptionsModal{{buddy.username}}" class="addBuddyBtn btn btn-primary">Add Buddy</button></div>
+                    <div class='buttonDiv'><button type="button" id="{{buddy.username}}" href="/findbuddy/add/{{buddy.username}}" data-toggle="modal" data-target="#myOptionsModal{{buddy.username}}" class="addBuddyBtn btn btn-custom">Add Buddy</button></div>
                 {{/unless}}
                 </div>
                 <hr width="100%"></hr>
@@ -104,8 +104,8 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary btn-sm" href="profile/{{buddy.username}}">Visit Profile</button>
-                            <button type="button" class="btn btn-primary btn-sm" href="/message/reply/{{buddy.username}}">Message</button>
+                            <button type="button" class="btn btn-custom btn-sm" href="profile/{{buddy.username}}">Visit Profile</button>
+                            <button type="button" class="btn btn-custom btn-sm" href="/message/reply/{{buddy.username}}">Message</button>
                         </div>
                     </div>
                 </div>

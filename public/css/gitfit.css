@@ -65,13 +65,10 @@ body {
 	padding:0px;
 }
 
-.profileInfo {
-	font-weight: lighter;
+.profile {
+	background-color: #ffffff;
 }
 
-/*.nameInfo {
-	background-color: 
-}*/
 .btn-custom {
   background-color: hsl(218, 69%, 31%) !important;
   background-repeat: repeat-x;
@@ -92,14 +89,11 @@ body {
 body {
 	background-image: url('/images/cream_pixels.png');
 	z-index: -1;
+	font-family: 'PT Sans', Helvetica, Arial, sans-serif;
 }
 
 h1,h2,h3,h4,h5 {
-    font-family: 'Arvo', Georgia, Times, serif;
-}
- 
-p,li {
-    font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Arvo', Georgia, Times, serif;
 }
 
 a {

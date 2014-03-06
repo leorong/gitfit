@@ -252,8 +252,8 @@ function initializePage() {
     $('#composeBtn').click(function (e) {
         var newNavBarHTML =
             '<ul class="nav nav-tabs nav-justified">'+
-            '<li><a href="/message" type="btn btn-primary">All Messages</a></li>'+
-            '<li class="active"><a href="#" id="composeBtn" type="btn btn-primary">Compose</a></li>'+
+            '<li><a href="/message" type="btn btn-custom">All Messages</a></li>'+
+            '<li class="active"><a href="#" id="composeBtn" type="btn btn-custom">Compose</a></li>'+
             '</ul>';
         
         var newBodyHTML = 
@@ -264,13 +264,13 @@ function initializePage() {
                 '<div class="panel-body">'+
                     '<form id="new-message-form" role="form">'+
                         '<div class="form-group">'+
-                            '<label for="to">To:</label>'+
+                            '<label for="to"><p>To:</p></label>'+
                             '<input type="text" class="form-control" id="to" placeholder="User\'s Name">'+
                         '</div>'+
                         '<div class="form-group">'+
-                            '<label for="messageSubject">Subject:</label>'+
+                            '<label for="messageSubject"><p>Subject:</p></label>'+
                             '<input type="text" class="form-control" id="messageSubject" placeholder="Subject">'+
-                            '<label for="messageContent">Message:</label>'+
+                            '<label for="messageContent"><p>Message:</p></label>'+
                             '<textarea type="text" class="form-control" rows="3" id="messageContent"></textarea>'+
                         '</div>'+
                         '<button id="newMessageSubmitBtn" type="button" class="btn btn-primary">Send</button> '+

@@ -23,8 +23,8 @@
 
         <div class="message_navbar">
             <ul class="nav nav-tabs nav-justified">
-                    <li class="active"><a type="btn btn-primary" href="#">All Messages</a></li>
-                    <li><a href="#" id="composeBtn" type="btn btn-primary">Compose</a></li>
+                    <li class="active"><a type="btn btn-custom" href="#">All Messages</a></li>
+                    <li><a href="#" id="composeBtn" type="btn btn-custom">Compose</a></li>
             </ul>
         </div>    
 
@@ -35,11 +35,11 @@
                     {{subject}}
                 </div>
                 <div class="panel-body">
-                    <h5>Date: {{date}}</h5>
-                    <h5>From: {{from}} </h5>
-                    <h5>To: {{to}} </h5>
+                    <p>Date: {{date}}</p>
+                    <p>From: {{from}} </p>
+                    <p>To: {{to}} </p>
                     <p>{{message}} </p>
-                    <a type="button" class="btn btn-primary" href="/message/reply/{{from}}">Reply</a>
+                    <a type="button" class="btn btn-custom" href="/message/reply/{{from}}">Reply</a>
                 </div>
             </div>    
             {{/each}}

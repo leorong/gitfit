@@ -28,7 +28,7 @@
 					</div>
 					<div class="col-xs-8">
 		        <a href="profile/{{username}}"><h3 id="name">{{name.first}} {{name.last}}</h3></a> 
-		        <a href="/buddylist/remove/{{username}}" type="button" class="btn btn-primary" id="unfriendBtn"><span class="glyphicon glyphicon-minus">Unfriend</span></a>
+		        <button href="/buddylist/remove/{{username}}" type="button" class="btn btn-custom" id="unfriendBtn"><span class="glyphicon glyphicon-minus">Unfriend</span></button>
 		      </div>
 					<hr width="100%">
 	      </div>
@@ -37,7 +37,7 @@
 		{{else}}
 			<div>
 				<p>You don't have any buddies yet!</p>
-				<a href="/findbuddy" type="button" class="btn btn-primary">Find a Buddy</a>
+				<a href="/findbuddy" type="button" class="btn btn-custom">Find a Buddy</a>
 			</div>
 		{{/if}}
 
