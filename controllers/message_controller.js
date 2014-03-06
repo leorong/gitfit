@@ -13,15 +13,34 @@ exports.view = function(req, res) {
 
     console.log("message user: " + user.username + "----");
     Message
-        .find({"to": user.username}) 
+        .find({$or:[{"to": user.username},{"from":user.username}]}) 
         .sort({date: -1})
         .exec(renderMessages);
 
     function renderMessages(err, messages) {
         if(err) {console.log(err); res.send(500);}
-        console.log(messages);
-        res.render('message', {
-            "messages": messages,
+       
+		var returnList = [];
+
+		for(var i = 0; i < messages.length; i++) {
+			var messageObj = messages[i];
+			if(user.username === messageObj.from) {
+				returnList.push({
+					'message':messages[i],
+					'reply':false
+				});
+			} else {
+				returnList.push({
+					'message':messages[i],
+					'reply':true
+				});
+			}
+		}
+	
+		console.log(returnList);
+
+		res.render('message', {
+            "messages": returnList,
             user: req.user ? JSON.stringify(req.user) : null,
             'current_user': req.user.username
         });
@@ -42,6 +61,20 @@ exports.reply = function(req, res) {
 
 }
 
+exports.deleteMessage = function(req, res) {
+	var user = req.user;
+	if(!user) {res.render('/login');}
+
+	var messageID = req.params.id;
+
+	Message.find({"_id": messageID}).remove().exec(afterRemoving);
+
+	function afterRemoving(err) {
+		if(err) {console.log(err); res.send(500)};
+		res.redirect('/message/');
+	}
+}
+
 exports.addNewMessage = function(req, res) {
     console.log("in add new message");
     var user = req.user;
@@ -49,7 +82,7 @@ exports.addNewMessage = function(req, res) {
     if(!user) {res.render('/login');}
 
     var form_data = req.body;
-    var curDate = moment().format('MMM Do YYYY, h:mm:ss a');
+    var curDate = moment().zone("-08:00").format('MMM Do YYYY, h:mm:ss a');
 
     console.log(form_data);
 

@@ -7,6 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
 	<link href="/css/gitfit.css" rel="stylesheet">
        
 </head>
@@ -18,20 +21,23 @@
 	<div class="container">
 		<div class="profile">
 			<div class="col-xs-12">
-                <h2><a href="#" id="name">Your Profile</a></h2>
 				<a href="#" class="thumbnail">
 					<img class="img" src={{imageURL}}></img>
 				</a>
-				<div>
-					<p>Looking for a friend:
-						<input type="checkbox" name="find_friend_toggle" class="switch-small" checked data-animated="false">
-					</p>
-				</div>
-				<h4>{{location}}</h4>
-				<h4>Gym: {{gym}}</h4>
-				<h4>Age: {{age}}</h4>
-				<h4>About Me:</h4>
-				<h5>{{about_me}}</h5>
+				
+                <div class="userInfo">
+                    <h3 class="nameInfo">{{name}}, {{age}}</h3>
+    				<p class="profileInfo">
+                        {{gym}} Gym</br>
+                        {{location}}</br>
+                        {{about_me}}
+                    </p>
+                </div>
+                <div>
+                    <p>Looking for a friend:
+                        <input type="checkbox" name="find_friend_toggle" class="switch-small" checked data-animated="false">
+                    </p>
+                </div>
 				<div class="activities">
                     <div class="row">
                         <div class="panel panel-default">
