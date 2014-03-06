@@ -6,31 +6,13 @@ $(document).ready(function () {
 });
 
 function initializePage() {
-    $('.addButton').click(function (e) {
-        var addButtonID = $(this).closest('.addButton').attr('id');
-
-        var buddyID = addButtonID.substr('add'.length);
-    
-        var newHTML =
-            '<div class="alert-primary block-message">'+
-            '<p><font color="ff6600"><b>Would you like to:</b></font></p>'+
-            '<div class="alert-actions">'+
-            '<a class="btn btn-primary small" href="profile/'+buddyID+'">Visit Profile</a>  '+
-            '<a class="btn btn-primary small" href="/message/reply/'+buddyID+'">Message</a></div>'+
-            '</div>';
-
-        var addButtonDiv = $('#add'+buddyID + ' .buttonDiv');
+    $('.addBuddyBtn').click(function(e) {
+        var btnID = $(this).closest('.addBuddyBtn').attr('id');
         
-
-        addButtonDiv.html(newHTML);
-        $.get('/findbuddy/add/'+buddyID);
+        $('.buttonDiv #'+btnID).hide();
     });
-
-    $('.close').click(function (e) {
-        $(this).closest('.alert').html("");
-    });    
-       
-
+    
+    
     $('#signUpBtn').click(function (e) {
         e.preventDefault();
         console.log('clicked');
@@ -343,9 +325,10 @@ function initializePage() {
     });
 
 
+    /*
     $('#start').timepicker('setTime', '8:00 AM');
     $('#end').timepicker('setTime', '10:45 AM');
-
+    */
     $("#addBtn").click(function (e) {
         e.preventDefault();
         var json = {

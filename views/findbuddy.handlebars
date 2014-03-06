@@ -73,9 +73,9 @@
             </div>
         </div>
 
+ 		{{#each buddies}}	
         <div class="matches" id="{{buddy.username}}">
- 		    {{#each buddies}}	
-            <div>
+            <div class="col-xs-12">
                 <a href="profile/{{buddy.username}}"><h3 id="name">{{buddy.name.full}}</h3></a>
                 <a href="profile/{{buddy.username}}" class='thumbnail'><img src="{{buddy.imageURL}}" id="{{buddy.imageURL}}"></img></a>
                 <p><font color="ff6600"><b>Match Score:</b></font> {{score}}</font>.</p>
@@ -85,14 +85,33 @@
 
                 <div class="addButton" id="add{{buddy.username}}">
                 {{#unless isFriend}}
-                <div class='buttonDiv'><a type="button" class="btn btn-primary">Add Buddy</a></div>
+                    <div class='buttonDiv'><button type="button" id="{{buddy.username}}" href="/findbuddy/add/{{buddy.username}}" data-toggle="modal" data-target="#myOptionsModal{{buddy.username}}" class="addBuddyBtn btn btn-primary">Add Buddy</button></div>
                 {{/unless}}
                 </div>
                 <hr width="100%"></hr>
             </div>
-            {{/each}}
+
+            <!-- Modal -->
+            <div class="modal fade" id="myOptionsModal{{buddy.username}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">Buddy Added!</h4>
+                        </div>
+                        <div class="modal-body">
+                            What would you like to do next?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-sm" href="profile/{{buddy.username}}">Visit Profile</button>
+                            <button type="button" class="btn btn-primary btn-sm" href="/message/reply/{{buddy.username}}">Message</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-		
+        {{/each}}
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
