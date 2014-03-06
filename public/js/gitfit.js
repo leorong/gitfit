@@ -8,7 +8,8 @@ $(document).ready(function () {
 function initializePage() {
     $('.addBuddyBtn').click(function(e) {
         var btnID = $(this).closest('.addBuddyBtn').attr('id');
-        
+       
+		console.log('buddy added');
         $('.buttonDiv #'+btnID).hide();
     });
     
@@ -272,10 +273,15 @@ function initializePage() {
     
     });
 
-    $('#newMessageSubmitBtn').click(function (e) {
-        var to = $('#new-message-form #to').val();
-        var subject = $('#new-message-form #messageSubject').val();
-        var message = $('#new-message-form #messageContent').val();
+    $(document).on("click", ".newMessageSubmitBtn", (function (e) {
+		console.log('send button clicked');
+		
+		var buddyID = $(this).closest(".newMessageSubmitBtn").attr('id');
+        
+		
+		var to = $('.new-message-form #new-message-formid-'+buddyID+' #to').val();
+        var subject = $('.new-message-form #new-message-formid-'+buddyID+' #messageSubject').val();
+        var message = $('.new-message-form #new-message-formid-'+buddyID+' #messageContent').val();
 
         var json = {
             'to': to,
@@ -283,15 +289,12 @@ function initializePage() {
             'message': message
         };
 
+		console.log(json);
+
         $.post('/message/new', json, function () {
             window.location.href = '/message';
         });
-    });
-
-    $('#newMessageCancelBtn').click(function (e) {
-        window.location.href = '/message/';
-    });
-
+    }));
 
     /*
     $('#start').timepicker('setTime', '8:00 AM');
