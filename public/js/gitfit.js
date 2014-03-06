@@ -246,7 +246,7 @@ function initializePage() {
                             '<label for="messageContent">Message:</label>'+
                             '<textarea type="text" class="form-control" rows="3" id="messageContent"></textarea>'+
                         '</div>'+
-                        '<button id="newMessageSubmitBtn" type="button" class="btn btn-default">Send</button> '+
+                        '<button id="newMessageSubmitBtn" type="button" class="btn btn-primary">Send</button> '+
                         '<button id="newMessageCancelBtn" type="button" class="btn btn-default">Cancel</button>'+
                     '</form>'+
                 '</div>'+

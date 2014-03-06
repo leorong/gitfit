@@ -17,6 +17,53 @@
 	<div class="container">
 		<h1 position:"center">Find a Buddy</h1>
 
+        <div class="panel panel-default searchbox">
+            <div class="panel-heading">
+                <h3 class="panel-title">Search<h3>
+            </div>
+            <div class="panel-body">
+                <form id="new-message-form" role="form">
+                    <div class="form-group">
+                        <label>Gym:</label>
+                        <select class="form-control" id="gym" name="gym">
+                            <option>Arrillaga East</option>
+                            <option>Arrillaga West</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>What exercises do you like to do?</label>
+                        <div id = "checkbox">
+                            <label class="checkbox">
+                                <input type="checkbox" id="basketball" value="basketball">
+                                Basketball
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" id="weightlifting" value="weightlifting">
+                                Weight Lifting
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" id="running" value="running">
+                                Running
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" id="swimming" value="swimming">
+                                Swimming
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" id="climbing" value="climbing">
+                                Climbing
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" id="cycling" value="cycling">
+                                Cycling
+                            </label>
+                        </div>
+                    </div>
+                    <button id="searchBuddiesBtn" type="button" class="btn btn-primary">Search</button>
+                </form>
+            </div>
+        </div>
+
 		<p>Check out the matches we found! Time to GitFit!</p>
 
         <div class="matches" id="{{buddy.username}}">
