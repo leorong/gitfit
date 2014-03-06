@@ -274,22 +274,46 @@ function initializePage() {
                             '<label for="messageContent"><p>Message:</p></label>'+
                             '<textarea type="text" class="form-control" rows="3" id="messageContent"></textarea>'+
                         '</div>'+
-                        '<button id="newMessageSubmitBtn" type="button" class="btn btn-primary">Send</button> '+
-                        '<button id="newMessageCancelBtn" type="button" class="btn btn-default">Cancel</button>'+
+                        '<button id="composeCancel" type="button" class="btn btn-default">Cancel</button>'+
+                        '<button id="composeSend" type="button" class="btn btn-custom">Send</button> '+
                     '</form>'+
                 '</div>'+
             '</div>';
             
-            $('.messages').html(newBodyHTML);
-            $('.message_navbar').html(newNavBarHTML);
+		$('.messages').html(newBodyHTML);
+		$('.message_navbar').html(newNavBarHTML);
+	
+	
+		$("#composeSend").click(function(e) {
+			var to = $('#new-message-form #to').val();
+			var subject = $('#new-message-form #messageSubject').val();
+			var message = $('#new-message-form #messageContent').val();
+
+			var json = {
+				'to': to,
+				'subject': subject,
+				'message': message
+			};
+
+			console.log(json);
+
+			$.post('/message/new', json, function () {
+				window.location.href = '/message';
+			});
+		});
+
+		$("#composeCancel").click(function(e) {
+			$.get('/message');
+		});
+		
 	});
+
 
     $(".newMessageSubmitBtn").click(function (e) {
 		console.log('send button clicked');
 		
 		var buddyID = $(this).closest(".newMessageSubmitBtn").attr('id');
         
-		
 		var to = $('.new-message-form #new-message-formid-'+buddyID+' #to').val();
         var subject = $('.new-message-form #new-message-formid-'+buddyID+' #messageSubject').val();
         var message = $('.new-message-form #new-message-formid-'+buddyID+' #messageContent').val();
