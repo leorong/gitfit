@@ -41,11 +41,11 @@
                     </p>
                 </div>
                 <a type="button" class="btn btn-custom" data-toggle="modal" data-target="#messageBuddyModal{{username}}">Message</a>
-				{{#if isFriend}}
+				{{#unless isFriend}}
 					<div class='buttonDiv'><a type="button" id="{{username}}" href="/findbuddy/add/{{username}}" data-toggle="modal" data-target="#myOptionsModal{{username}}" class="addBuddyBtn btn btn-custom">Add Buddy</a></div>
 				{{else}}
 					<a href="/buddylist/remove/{{username}}" type="button" class="btn btn-custom btn-sm" id="unfriendBtn"><span class="glyphicon glyphicon-minus"></span>Unfriend</a>
-				{{/if}}
+				{{/unless}}
 				
 				<!-- Modal -->
 				<div class="modal fade" id="myOptionsModal{{username}}" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

@@ -42,7 +42,7 @@ function onceClear(err, users) {
 	}
 
 	var updated_count = 0;
-    models.update({username: users[i].username}, newImageURL, function(err) {
+    models.User.update({username: users[i].username}, newImageURL, function(err) {
       if(err) console.log(err);
 
       updateD_count++;
