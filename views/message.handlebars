@@ -39,10 +39,10 @@
                     <p>From: {{message.from}} </p>
                     <p>To: {{message.to}} </p>
                     <p>{{message.message}} </p>
-					<a type="button" class="btn btn-warning" href="/message/delete/{{message._id}}">Delete</a>
-					{{#if reply}}
+                    {{#if reply}}
 						<button type="button" class="btn btn-custom" data-toggle="modal" data-target="#messageBuddyModal{{message.from}}">Reply</button>
 					{{/if}}
+					<a type="button" class="btn btn-warning" href="/message/delete/{{message._id}}">Delete</a>
 				</div>
 			</div>
 
