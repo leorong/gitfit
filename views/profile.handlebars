@@ -45,7 +45,7 @@
 					<a href="/buddylist/remove/{{username}}" type="button" class="btn btn-custom btn-sm" id="unfriendBtn"><span class="glyphicon glyphicon-minus"></span>Unfriend</a>
 				{{else}}
 					<div class='buttonDiv'><a type="button" id="{{username}}" href="/findbuddy/add/{{username}}" data-toggle="modal" data-target="#myOptionsModal{{username}}" class="addBuddyBtn btn btn-custom">Add Buddy</a></div>
-				{{/unless}}
+				{{/if}}
 				
 				<!-- Modal -->
 				<div class="modal fade" id="myOptionsModal{{username}}" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
