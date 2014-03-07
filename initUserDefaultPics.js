@@ -34,23 +34,29 @@ models.User
 
 // Step 3: load the data from the JSON file
 function onceClear(err, users) {
-  if(err) console.log(err);
+  	if(err) console.log(err);
 
-  for(var i=0; i<users.length; i++) {
-    var newImageURL = {
-		"imageURL": "images/anonymous-user.jpg"
-	}
+  	for(var i=0; i<users.length; i++) {
+    	var newImageURL = {
+			"imageURL": "images/anonymous-user.jpg"
+		}	
 
-	var updated_count = 0;
-    models.User.update({username: users[i].username}, newImageURL, function(err) {
-      if(err) console.log(err);
+		var updated_count = 0;
+    	models.User.update({username: users[i].username}, newImageURL, function(err) {
+      		if(err) console.log(err);
 
-      updated_count++;
-      console.log(updated_count + ' updated');
-        // The script won't terminate until the 
-        // connection to the database is closed
+      		updated_count++;
+      		console.log(updated_count + ' updated');
       });
 	}
+
+  	var updateRicky = {
+	  imageURL:"http://www.returnofkings.com/wp-content/uploads/2013/06/Arnold-Schwarzenegger11-300x300.jpg"}
+	}
+	models.User.update({username: "rtran58"}, updateRicky, function(err) {
+		if(err) console.log(err);
+	}
+
   	console.log("DONE");
 	mongoose.connection.close()
 };
