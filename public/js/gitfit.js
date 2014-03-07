@@ -343,10 +343,17 @@ function initializePage() {
 
     $("[name='lookingToggle']").bootstrapSwitch();
 
-    
+    $('#lookingToggle').on('switchChange', function (e, data) {
+        var $element = $(data.el),
+            value = data.value;
+        var json = {
+            'looking' : value
+        }
 
+        $.post('/editLooking', json, function () {
 
-
+        })
+    });
 
     /* Find Buddy page */
 
@@ -473,12 +480,12 @@ function initializePage() {
 		$('.profile_setup .form-group #imageURL').val('/images/'+img);
 	});
 
-    $('#start').timepicker('setTime', '8:00 AM');
-    $('#end').timepicker('setTime', '10:45 AM');
-    
 
     /* Schedule Page */
 
+    $('#start').timepicker('setTime', '8:00 AM');
+    $('#end').timepicker('setTime', '10:45 AM');
+    
     $("#addBtn").click(function (e) {
         e.preventDefault();
         var json = {

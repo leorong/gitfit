@@ -412,7 +412,7 @@ exports.editActivities = function(req, res, next) {
 }
 
 exports.editAvailability = function(req, res, next) {
-     if (!req.user) {
+    if (!req.user) {
         res.redirect('/');
     }
 
@@ -436,7 +436,27 @@ exports.editAvailability = function(req, res, next) {
 }
 
 exports.editLooking = function(req, res, next) {
+    if (!req.user) {
+        res.redirect('/');
+    }
 
+    var json = req.body;
+    var looking = json['looking'];
+    var query = {username: req.user.username};
+    User.update(
+        query, 
+        { $set: { looking: looking } }, 
+        function(err, numAffected, raw) {
+            if (err) { 
+                console.log(err);
+                res.send(500);
+            } else {
+                console.log('The number of updated users was %d', numAffected);
+                console.log('The raw response from Mongo was ', raw);
+                res.send(200);
+            }
+        }
+    );
 }
 
 /* Show Buddy List */
