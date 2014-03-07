@@ -238,7 +238,6 @@ function initializePage() {
     /* Profile Page */
 
     $('#changePicBtn').click(function (e) {
-        console.log("Changing Picture");
         e.preventDefault();
         var json = {
             'imageURL' : $('#changeImageURL').val()
@@ -248,7 +247,108 @@ function initializePage() {
         });
     });
 
-    //Find Buddy page
+    $('#editBasicInfoBtn').click(function (e) {
+        e.preventDefault();
+        var json = {
+            'firstname' : $('#editFirstname').val(),
+            'lastname' : $('#editLastname').val(),
+            'age' : $('#editAge').val(),
+            'city' : $('#editCity').val(),
+            'state' : $('#editState').val(),
+            'gym' : $('#editGym').val(),
+            'about_me' : $('#editAbout_me').val()
+        }
+        $.post('/editBasicInfo', json, function () {
+            window.location.href = '/';
+        });
+    });
+
+    $('#editActivitiesBtn').click(function (e) {
+        e.preventDefault();
+
+        var activities = [];
+
+        if ($('#editBasketball').is(':checked')) {
+            activities.push('basketball');
+        }
+        if ($('#editWeightlifting').is(':checked')) {
+            activities.push('weightlifting');
+        }
+        if ($('#editRunning').is(':checked')) {
+            activities.push('running');
+        }
+        if ($('#editSwimming').is(':checked')) {
+            activities.push('swimming');
+        }
+        if ($('#editClimbing').is(':checked')) {
+            activities.push('climbing');
+        }
+
+        var json = {
+            'activities': activities
+        }
+
+        $.post('/editActivities', json, function () {
+            window.location.href = '/';
+        });
+    });
+
+    $('#editAvailabilityBtn').click(function (e) {
+        e.preventDefault();
+
+        var json = {
+            'availability': {
+                'monday': {
+                    'morning': $('#editmonday-morning').is(':checked'),
+                    'afternoon': $('#editmonday-afternoon').is(':checked'),
+                    'evening': $('#editmonday-evening').is(':checked')
+                },
+                'tuesday': {
+                    'morning': $('#edittuesday-morning').is(':checked'),
+                    'afternoon': $('#edittuesday-afternoon').is(':checked'),
+                    'evening': $('#edittuesday-evening').is(':checked')
+                },
+                'wednesday': {
+                    'morning': $('#editwednesday-morning').is(':checked'),
+                    'afternoon': $('#editwednesday-afternoon').is(':checked'),
+                    'evening': $('#editwednesday-evening').is(':checked')
+                },
+                'thursday': {
+                    'morning': $('#editthursday-morning').is(':checked'),
+                    'afternoon': $('#editthursday-afternoon').is(':checked'),
+                    'evening': $('#editthursday-evening').is(':checked')
+                },
+                'friday': {
+                    'morning': $('#editfriday-morning').is(':checked'),
+                    'afternoon': $('#editfriday-afternoon').is(':checked'),
+                    'evening': $('#editfriday-evening').is(':checked')
+                },
+                'saturday': {
+                    'morning': $('#editsaturday-morning').is(':checked'),
+                    'afternoon': $('#editsaturday-afternoon').is(':checked'),
+                    'evening': $('#editsaturday-evening').is(':checked')
+                },
+                'sunday': {
+                    'morning': $('#editsunday-morning').is(':checked'),
+                    'afternoon': $('#editsunday-afternoon').is(':checked'),
+                    'evening': $('#editsunday-evening').is(':checked')
+                }
+            }
+        }
+
+        $.post('/editAvailability', json, function () {
+            window.location.href = '/';
+        });
+    });
+
+    $("[name='lookingToggle']").bootstrapSwitch();
+
+    
+
+
+
+
+    /* Find Buddy page */
 
     $('#searchBuddiesBtn').click(function (e) {
         e.preventDefault();
@@ -376,6 +476,9 @@ function initializePage() {
     $('#start').timepicker('setTime', '8:00 AM');
     $('#end').timepicker('setTime', '10:45 AM');
     
+
+    /* Schedule Page */
+
     $("#addBtn").click(function (e) {
         e.preventDefault();
         var json = {

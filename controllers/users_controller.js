@@ -241,11 +241,15 @@ exports.view = function(req, res) {
                     user: req.user ? JSON.stringify(req.user) : null,
                     'current_user': req.user ? req.user.username : 'null',
                     'name': user.name.full,
+                    'firstname' : user.name.first,
+                    'lastname' : user.name.last,
                     'username': user.username,
                     'age': user.age,
                     'looking':user.looking,
                     'imageURL': user.imageURL,
                     'location': user.location,
+                    'city' : user.location.split(",")[0],
+                    'state' : user.location.split(",")[1],
                     'gym': user.gym,
                     'about_me': user.about_me,
                     'activities': user.activities,
@@ -348,14 +352,90 @@ exports.editImageURL = function(req, res, next) {
 }
 
 exports.editBasicInfo = function(req, res, next) {
+    if (!req.user) {
+        res.redirect('/');
+    } 
 
+    var userBasicInfo = req.body;
+
+
+    var location = userBasicInfo['city'] + ", " + userBasicInfo['state'];
+
+    var profile = {
+        name: {
+            first: userBasicInfo['firstname'],
+            last: userBasicInfo['lastname'],
+        },
+        age: userBasicInfo['age'],
+        location: location,
+        gym: userBasicInfo['gym'],
+        about_me: userBasicInfo['about_me']
+    }
+
+    var query = {username: req.user.username};
+
+    User.update(query, profile, function(err, numAffected, raw) {
+        if (err) { 
+            console.log(err);
+            res.send(500);
+        } else {
+            console.log('The number of updated users was %d', numAffected);
+            console.log('The raw response from Mongo was ', raw);
+            res.send(200);
+        }
+    })
 }
 
 exports.editActivities = function(req, res, next) {
+    if (!req.user) {
+        res.redirect('/');
+    }
 
+    var json = req.body;
+    var activities = json['activities'];
+    var query = {username: req.user.username};
+    User.update(
+        query, 
+        { $set: { activities: activities } }, 
+        function(err, numAffected, raw) {
+            if (err) { 
+                console.log(err);
+                res.send(500);
+            } else {
+                console.log('The number of updated users was %d', numAffected);
+                console.log('The raw response from Mongo was ', raw);
+                res.send(200);
+            }
+        }
+    );
+    
 }
 
 exports.editAvailability = function(req, res, next) {
+     if (!req.user) {
+        res.redirect('/');
+    }
+
+    var json = req.body;
+    var availability = json['availability'];
+    var query = {username: req.user.username};
+    User.update(
+        query, 
+        { $set: { availability: availability } }, 
+        function(err, numAffected, raw) {
+            if (err) { 
+                console.log(err);
+                res.send(500);
+            } else {
+                console.log('The number of updated users was %d', numAffected);
+                console.log('The raw response from Mongo was ', raw);
+                res.send(200);
+            }
+        }
+    );
+}
+
+exports.editLooking = function(req, res, next) {
 
 }
 

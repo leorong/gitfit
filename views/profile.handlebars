@@ -6,6 +6,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap-switch.min.css" rel="stylesheet">
 		<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
 		<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
@@ -38,9 +39,9 @@
 
 				<p>Looking for Gym Buddies?
 	            	{{#if looking}}
-	            		<input type="checkbox" name="lookingToggle" checked disabled data-size="mini">
+	            		<input type="checkbox" name="lookingToggle" checked disabled data-size="small" data-off-color="warning">
 	            	{{else}}
-	            		<input type="checkbox" name="lookingToggle" disabled data-size="mini">
+	            		<input type="checkbox" name="lookingToggle" disabled data-size="small" data-off-color="warning">
 	            	{{/if}}
 	            </p>
 
@@ -338,6 +339,7 @@
 
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/bootstrap-switch.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 		<script src="/js/gitfit.js"></script>
 		<script>

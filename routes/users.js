@@ -30,6 +30,7 @@ module.exports = function(app, passport) {
     app.post('/editBasicInfo', users.editBasicInfo);
     app.post('/editActivities', users.editActivities);
     app.post('/editAvailability', users.editAvailability);
+    app.post('/editLooking', users.editLooking);
     app.get('/buddylist', buddylist.view);
     app.get('/buddylist/remove/:username', buddylist.unfriend);
     app.get('/schedule', users.schedule);
