@@ -58,4 +58,4 @@ function onceClear(err, users) {
 		});
 	console.log("DONE");
 	mongoose.connection.close();
-};
+}
