@@ -5,8 +5,10 @@
 	<title>Find a Gym Buddy</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<link href="/css/bootstrap.css" rel="stylesheet">
-	<link href="/css/bootstrap-theme.css" rel="stylesheet">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-switch.min.css" rel="stylesheet">
+    <link href="css/bootstrap-timepicker.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
@@ -18,7 +20,6 @@
 	{{> _navbar}}
 
 	<div class="container">
-		<h1>Find a Buddy</h1>
         <p>Check out the matches we found! Time to GitFit!</p>
 
 		<div class="panel-group" id="accordion">
@@ -78,7 +79,11 @@
         <div class="matches" id="{{buddy.username}}">
             <div class="col-xs-12">
                 <a href="profile/{{buddy.username}}"><h3 id="name">{{buddy.name.full}}</h3></a>
-                <a href="profile/{{buddy.username}}" class='thumbnail'><img src="{{buddy.imageURL}}" id="{{buddy.imageURL}}"></img></a>
+                <a href="profile/{{buddy.username}}">
+                    <div class="img_wrapper">
+                        <img class="img" src={{buddy.imageURL}}  id={{buddy.imageURL}}></img>
+                    </div>
+                </a>
                 <p><font color="ff6600"><b>Match Score:</b></font> {{score}}</font>.</p>
                 <p><font color="ff6600"><b>Age:</b></font> {{buddy.age}}</p>
                 <p><font color="ff6600"><b>Gym:</b></font> {{buddy.gym}}</p>
@@ -164,6 +169,8 @@
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap-switch.min.js"></script>
+    <script src="/js/bootstrap-timepicker.min.js"></script>
     <script src="/bootstrap/js/alert.js"></script>
     <script src="/js/gitfit.js"></script>
     <script>

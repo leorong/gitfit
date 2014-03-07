@@ -26,6 +26,11 @@ module.exports = function(app, passport) {
     app.get('/signout', users.signout);
     app.get('/profile/:username', users.viewProfile);
     app.get('/user/:username', users.view);
+    app.post('/editImageURL', users.editImageURL);
+    app.post('/editBasicInfo', users.editBasicInfo);
+    app.post('/editActivities', users.editActivities);
+    app.post('/editAvailability', users.editAvailability);
+    app.post('/editLooking', users.editLooking);
     app.get('/buddylist', buddylist.view);
     app.get('/buddylist/remove/:username', buddylist.unfriend);
     app.get('/schedule', users.schedule);

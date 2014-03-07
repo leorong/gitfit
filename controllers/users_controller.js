@@ -219,6 +219,8 @@ exports.addavailability = function(req, res, next) {
     })
 }
 
+/* View own profile */
+
 exports.view = function(req, res) {
 
     if (!req.user) {
@@ -239,10 +241,15 @@ exports.view = function(req, res) {
                     user: req.user ? JSON.stringify(req.user) : null,
                     'current_user': req.user ? req.user.username : 'null',
                     'name': user.name.full,
+                    'firstname' : user.name.first,
+                    'lastname' : user.name.last,
                     'username': user.username,
                     'age': user.age,
+                    'looking':user.looking,
                     'imageURL': user.imageURL,
                     'location': user.location,
+                    'city' : user.location.split(",")[0],
+                    'state' : user.location.split(",")[1],
                     'gym': user.gym,
                     'about_me': user.about_me,
                     'activities': user.activities,
@@ -260,7 +267,7 @@ exports.view = function(req, res) {
 
 };
 
-/* View profiles */
+/* View other people's profiles */
 
 exports.viewProfile = function(req, res) {
 
@@ -277,6 +284,7 @@ exports.viewProfile = function(req, res) {
             res.redirect('/');
         } else {
             // console.log(req.user);
+
             Friend.find({"friend1": req.user.username, "friend2": username}).exec(function (err, friends) {
 				if(err) {console.log(err); res.send(500);}
 				
@@ -294,6 +302,7 @@ exports.viewProfile = function(req, res) {
 						'name': user.name.full,
 						'username': user.username,
 						'age': user.age,
+                        'looking':user.looking,
 						'imageURL': user.imageURL,
 						'location': user.location,
 						'gym': user.gym,
@@ -314,6 +323,141 @@ exports.viewProfile = function(req, res) {
     });
 
 };
+
+/* Profile Edit Calls */
+
+exports.editImageURL = function(req, res, next) {
+    if (!req.user) {
+        res.redirect('/');
+    }
+
+    var json = req.body;
+    var url = json['imageURL'];
+
+    var query = {username: req.user.username};
+    User.update(
+        query, 
+        { $set: { imageURL: url } }, 
+        function(err, numAffected, raw) {
+            if (err) { 
+                console.log(err);
+                res.send(500);
+            } else {
+                console.log('The number of updated users was %d', numAffected);
+                console.log('The raw response from Mongo was ', raw);
+                res.send(200);
+            }
+        }
+    );
+}
+
+exports.editBasicInfo = function(req, res, next) {
+    if (!req.user) {
+        res.redirect('/');
+    } 
+
+    var userBasicInfo = req.body;
+
+
+    var location = userBasicInfo['city'] + ", " + userBasicInfo['state'];
+
+    var profile = {
+        name: {
+            first: userBasicInfo['firstname'],
+            last: userBasicInfo['lastname'],
+        },
+        age: userBasicInfo['age'],
+        location: location,
+        gym: userBasicInfo['gym'],
+        about_me: userBasicInfo['about_me']
+    }
+
+    var query = {username: req.user.username};
+
+    User.update(query, profile, function(err, numAffected, raw) {
+        if (err) { 
+            console.log(err);
+            res.send(500);
+        } else {
+            console.log('The number of updated users was %d', numAffected);
+            console.log('The raw response from Mongo was ', raw);
+            res.send(200);
+        }
+    })
+}
+
+exports.editActivities = function(req, res, next) {
+    if (!req.user) {
+        res.redirect('/');
+    }
+
+    var json = req.body;
+    var activities = json['activities'];
+    var query = {username: req.user.username};
+    User.update(
+        query, 
+        { $set: { activities: activities } }, 
+        function(err, numAffected, raw) {
+            if (err) { 
+                console.log(err);
+                res.send(500);
+            } else {
+                console.log('The number of updated users was %d', numAffected);
+                console.log('The raw response from Mongo was ', raw);
+                res.send(200);
+            }
+        }
+    );
+    
+}
+
+exports.editAvailability = function(req, res, next) {
+    if (!req.user) {
+        res.redirect('/');
+    }
+
+    var json = req.body;
+    var availability = json['availability'];
+    var query = {username: req.user.username};
+    User.update(
+        query, 
+        { $set: { availability: availability } }, 
+        function(err, numAffected, raw) {
+            if (err) { 
+                console.log(err);
+                res.send(500);
+            } else {
+                console.log('The number of updated users was %d', numAffected);
+                console.log('The raw response from Mongo was ', raw);
+                res.send(200);
+            }
+        }
+    );
+}
+
+exports.editLooking = function(req, res, next) {
+    if (!req.user) {
+        res.redirect('/');
+    }
+
+    var json = req.body;
+    var looking = json['looking'];
+    var query = {username: req.user.username};
+    User.update(
+        query, 
+        { $set: { looking: looking } }, 
+        function(err, numAffected, raw) {
+            if (err) { 
+                console.log(err);
+                res.send(500);
+            } else {
+                console.log('The number of updated users was %d', numAffected);
+                console.log('The raw response from Mongo was ', raw);
+                res.send(200);
+            }
+        }
+    );
+}
 
 /* Show Buddy List */
 exports.buddylist = function(req, res) {
