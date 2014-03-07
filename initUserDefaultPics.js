@@ -45,7 +45,7 @@ function onceClear(err, users) {
     models.User.update({username: users[i].username}, newImageURL, function(err) {
       if(err) console.log(err);
 
-      updateD_count++;
+      updated_count++;
       console.log(updated_count + ' updated');
         // The script won't terminate until the 
         // connection to the database is closed
