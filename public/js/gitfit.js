@@ -113,8 +113,8 @@ function initializePage() {
             }
         };
 
-        console.log("json");
-        console.log(json);
+        // console.log("json");
+        // console.log(json);
 
         $.post('/addprofile', json, function () {
             window.location.href = '/';
@@ -218,36 +218,45 @@ function initializePage() {
         });
     });
 
+    $('#testBtn').click(function (e) {
+        e.preventDefault();
+        console.log('Test btn clicked');
+    });
+
     $('#searchBuddiesBtn').click(function (e) {
         e.preventDefault();
-        var activities = [];
+        console.log('clicked');
+        $.get('/');
+        // var activities = [];
 
-        if ($('#basketball').is(':checked')) {
-            activities.push('basketball');
-        }
-        if ($('#weightlifting').is(':checked')) {
-            activities.push('weightlifting');
-        }
-        if ($('#running').is(':checked')) {
-            activities.push('running');
-        }
-        if ($('#swimming').is(':checked')) {
-            activities.push('swimming');
-        }
-        if ($('#climbing').is(':checked')) {
-            activities.push('climbing');
-        }
+        // if ($('#basketball').is(':checked')) {
+        //     activities.push('basketball');
+        // }
+        // if ($('#weightlifting').is(':checked')) {
+        //     activities.push('weightlifting');
+        // }
+        // if ($('#running').is(':checked')) {
+        //     activities.push('running');
+        // }
+        // if ($('#swimming').is(':checked')) {
+        //     activities.push('swimming');
+        // }
+        // if ($('#climbing').is(':checked')) {
+        //     activities.push('climbing');
+        // }
 
-        var json = {
-            'gym': $('#gym').val(),
-            'activities': activities
-        }
+        // var json = {
+        //     'gym': $('#gym').val(),
+        //     'activities': activities
+        // }
+        // console.log('Json is');
+        // console.log(json);
 
-        $.get('/customsearch', json, newResults);
+        // $.get('/customsearch', json, newResults);
 
-        function newResults(info) {
-            res.render('findbuddy', info);
-        }
+        // function newResults(info) {
+        //     res.render('findbuddy', info);
+        // }
     });
 
     $('#composeBtn').click(function (e) {
@@ -274,8 +283,8 @@ function initializePage() {
                             '<label for="messageContent"><p>Message:</p></label>'+
                             '<textarea type="text" class="form-control" rows="3" id="messageContent"></textarea>'+
                         '</div>'+
+                        '<button id="composeSend" type="button" class="btn btn-custom">Send</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'+
                         '<button id="composeCancel" type="button" class="btn btn-default">Cancel</button>'+
-                        '<button id="composeSend" type="button" class="btn btn-custom">Send</button> '+
                     '</form>'+
                 '</div>'+
             '</div>';
@@ -331,10 +340,10 @@ function initializePage() {
         });
     });
 
-    /*
+    
     $('#start').timepicker('setTime', '8:00 AM');
     $('#end').timepicker('setTime', '10:45 AM');
-    */
+    
     $("#addBtn").click(function (e) {
         e.preventDefault();
         var json = {

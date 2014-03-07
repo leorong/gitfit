@@ -7,11 +7,10 @@ var moment = require('moment');
 
 exports.view = function(req, res) {
     var user = req.user;
-    console.log(user);
     
     if (!user) {res.render('/login');} //res.send(500);}
 
-    console.log("message user: " + user.username + "----");
+    // console.log("message user: " + user.username + "----");
     Message
         .find({$or:[{"to": user.username},{"from":user.username}]}) 
         .sort({date: -1})
@@ -37,7 +36,7 @@ exports.view = function(req, res) {
 			}
 		}
 	
-		console.log(returnList);
+		// console.log(returnList);
 
 		res.render('message', {
             "messages": returnList,
@@ -76,7 +75,6 @@ exports.deleteMessage = function(req, res) {
 }
 
 exports.addNewMessage = function(req, res) {
-    console.log("in add new message");
     var user = req.user;
 
     if(!user) {res.render('/login');}
@@ -84,7 +82,7 @@ exports.addNewMessage = function(req, res) {
     var form_data = req.body;
     var curDate = moment().zone("-08:00").format('MMM Do YYYY, h:mm:ss a');
 
-    console.log(form_data);
+    // console.log(form_data);
 
     //need to check if valid to user
     var newMessage = new Message({
