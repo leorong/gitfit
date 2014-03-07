@@ -34,8 +34,26 @@ body {
 }
 
 .img {
-	max-height: 300px;
-    max-width: 300px;
+	max-width:300px;
+	max-height:300px;
+}
+
+.img_wrapper {
+	max-height: 200px;
+	max-width: 200px;
+	overflow:hidden;
+	margin-left: auto;
+  	margin-right: auto;
+  	margin-bottom:5px;
+  	border:2px double #1a4692;
+  	border-radius:10px;
+}
+
+.center_div {
+	margin-left: auto;
+  	margin-right: auto;
+  	text-align: center;
+  	margin-bottom:5px;
 }
 
 .warning-message {
@@ -63,10 +81,6 @@ body {
 .message p {
 	margin:0px;
 	padding:0px;
-}
-
-.profile {
-	background-color: #ffffff;
 }
 
 .btn-custom {
