@@ -30,7 +30,7 @@ function initializePage() {
             };
             console.log(json);
             $.post('/create', json, function () {
-                window.location.href = '/profile_setup';
+                window.location.href = '/profile_setup_basicinfo';
             });
         }
     });
@@ -218,44 +218,40 @@ function initializePage() {
         });
     });
 
-    $('#testBtn').click(function (e) {
-        e.preventDefault();
-        console.log('Test btn clicked');
-    });
-
     $('#searchBuddiesBtn').click(function (e) {
         e.preventDefault();
-        console.log('clicked');
-        $.get('/');
-        // var activities = [];
+        var activities = [];
 
-        // if ($('#basketball').is(':checked')) {
-        //     activities.push('basketball');
-        // }
-        // if ($('#weightlifting').is(':checked')) {
-        //     activities.push('weightlifting');
-        // }
-        // if ($('#running').is(':checked')) {
-        //     activities.push('running');
-        // }
-        // if ($('#swimming').is(':checked')) {
-        //     activities.push('swimming');
-        // }
-        // if ($('#climbing').is(':checked')) {
-        //     activities.push('climbing');
-        // }
+        if ($('#basketball').is(':checked')) {
+            activities.push('basketball');
+        }
+        if ($('#weightlifting').is(':checked')) {
+            activities.push('weightlifting');
+        }
+        if ($('#running').is(':checked')) {
+            activities.push('running');
+        }
+        if ($('#swimming').is(':checked')) {
+            activities.push('swimming');
+        }
+        if ($('#climbing').is(':checked')) {
+            activities.push('climbing');
+        }
 
-        // var json = {
-        //     'gym': $('#gym').val(),
-        //     'activities': activities
-        // }
-        // console.log('Json is');
-        // console.log(json);
+        var json = {
+            'gym': $('#gym').val(),
+            'activities': activities
+        }
+        console.log('Json is');
+        console.log(json);
 
-        // $.get('/customsearch', json, newResults);
+        $.post('/customsearch',json);
+
+        // $.get('/customsearch',json);
 
         // function newResults(info) {
-        //     res.render('findbuddy', info);
+        //     console.log('in callback');
+        //     window.location.href = '/schedule';
         // }
     });
 
