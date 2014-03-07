@@ -55,7 +55,7 @@ function onceClear(err, users) {
 	}
 	models.User.update({username: "rtran58"}, updateRicky, function(err) {
 		if(err) console.log(err);
-	}
-
-	mongoose.connection.close()
+		)};
+	console.log("DONE");
+	mongoose.connection.close();
 };
