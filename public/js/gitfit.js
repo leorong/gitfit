@@ -331,7 +331,13 @@ function initializePage() {
         });
     });
 
-    
+	$('#selectDefault').click(function(e) {
+		var img = $("input:radio[name=defaultPicture]:checked").val();
+		
+		console.log(img);
+		$('.profile_setup .form-group #imageURL').val('/images/'+img);
+	});
+
     $('#start').timepicker('setTime', '8:00 AM');
     $('#end').timepicker('setTime', '10:45 AM');
     
