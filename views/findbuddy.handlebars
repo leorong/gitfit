@@ -80,7 +80,11 @@
         <div class="matches" id="{{buddy.username}}">
             <div class="col-xs-12">
                 <a href="profile/{{buddy.username}}"><h3 id="name">{{buddy.name.full}}</h3></a>
-                <a href="profile/{{buddy.username}}" class='thumbnail'><img src="{{buddy.imageURL}}" id="{{buddy.imageURL}}"></img></a>
+                <a href="profile/{{buddy.username}}">
+                    <div class="img_wrapper">
+                        <img class="img" src={{buddy.imageURL}}  id={{buddy.imageURL}}></img>
+                    </div>
+                </a>
                 <p><font color="ff6600"><b>Match Score:</b></font> {{score}}</font>.</p>
                 <p><font color="ff6600"><b>Age:</b></font> {{buddy.age}}</p>
                 <p><font color="ff6600"><b>Gym:</b></font> {{buddy.gym}}</p>
