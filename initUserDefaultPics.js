@@ -27,15 +27,19 @@ mongoose.connect(database_uri);
 // Step 1: load the JSON data
 var user_json = require('./json/fake_users.json');
 
+var updateRicky = {
+  imageURL:"http://www.returnofkings.com/wp-content/uploads/2013/06/Arnold-Schwarzenegger11-300x300.jpg"
+};
 // Step 2: Remove all existing documents
 models.User
-  .find({"imageURL":""})
-  .exec(onceClear); // callback to continue at
+  .update({username:"rtran58"}, updateRicky, afterFind)
+  .exec(afterFind); // callback to continue at
 
 // Step 3: load the data from the JSON file
-function onceClear(err, users) {
+function afterFind(err, users) {
   	if(err) console.log(err);
 
+	/*
   	for(var i=0; i<users.length; i++) {
     	var newImageURL = {
 			"imageURL": "images/anonymous-user.jpg"
@@ -49,13 +53,11 @@ function onceClear(err, users) {
       		console.log(updated_count + ' updated');
       });
 	}
+	*/
 
-  	var updateRicky = {
-	  imageURL:"http://www.returnofkings.com/wp-content/uploads/2013/06/Arnold-Schwarzenegger11-300x300.jpg"}
-	}
-	models.User.update({username: "rtran58"}, updateRicky, function(err) {
-		if(err) console.log(err);
-		});
 	console.log("DONE");
 	mongoose.connection.close();
 }
+
+
+
