@@ -10,10 +10,28 @@ function initializePage() {
         var btnID = $(this).closest('.addBuddyBtn').attr('id');
        
 		console.log('buddy added');
-        $('.buttonDiv #'+btnID).hide();
+        $('.addBuddyBtn').hide();
+
     });
+   
+	$('.unfriendBtn').click(function(e) {
+		$('.unfriendBtn').hide();
+	});
+	
+	$('.buddylistUnfriendBtn').click(function(e) {
+
+		$.get('/buddylist', function() {
+			window.location.href = '/buddylist';
+		});
+	});
     
+
     /* Sign Up Page */
+	$('.messageDeleteBtn').click(function(e) {
+		$.get('/message', function() {
+			window.location.href = '/message';
+		});
+	});
 
     $('#signUpBtn').click(function (e) {
         e.preventDefault();
@@ -345,10 +363,8 @@ function initializePage() {
 
 		console.log(json);
 
-        $.post('/message/new', json, function () {
-            window.location.href = '/message';
-        });
-    });
+        $.post('/message/new', json);
+	});
 
 	$('#selectDefault').click(function(e) {
 		var img = $("input:radio[name=defaultPicture]:checked").val();
