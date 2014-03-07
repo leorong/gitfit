@@ -21,6 +21,16 @@ body {
 	padding: 30px;
 }
 
+#pictureSelectionModal .col {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#pictureSelectionModal img {
+	height: 100px;
+	width: 100px;
+}
+
 .main .footer {
 	margin-top: 10px;
 }

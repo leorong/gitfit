@@ -1,5 +1,6 @@
 'use strict';
-var data = require('../json/fake_users.json');
+
+var user_controller = require('./users_controller.js');
 
 var mongoose = require('mongoose'),
 	User = mongoose.model('User');
@@ -10,9 +11,7 @@ exports.view = function(req, res) {
     if (!req.user) {
         res.render('index', {user: null});
     } else {
-        res.render('user', {
-            user: JSON.stringify(req.user),
-            'current_user': req.user.username
-        });
+    	var userProfile = '/user/' + req.user.username;
+    	res.redirect(userProfile);
     }
 }
