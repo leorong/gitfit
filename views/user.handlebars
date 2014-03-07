@@ -91,17 +91,15 @@
                     <input type="checkbox" name="find_friend_toggle" class="switch-small" checked data-animated="false">
                 </p>
             </div>
-			<div class="activities">
-                <div class="row">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">{{name}}'s Activities</div>
-                        <ul class="list-group">
-                            {{#each activities}}
-                            	<li class="list-group-item">{{this}}</li>
-                            {{/each}}
-                        </ul>
-                    </div>
-                </div>
+			<h4>Activities</h4>
+			<div class="table-responsive">
+				<table class="table table-boredered">
+					{{#each activities}}
+					<tr>
+						<td>{{this}}</td>
+					</tr>
+					{{/each}}
+				</table>						
             </div>
             <h4>Availability</h4>
             <div class="table-responsive">

@@ -70,7 +70,6 @@ exports.deleteMessage = function(req, res) {
 
 	function afterRemoving(err) {
 		if(err) {console.log(err); res.send(500)};
-		res.redirect('/message/');
 	}
 }
 
@@ -98,6 +97,5 @@ exports.addNewMessage = function(req, res) {
 
     function afterAdding(err) {
         if(err) {console.log(err); res.send(500);}
-        res.redirect('/message');
     }
 }
