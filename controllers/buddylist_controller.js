@@ -27,8 +27,8 @@ exports.view = function(req, res) {
                         return u;
                     }(user);
                     
-                    console.log("user1:")
-                    console.log(u);            
+                    // console.log("user1:")
+                    // console.log(u);            
                     
                     userArr.push(u);
                 });

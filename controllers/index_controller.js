@@ -10,7 +10,7 @@ exports.view = function(req, res) {
     if (!req.user) {
         res.render('index', {user: null});
     } else {
-        res.render('index', {
+        res.render('user', {
             user: JSON.stringify(req.user),
             'current_user': req.user.username
         });
