@@ -2,7 +2,8 @@
 var data = require('../json/fake_users.json');
 
 var mongoose = require('mongoose'),
-	User = mongoose.model('User');
+	User = mongoose.model('User'),
+	Friend = mongoose.model('Friend');
 
 /* Login form */
 exports.login = function(req, res) {
@@ -276,27 +277,39 @@ exports.viewProfile = function(req, res) {
             res.redirect('/');
         } else {
             // console.log(req.user);
-            if (user) {
-                res.render('profile', {
-                    user: req.user ? JSON.stringify(req.user) : null,
-                    'current_user': req.user ? req.user.username : 'null',
-                    'name': user.name.full,
-                    'username': user.username,
-                    'age': user.age,
-                    'imageURL': user.imageURL,
-                    'location': user.location,
-                    'gym': user.gym,
-                    'about_me': user.about_me,
-                    'activities': user.activities,
-                    'availability': user.availability,
-                    'schedule': user.schedule
-                }); 
-            } else {
-                res.render('index', {
-                    user: req.user ? JSON.stringify(req.user) : null,
-                    'current_user': req.user ? req.user.username : 'null'
-                });
-            }
+            Friend.find({"friend1": req.user.username, "friend2": username}).exec(function (err, friends) {
+				if(err) {console.log(err); res.send(500);}
+				
+				var isFriend;
+				if(friends.length > 0) {
+					isFriend = true;
+				} else {
+					isFriend = false;
+				}
+
+				if (user) {
+					res.render('profile', {
+						user: req.user ? JSON.stringify(req.user) : null,
+						'current_user': req.user ? req.user.username : 'null',
+						'name': user.name.full,
+						'username': user.username,
+						'age': user.age,
+						'imageURL': user.imageURL,
+						'location': user.location,
+						'gym': user.gym,
+						'about_me': user.about_me,
+						'activities': user.activities,
+						'availability': user.availability,
+						'schedule': user.schedule,
+						'isFriend': isFriend
+					}); 
+				} else {
+					res.render('index', {
+						user: req.user ? JSON.stringify(req.user) : null,
+						'current_user': req.user ? req.user.username : 'null'
+					});
+				}
+			});
         }
     });
 

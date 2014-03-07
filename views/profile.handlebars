@@ -41,6 +41,31 @@
                     </p>
                 </div>
                 <a type="button" class="btn btn-custom" data-toggle="modal" data-target="#messageBuddyModal{{username}}">Message</a>
+				{{#if isFriend}}
+					<div class='buttonDiv'><a type="button" id="{{username}}" href="/findbuddy/add/{{username}}" data-toggle="modal" data-target="#myOptionsModal{{username}}" class="addBuddyBtn btn btn-custom">Add Buddy</a></div>
+				{{else}}
+					<a href="/buddylist/remove/{{username}}" type="button" class="btn btn-custom btn-sm" id="unfriendBtn"><span class="glyphicon glyphicon-minus"></span>Unfriend</a>
+				{{/if}}
+				
+				<!-- Modal -->
+				<div class="modal fade" id="myOptionsModal{{username}}" tabindex="-1"  role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabel">Buddy Added!</h4>
+							</div>
+							<div class="modal-body">
+								What would you like to do next?
+							</div>
+							<div class="modal-footer">
+								<a type="button" class="btn btn-custom btn-sm" href="profile/{{username}}">Visit Profile</a>
+								<button type="button" class="btn btn-custom btn-sm" data-    toggle="modal" data-target="#messageBuddyModal{{username}}">Message</button>
+								<button type="button" class="btn btn-default btn-sm" data-   dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
 
 				<!-- Message User Model -->
                 <div class="modal fade" id="messageBuddyModal{{username}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
