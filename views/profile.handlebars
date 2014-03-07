@@ -27,19 +27,23 @@
 					<img class="img" src={{imageURL}}></img>
 				</div>
 
-                <div class="userInfo">
-                    <h3 class="nameInfo">{{name}}, {{age}}</h3>
-                    <p class="profileInfo">
-                        {{gym}} Gym</br>
-                        {{location}}</br>
-                        {{about_me}}
-                    </p>
-                </div>
-                <div>
-                    <p>Looking for a friend:
-                        <input disabled type="checkbox" name="find_friend_toggle" class="switch-small" checked data-animated="false">
-                    </p>
-                </div>
+                
+                <h3 class="nameInfo">{{name}}, {{age}}</h3>
+                <p class="profileInfo">
+                    {{gym}} Gym</br>
+                    {{location}}</br>
+                    {{about_me}}
+                </p>
+               
+                
+                <p>Looking for Gym Buddies?
+                    {{#if looking}}
+	            		<input type="checkbox" name="lookingToggle" checked disabled data-size="mini">
+	            	{{else}}
+	            		<input type="checkbox" name="lookingToggle" disabled data-size="mini">
+	            	{{/if}}
+                </p>
+                
                 <a type="button" class="btn btn-custom" data-toggle="modal" data-target="#messageBuddyModal{{username}}">Message</a>
 
 				<!-- Message User Model -->
@@ -74,190 +78,205 @@
                     </div>
                 </div>
 				
-				<div class="activities">
-                    <div class="row">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">{{name}}'s Activities</div>
-                            <ul class="list-group">
-                                {{#each activities}}
-                          	        <li class="list-group-item">{{this}}</li>
-                                {{/each}}
-                            </ul>
+                <div class="row">
+                	<br>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                        	<b>{{name}}'s Activities</b>
                         </div>
+                        <ul class="list-group">
+                            {{#each activities}}
+                      	        <li class="list-group-item">{{this}}</li>
+                            {{/each}}
+                        </ul>
                     </div>
                 </div>
-                <h4>Availability</h4>
-                <div class="table-responsive">
-		            <table class="table table-bordered">
-		            	<tr>
-		            		<th>Monday</th>
-		                    <th>Tuesday</th>
-		                    <th>Wednesday</th>
-		                    <th>Thursday</th>
-		                    <th>Friday</th>
-		                    <th>Saturday</th>
-		                    <th>Sunday</th>
-		            	</tr>
-		            	<tr>
-		            		<td>
-		            			{{#if availability.monday.morning}}
-		            				<h5>Morning</h5>
-		            			{{/if}}
-		            			{{#if availability.monday.afternoon}}
-		            				<h5>Afternoon</h5>
-		            			{{/if}}
-		            			{{#if availability.monday.evening}}
-		            				<h5>Evening</h5>
-		            			{{/if}}
-		            		</td>
-		            		<td>
-		            			{{#if availability.tuesday.morning}}
-		            				<h5>Morning</h5>
-		            			{{/if}}
-		            			{{#if availability.tuesday.afternoon}}
-		            				<h5>Afternoon</h5>
-		            			{{/if}}
-		            			{{#if availability.tuesday.evening}}
-		            				<h5>Evening</h5>
-		            			{{/if}}
-		            		</td>
-		            		<td>
-		            			{{#if availability.wednesday.morning}}
-		            				<h5>Morning</h5>
-		            			{{/if}}
-		            			{{#if availability.wednesday.afternoon}}
-		            				<h5>Afternoon</h5>
-		            			{{/if}}
-		            			{{#if availability.wednesday.evening}}
-		            				<h5>Evening</h5>
-		            			{{/if}}
-		            		</td>
-		            		<td>
-		            			{{#if availability.thursday.morning}}
-		            				<h5>Morning</h5>
-		            			{{/if}}
-		            			{{#if availability.thursday.afternoon}}
-		            				<h5>Afternoon</h5>
-		            			{{/if}}
-		            			{{#if availability.thursday.evening}}
-		            				<h5>Evening</h5>
-		            			{{/if}}
-		            		</td>
-		            		<td>
-		            			{{#if availability.friday.morning}}
-		            				<h5>Morning</h5>
-		            			{{/if}}
-		            			{{#if availability.friday.afternoon}}
-		            				<h5>Afternoon</h5>
-		            			{{/if}}
-		            			{{#if availability.friday.evening}}
-		            				<h5>Evening</h5>
-		            			{{/if}}
-		            		</td>
-		            		<td>
-		            			{{#if availability.saturday.morning}}
-		            				<h5>Morning</h5>
-		            			{{/if}}
-		            			{{#if availability.saturday.afternoon}}
-		            				<h5>Afternoon</h5>
-		            			{{/if}}
-		            			{{#if availability.saturday.evening}}
-		            				<h5>Evening</h5>
-		            			{{/if}}
-		            		</td>
-		            		<td>
-		            			{{#if availability.sunday.morning}}
-		            				<h5>Morning</h5>
-		            			{{/if}}
-		            			{{#if availability.sunday.afternoon}}
-		            				<h5>Afternoon</h5>
-		            			{{/if}}
-		            			{{#if availability.sunday.evening}}
-		            				<h5>Evening</h5>
-		            			{{/if}}
-		            		</td>
-		            	</tr>
-		            </table>
-				</div>
-                <h4>Schedule</h4>
-                <div class="table-responsive">
-		            <table class="table table-bordered">
-		            	<tr>
-		            		<th>Monday</th>
-		                    <th>Tuesday</th>
-		                    <th>Wednesday</th>
-		                    <th>Thursday</th>
-		                    <th>Friday</th>
-		                    <th>Saturday</th>
-		                    <th>Sunday</th>
-		            	</tr>
-		            	<tr>
-		            		<td>
-		            			{{#each schedule.monday}}
-									<h5>{{activity}}</h5>
-									<h6>{{startTime}}</h6>
-									to
-									<h6>{{endTime}}</h6>
-									<hr>
-								{{/each}}
-		            		</td>
-		            		<td>
-		            			{{#each schedule.tuesday}}
-									<h5>{{activity}}</h5>
-									<h6>{{startTime}}</h6>
-									to
-									<h6>{{endTime}}</h6>
-									<hr>
-								{{/each}}
-		            		</td>
-		            		<td>
-		            			{{#each schedule.wednesday}}
-									<h5>{{activity}}</h5>
-									<h6>{{startTime}}</h6>
-									to
-									<h6>{{endTime}}</h6>
-									<hr>
-								{{/each}}
-		            		</td>
-		            		<td>
-		            			{{#each schedule.thursday}}
-									<h5>{{activity}}</h5>
-									<h6>{{startTime}}</h6>
-									to
-									<h6>{{endTime}}</h6>
-									<hr>
-								{{/each}}
-		            		</td>
-		            		<td>
-		            			{{#each schedule.friday}}
-									<h5>{{activity}}</h5>
-									<h6>{{startTime}}</h6>
-									to
-									<h6>{{endTime}}</h6>
-									<hr>
-								{{/each}}
-		            		</td>
-		            		<td>
-		            			{{#each schedule.saturday}}
-									<h5>{{activity}}</h5>
-									<h6>{{startTime}}</h6>
-									to
-									<h6>{{endTime}}</h6>
-									<hr>
-								{{/each}}
-		            		</td>
-		            		<td>
-		            			{{#each schedule.sunday}}
-									<h5>{{activity}}</h5>
-									<h6>{{startTime}}</h6>
-									to
-									<h6>{{endTime}}</h6>
-									<hr>
-								{{/each}}
-		            		</td>
-		            	</tr>
-		            </table>
-				</div>
+                
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                        	<b>{{name}}'s Availability</b>
+                        </div>
+            			<div class="table-responsive">
+				            <table class="table table-bordered">
+				            	<tr>
+				            		<th>Monday</th>
+				                    <th>Tuesday</th>
+				                    <th>Wednesday</th>
+				                    <th>Thursday</th>
+				                    <th>Friday</th>
+				                    <th>Saturday</th>
+				                    <th>Sunday</th>
+				            	</tr>
+				            	<tr>
+				            		<td>
+				            			{{#if availability.monday.morning}}
+				            				<h5>Morning</h5>
+				            			{{/if}}
+				            			{{#if availability.monday.afternoon}}
+				            				<h5>Afternoon</h5>
+				            			{{/if}}
+				            			{{#if availability.monday.evening}}
+				            				<h5>Evening</h5>
+				            			{{/if}}
+				            		</td>
+				            		<td>
+				            			{{#if availability.tuesday.morning}}
+				            				<h5>Morning</h5>
+				            			{{/if}}
+				            			{{#if availability.tuesday.afternoon}}
+				            				<h5>Afternoon</h5>
+				            			{{/if}}
+				            			{{#if availability.tuesday.evening}}
+				            				<h5>Evening</h5>
+				            			{{/if}}
+				            		</td>
+				            		<td>
+				            			{{#if availability.wednesday.morning}}
+				            				<h5>Morning</h5>
+				            			{{/if}}
+				            			{{#if availability.wednesday.afternoon}}
+				            				<h5>Afternoon</h5>
+				            			{{/if}}
+				            			{{#if availability.wednesday.evening}}
+				            				<h5>Evening</h5>
+				            			{{/if}}
+				            		</td>
+				            		<td>
+				            			{{#if availability.thursday.morning}}
+				            				<h5>Morning</h5>
+				            			{{/if}}
+				            			{{#if availability.thursday.afternoon}}
+				            				<h5>Afternoon</h5>
+				            			{{/if}}
+				            			{{#if availability.thursday.evening}}
+				            				<h5>Evening</h5>
+				            			{{/if}}
+				            		</td>
+				            		<td>
+				            			{{#if availability.friday.morning}}
+				            				<h5>Morning</h5>
+				            			{{/if}}
+				            			{{#if availability.friday.afternoon}}
+				            				<h5>Afternoon</h5>
+				            			{{/if}}
+				            			{{#if availability.friday.evening}}
+				            				<h5>Evening</h5>
+				            			{{/if}}
+				            		</td>
+				            		<td>
+				            			{{#if availability.saturday.morning}}
+				            				<h5>Morning</h5>
+				            			{{/if}}
+				            			{{#if availability.saturday.afternoon}}
+				            				<h5>Afternoon</h5>
+				            			{{/if}}
+				            			{{#if availability.saturday.evening}}
+				            				<h5>Evening</h5>
+				            			{{/if}}
+				            		</td>
+				            		<td>
+				            			{{#if availability.sunday.morning}}
+				            				<h5>Morning</h5>
+				            			{{/if}}
+				            			{{#if availability.sunday.afternoon}}
+				            				<h5>Afternoon</h5>
+				            			{{/if}}
+				            			{{#if availability.sunday.evening}}
+				            				<h5>Evening</h5>
+				            			{{/if}}
+				            		</td>
+				            	</tr>
+				            </table>
+						</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                        	<b>{{name}}'s Schedule</b>
+                        </div>
+                        <div class="table-responsive">
+				            <table class="table table-bordered">
+				            	<tr>
+				            		<th>Monday</th>
+				                    <th>Tuesday</th>
+				                    <th>Wednesday</th>
+				                    <th>Thursday</th>
+				                    <th>Friday</th>
+				                    <th>Saturday</th>
+				                    <th>Sunday</th>
+				            	</tr>
+				            	<tr>
+				            		<td>
+				            			{{#each schedule.monday}}
+											<h5>{{activity}}</h5>
+											<h6>{{startTime}}</h6>
+											to
+											<h6>{{endTime}}</h6>
+											<hr>
+										{{/each}}
+				            		</td>
+				            		<td>
+				            			{{#each schedule.tuesday}}
+											<h5>{{activity}}</h5>
+											<h6>{{startTime}}</h6>
+											to
+											<h6>{{endTime}}</h6>
+											<hr>
+										{{/each}}
+				            		</td>
+				            		<td>
+				            			{{#each schedule.wednesday}}
+											<h5>{{activity}}</h5>
+											<h6>{{startTime}}</h6>
+											to
+											<h6>{{endTime}}</h6>
+											<hr>
+										{{/each}}
+				            		</td>
+				            		<td>
+				            			{{#each schedule.thursday}}
+											<h5>{{activity}}</h5>
+											<h6>{{startTime}}</h6>
+											to
+											<h6>{{endTime}}</h6>
+											<hr>
+										{{/each}}
+				            		</td>
+				            		<td>
+				            			{{#each schedule.friday}}
+											<h5>{{activity}}</h5>
+											<h6>{{startTime}}</h6>
+											to
+											<h6>{{endTime}}</h6>
+											<hr>
+										{{/each}}
+				            		</td>
+				            		<td>
+				            			{{#each schedule.saturday}}
+											<h5>{{activity}}</h5>
+											<h6>{{startTime}}</h6>
+											to
+											<h6>{{endTime}}</h6>
+											<hr>
+										{{/each}}
+				            		</td>
+				            		<td>
+				            			{{#each schedule.sunday}}
+											<h5>{{activity}}</h5>
+											<h6>{{startTime}}</h6>
+											to
+											<h6>{{endTime}}</h6>
+											<hr>
+										{{/each}}
+				            		</td>
+				            	</tr>
+				            </table>
+						</div>
+                    </div>
+                </div>
 			</div>
 	</div>
 

@@ -6,10 +6,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-switch.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
+  	<link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+  	<link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
 	<link href="/css/gitfit.css" rel="stylesheet">
        
 </head>
@@ -40,7 +41,7 @@
 							<div class="modal-body">
 								<div class="form-group">
 					                <label>Image URL:</label>
-					                <input type="text" class="form-control" id="changeImageURL" name="changeImageURL" placeholder="http://lorempixel.com/technics/300/300">
+					                <input type="text" class="form-control" id="changeImageURL" name="changeImageURL" value={{imageURL}}>
 					            </div>
 							</div>
 							<div class="modal-footer">
@@ -53,155 +54,388 @@
 				<br>
 			</div>
 			
-<!-- 
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<b>Basic Info</b>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					glyphicon glyphicon-pencil
-                </div>
+			<a class="editIcon" href="#" data-toggle="modal" data-target="#editBasicInfo">
+				<span class="glyphicon glyphicon-pencil"></span>
+				Edit
+			</a>
 
-
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<b>Gym and Activities</b>
-                </div>
+			<!-- Modal -->
+			<div class="modal fade" id="editBasicInfo">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Edit Basic Information</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+				                <label>First Name:</label>
+				                <div class ="row">
+				                    <div class = "col-md-12">
+				                        <input type="text" class="form-control" id="firstname" name ="firstname" placeholder="Bruce">
+				                    </div>
+				                </div>
+				            </div>
+				            <div class="form-group">
+				                <label>Last Name:</label>
+				                <div class="row">
+				                    <div class = "col-md-12">
+				                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Wayne">
+				                    </div>
+				                </div>
+				            </div>
+				            <div class="form-group">
+				                <label>Age:</label>
+				                <input type="number" class="form-control" id="age" name="age"placeholder="33">
+				            </div>
+				            <div class="form-group">
+				                <label>City:</label>
+				                <div class ="row">
+				                    <div class = "col-md-12">
+				                        <input type="text" class="form-control" id="city" name=
+				                        "city" placeholder="Gotham">
+				                    </div>
+				                </div>
+				            </div>
+				            <div class="form-group">
+				                <label>State:</label>
+				                <div class="row">
+				                    <div class = "col-md-12">
+				                        <input type="text" class="form-control" id="state" name="state" placeholder="NY">
+				                    </div>
+				                </div>
+				            </div>
+				            <div class="form-group">
+				                <label>About Me:</label>
+				                <textarea class="form-control" rows="3" id="about_me" name="about_me" placeholder="Write something about yourself..."></textarea>
+				            </div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-custom" id="editBasicInfoBtn">Save</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
                 
+            <h3 class="nameInfo">{{name}}, {{age}}</h3>
+			<p class="profileInfo">
+                {{gym}} Gym</br>
+                {{location}}</br>
+                {{about_me}}
+            </p>
 
-			</div>
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<b>Availability</b>
-                </div>
-                
-
-			</div> -->
-
-            <div class="userInfo">
-                <h3 class="nameInfo">{{name}}, {{age}}</h3>
-				<p class="profileInfo">
-                    {{gym}} Gym</br>
-                    {{location}}</br>
-                    {{about_me}}
-                </p>
-            </div>
-            <div>
-                <p>Looking for a friend:
-                    <input type="checkbox" name="find_friend_toggle" class="switch-small" checked data-animated="false">
-                </p>
-            </div>
-			<div class="activities">
-                <div class="row">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">{{name}}'s Activities</div>
-                        <ul class="list-group">
-                            {{#each activities}}
-                            	<li class="list-group-item">{{this}}</li>
-                            {{/each}}
-                        </ul>
+            <p>Looking for Gym Buddies?
+            	{{#if looking}}
+            		<input type="checkbox" name="lookingToggle" checked data-size="mini">
+            	{{else}}
+            		<input type="checkbox" name="lookingToggle" data-size="mini">
+            	{{/if}}
+            </p>
+			
+			
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    	<b>Activities</b>
+                    	<a class="editIcon" href="#" data-toggle="modal" data-target="#editActivities">
+							<span class="glyphicon glyphicon-pencil"></span>
+							Edit
+						</a>
                     </div>
+                    <ul class="list-group">
+                        {{#each activities}}
+                        	<li class="list-group-item">{{this}}</li>
+                        {{/each}}
+                    </ul>
                 </div>
             </div>
-            <h4>Availability</h4>
-            <div class="table-responsive">
-	            <table class="table table-bordered">
-	            	<tr>
-	            		<th>Monday</th>
-	                    <th>Tuesday</th>
-	                    <th>Wednesday</th>
-	                    <th>Thursday</th>
-	                    <th>Friday</th>
-	                    <th>Saturday</th>
-	                    <th>Sunday</th>
-	            	</tr>
-	            	<tr>
-	            		<td>
-	            			{{#if availability.monday.morning}}
-	            				<h5>Morning</h5>
-	            			{{/if}}
-	            			{{#if availability.monday.afternoon}}
-	            				<h5>Afternoon</h5>
-	            			{{/if}}
-	            			{{#if availability.monday.evening}}
-	            				<h5>Evening</h5>
-	            			{{/if}}
-	            		</td>
-	            		<td>
-	            			{{#if availability.tuesday.morning}}
-	            				<h5>Morning</h5>
-	            			{{/if}}
-	            			{{#if availability.tuesday.afternoon}}
-	            				<h5>Afternoon</h5>
-	            			{{/if}}
-	            			{{#if availability.tuesday.evening}}
-	            				<h5>Evening</h5>
-	            			{{/if}}
-	            		</td>
-	            		<td>
-	            			{{#if availability.wednesday.morning}}
-	            				<h5>Morning</h5>
-	            			{{/if}}
-	            			{{#if availability.wednesday.afternoon}}
-	            				<h5>Afternoon</h5>
-	            			{{/if}}
-	            			{{#if availability.wednesday.evening}}
-	            				<h5>Evening</h5>
-	            			{{/if}}
-	            		</td>
-	            		<td>
-	            			{{#if availability.thursday.morning}}
-	            				<h5>Morning</h5>
-	            			{{/if}}
-	            			{{#if availability.thursday.afternoon}}
-	            				<h5>Afternoon</h5>
-	            			{{/if}}
-	            			{{#if availability.thursday.evening}}
-	            				<h5>Evening</h5>
-	            			{{/if}}
-	            		</td>
-	            		<td>
-	            			{{#if availability.friday.morning}}
-	            				<h5>Morning</h5>
-	            			{{/if}}
-	            			{{#if availability.friday.afternoon}}
-	            				<h5>Afternoon</h5>
-	            			{{/if}}
-	            			{{#if availability.friday.evening}}
-	            				<h5>Evening</h5>
-	            			{{/if}}
-	            		</td>
-	            		<td>
-	            			{{#if availability.saturday.morning}}
-	            				<h5>Morning</h5>
-	            			{{/if}}
-	            			{{#if availability.saturday.afternoon}}
-	            				<h5>Afternoon</h5>
-	            			{{/if}}
-	            			{{#if availability.saturday.evening}}
-	            				<h5>Evening</h5>
-	            			{{/if}}
-	            		</td>
-	            		<td>
-	            			{{#if availability.sunday.morning}}
-	            				<h5>Morning</h5>
-	            			{{/if}}
-	            			{{#if availability.sunday.afternoon}}
-	            				<h5>Afternoon</h5>
-	            			{{/if}}
-	            			{{#if availability.sunday.evening}}
-	            				<h5>Evening</h5>
-	            			{{/if}}
-	            		</td>
-	            	</tr>
-	            </table>
-			</div>
-		</div>
 
+            <!-- Modal -->
+			<div class="modal fade" id="editActivities">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Edit Activities</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+				                <label>What exercises do you like to do?</label>
+				                <div id = "checkbox">
+				                    <label class="checkbox">
+				                        <input type="checkbox" id="basketball" value="basketball">
+				                        Basketball
+				                    </label>
+				                    <label class="checkbox">
+				                        <input type="checkbox" id="weightlifting" value="weightlifting">
+				                        Weight Lifting
+				                    </label>
+				                    <label class="checkbox">
+				                        <input type="checkbox" id="running" value="running">
+				                        Running
+				                    </label>
+				                    <label class="checkbox">
+				                        <input type="checkbox" id="swimming" value="swimming">
+				                        Swimming
+				                    </label>
+				                    <label class="checkbox">
+				                        <input type="checkbox" id="climbing" value="climbing">
+				                        Climbing
+				                    </label>
+				                    <label class="checkbox">
+				                        <input type="checkbox" id="cycling" value="cycling">
+				                        Cycling
+				                    </label>
+				                </div>
+				            </div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-custom" id="editActivitiesBtn">Save</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                    	<b>Availability</b>
+                    	<a class="editIcon" href="#" data-toggle="modal" data-target="#editAvailability">
+							<span class="glyphicon glyphicon-pencil"></span>
+							Edit
+						</a>
+                    </div>
+                    <div class="table-responsive">
+			            <table class="table table-bordered">
+			            	<tr>
+			            		<th>Monday</th>
+			                    <th>Tuesday</th>
+			                    <th>Wednesday</th>
+			                    <th>Thursday</th>
+			                    <th>Friday</th>
+			                    <th>Saturday</th>
+			                    <th>Sunday</th>
+			            	</tr>
+			            	<tr>
+			            		<td>
+			            			{{#if availability.monday.morning}}
+			            				<h5>Morning</h5>
+			            			{{/if}}
+			            			{{#if availability.monday.afternoon}}
+			            				<h5>Afternoon</h5>
+			            			{{/if}}
+			            			{{#if availability.monday.evening}}
+			            				<h5>Evening</h5>
+			            			{{/if}}
+			            		</td>
+			            		<td>
+			            			{{#if availability.tuesday.morning}}
+			            				<h5>Morning</h5>
+			            			{{/if}}
+			            			{{#if availability.tuesday.afternoon}}
+			            				<h5>Afternoon</h5>
+			            			{{/if}}
+			            			{{#if availability.tuesday.evening}}
+			            				<h5>Evening</h5>
+			            			{{/if}}
+			            		</td>
+			            		<td>
+			            			{{#if availability.wednesday.morning}}
+			            				<h5>Morning</h5>
+			            			{{/if}}
+			            			{{#if availability.wednesday.afternoon}}
+			            				<h5>Afternoon</h5>
+			            			{{/if}}
+			            			{{#if availability.wednesday.evening}}
+			            				<h5>Evening</h5>
+			            			{{/if}}
+			            		</td>
+			            		<td>
+			            			{{#if availability.thursday.morning}}
+			            				<h5>Morning</h5>
+			            			{{/if}}
+			            			{{#if availability.thursday.afternoon}}
+			            				<h5>Afternoon</h5>
+			            			{{/if}}
+			            			{{#if availability.thursday.evening}}
+			            				<h5>Evening</h5>
+			            			{{/if}}
+			            		</td>
+			            		<td>
+			            			{{#if availability.friday.morning}}
+			            				<h5>Morning</h5>
+			            			{{/if}}
+			            			{{#if availability.friday.afternoon}}
+			            				<h5>Afternoon</h5>
+			            			{{/if}}
+			            			{{#if availability.friday.evening}}
+			            				<h5>Evening</h5>
+			            			{{/if}}
+			            		</td>
+			            		<td>
+			            			{{#if availability.saturday.morning}}
+			            				<h5>Morning</h5>
+			            			{{/if}}
+			            			{{#if availability.saturday.afternoon}}
+			            				<h5>Afternoon</h5>
+			            			{{/if}}
+			            			{{#if availability.saturday.evening}}
+			            				<h5>Evening</h5>
+			            			{{/if}}
+			            		</td>
+			            		<td>
+			            			{{#if availability.sunday.morning}}
+			            				<h5>Morning</h5>
+			            			{{/if}}
+			            			{{#if availability.sunday.afternoon}}
+			            				<h5>Afternoon</h5>
+			            			{{/if}}
+			            			{{#if availability.sunday.evening}}
+			            				<h5>Evening</h5>
+			            			{{/if}}
+			            		</td>
+			            	</tr>
+			            </table>
+					</div>      
+                </div>
+            </div>
+
+            <!-- Modal -->
+			<div class="modal fade" id="editAvailability">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+							<h4 class="modal-title">Change Availability</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+				                <label>When do you like to exercise? These preferences will help us find you buddies, so mark all the times you're free!</label>
+				                <ul>
+				                    <li><div class="monday">
+				                        <h5>Monday</h5>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="monday-morning">
+				                            Morning
+				                        </label>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="monday-afternoon">
+				                            Afternoon
+				                        </label>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="monday-evening">
+				                            Evening
+				                        </label>
+				                    </div></li>
+				                    <div class="tuesday">
+				                        <li><h5>Tuesday</h5>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="tuesday-morning">
+				                            Morning
+				                        </label>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="tuesday-afternoon">
+				                            Afternoon
+				                        </label>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="tuesday-evening">
+				                            Evening
+				                        </label>
+				                    </div></li>
+				                    <div class="wednesday">
+				                        <li><h5>Wednesday</h5>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="wednesday-morning">
+				                            Morning
+				                        </label>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="wednesday-afternoon">
+				                            Afternoon
+				                        </label>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="wednesday-evening">
+				                            Evening
+				                        </label>
+				                    </div></li>
+				                    <div class="thursday">
+				                        <li><h5>Thursday</h5>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="thursday-morning">
+				                            Morning
+				                        </label>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="thursday-afternoon">
+				                            Afternoon
+				                        </label>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="thursday-evening">
+				                            Evening
+				                        </label>
+				                    </div></li>
+				                    <div class="friday">
+				                        <li><h5>Friday</h5>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="friday-morning">
+				                            Morning
+				                        </label>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="friday-afternoon">
+				                            Afternoon
+				                        </label>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="friday-evening">
+				                            Evening
+				                        </label>
+				                    </div></li>
+				                    <div class="saturday">
+				                        <li><h5>Saturday</h5>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="saturday-morning">
+				                            Morning
+				                        </label>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="saturday-afternoon">
+				                            Afternoon
+				                        </label>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="saturday-evening">
+				                            Evening
+				                        </label>
+				                    </div></li>
+				                    <div class="sunday">
+				                        <li><h5>Sunday</h5>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="sunday-morning">
+				                            Morning
+				                        </label>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="sunday-afternoon">
+				                            Afternoon
+				                        </label>
+				                        <label class="checkbox">
+				                            <input type="checkbox" id="sunday-evening">
+				                            Evening
+				                        </label>
+				                    </div></li>
+				                </li>
+				            </div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn btn-custom" id="editAvailabilityBtn">Save</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+
+		</div>
 	</div>
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap-switch.min.js"></script>
 	<script src="/js/gitfit.js"></script>
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

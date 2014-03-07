@@ -218,6 +218,8 @@ exports.addavailability = function(req, res, next) {
     })
 }
 
+/* View own profile */
+
 exports.view = function(req, res) {
 
     if (!req.user) {
@@ -240,6 +242,7 @@ exports.view = function(req, res) {
                     'name': user.name.full,
                     'username': user.username,
                     'age': user.age,
+                    'looking':user.looking,
                     'imageURL': user.imageURL,
                     'location': user.location,
                     'gym': user.gym,
@@ -259,7 +262,7 @@ exports.view = function(req, res) {
 
 };
 
-/* View profiles */
+/* View other people's profiles */
 
 exports.viewProfile = function(req, res) {
 
@@ -283,6 +286,7 @@ exports.viewProfile = function(req, res) {
                     'name': user.name.full,
                     'username': user.username,
                     'age': user.age,
+                    'looking':user.looking,
                     'imageURL': user.imageURL,
                     'location': user.location,
                     'gym': user.gym,
@@ -301,6 +305,45 @@ exports.viewProfile = function(req, res) {
     });
 
 };
+
+/* Profile Edit Calls */
+
+exports.editImageURL = function(req, res, next) {
+    if (!req.user) {
+        res.redirect('/');
+    }
+
+    var json = req.body;
+    var url = json['imageURL'];
+
+    var query = {username: req.user.username};
+    User.update(
+        query, 
+        { $set: { imageURL: url } }, 
+        function(err, numAffected, raw) {
+            if (err) { 
+                console.log(err);
+                res.send(500);
+            } else {
+                console.log('The number of updated users was %d', numAffected);
+                console.log('The raw response from Mongo was ', raw);
+                res.send(200);
+            }
+        }
+    );
+}
+
+exports.editBasicInfo = function(req, res, next) {
+
+}
+
+exports.editActivities = function(req, res, next) {
+
+}
+
+exports.editAvailability = function(req, res, next) {
+
+}
 
 /* Show Buddy List */
 exports.buddylist = function(req, res) {

@@ -13,7 +13,8 @@ function initializePage() {
         $('.buttonDiv #'+btnID).hide();
     });
     
-    
+    /* Sign Up Page */
+
     $('#signUpBtn').click(function (e) {
         e.preventDefault();
         console.log('clicked');
@@ -35,6 +36,7 @@ function initializePage() {
         }
     });
 
+    /* Profile Setup Pages */
     $('#saveProfileBtn').click(function (e) {
         e.preventDefault();
         ga('send', 'event', 'submit', 'click');
@@ -112,9 +114,6 @@ function initializePage() {
                 }
             }
         };
-
-        // console.log("json");
-        // console.log(json);
 
         $.post('/addprofile', json, function () {
             window.location.href = '/';
@@ -217,6 +216,21 @@ function initializePage() {
             window.location.href = '/';
         });
     });
+    
+    /* Profile Page */
+
+    $('#changePicBtn').click(function (e) {
+        console.log("Changing Picture");
+        e.preventDefault();
+        var json = {
+            'imageURL' : $('#changeImageURL').val()
+        }
+        $.post('/editImageURL', json, function () {
+            window.location.href = '/';
+        });
+    });
+
+    //Find Buddy page
 
     $('#searchBuddiesBtn').click(function (e) {
         e.preventDefault();
@@ -361,5 +375,6 @@ function initializePage() {
             window.location.href = '/schedule';
         });
     });
+
 }
     

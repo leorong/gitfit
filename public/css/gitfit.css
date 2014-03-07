@@ -59,6 +59,10 @@ body {
   	border-radius:10px;
 }
 
+.editIcon {
+	float: right;
+}
+
 .center_div {
 	margin-left: auto;
   	margin-right: auto;
