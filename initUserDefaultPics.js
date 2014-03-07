@@ -57,6 +57,5 @@ function onceClear(err, users) {
 		if(err) console.log(err);
 	}
 
-  	console.log("DONE");
 	mongoose.connection.close()
 };
