@@ -1,4 +1,4 @@
-e strict';
+'use strict';
 
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function () {
@@ -13,10 +13,11 @@ function initializePage() {
         $('.addBuddyBtn').hide();
 
     });
-   
+  /* 
 	$('.unfriendBtn').click(function(e) {
 		$('.unfriendBtn').hide();
 	});
+*/
 
 	$('.buddylistUnfriendBtn').click(function(e) {
 
@@ -341,7 +342,6 @@ function initializePage() {
         });
     });
 
-    $("[name='lookingToggle']").bootstrapSwitch();
 
     $('#lookingToggle').on('switchChange', function (e, data) {
         var $element = $(data.el),
@@ -502,4 +502,5 @@ function initializePage() {
         });
     });
 
+    $("[name='lookingToggle']").bootstrapSwitch();
 }

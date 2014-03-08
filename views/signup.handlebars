@@ -1,78 +1,78 @@
 <!doctype html>
 
 <html>
-<head>
-	<title>Register</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<link href="/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
-	<link href="/css/gitfit.css" rel="stylesheet">
-	<style>
-		body { 
-			background-image: url('/images/background.jpg'); 
-			background-repeat: no-repeat;
-			background-position: center;
-			background-attachment: fixed;
-			background-size: cover;
-			padding-bottom: 60px;
-		}
-	</style>
-</head>
+	<head>
+		<title>Register</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+		<link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet" type="text/css">
+		<link href="/css/gitfit.css" rel="stylesheet">
+		<style>
+			body { 
+				background-image: url('/images/background.jpg'); 
+				background-repeat: no-repeat;
+				background-position: center;
+				background-attachment: fixed;
+				background-size: cover;
+				padding-bottom: 60px;
+			}
+		</style>
+	</head>
 
 
-<body>
-	<div class="container">
-		{{#if message}}
+	<body>
+		<div class="container">
+			{{#if message}}
 			<div class="warning-message">
 				<button class="close" data-dismiss"warning">&times;</button>
 				<p class="no-margin">{{message}}<p>
 			</div>
-		{{/if}}
-		<form class="form-register">
-			<h3 class="heading-desc" align="center">Register</h3>
-			<br>
-			<div class="form-group">
-				<input type="text" class="form-control signup" id="username" placeholder="Username" autocapitalize="off">
-			</div>
-			<div class="form-group">
-				<input type="email" class="form-control signup" id="email" placeholder="Email" autocapitalize="off">
-			</div>
-			<div class="form-group">
-				<input type="password" class="form-control signup" id="password" placeholder="Password" autocapitalize="off">
-			</div>
-			<div class="form-group">
-				<input type="password" class="form-control signup" id="re-password" placeholder="Confirm Password" autocapitalize="off">
-			</div>
-			
+			{{/if}}
+			<form class="form-register">
+				<h3 class="heading-desc" align="center">Register</h3>
+				<br>
+				<div class="form-group">
+					<input type="text" class="form-control signup" id="username" placeholder="Username" autocapitalize="off">
+				</div>
+				<div class="form-group">
+					<input type="email" class="form-control signup" id="email" placeholder="Email" autocapitalize="off">
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control signup" id="password" placeholder="Password" autocapitalize="off">
+				</div>
+				<div class="form-group">
+					<input type="password" class="form-control signup" id="re-password" placeholder="Confirm Password" autocapitalize="off">
+				</div>
 
-			<div class="signupBtns">
-				<div class="row">
-					<div class="col-md-12" align="center">
-						<button value="submit" class="btn btn-custom" id="signUpBtn" value="Sign Up">Sign Up</button>
-						<a href="/" class="btn btn-default">Cancel</a>
+
+				<div class="signupBtns">
+					<div class="row">
+						<div class="col-md-12" align="center">
+							<button value="submit" class="btn btn-custom" id="signUpBtn" value="Sign Up">Sign Up</button>
+							<a href="/" class="btn btn-default">Cancel</a>
+						</div>
 					</div>
 				</div>
-			</div>
-		</form>
-	</div>
+			</form>
+		</div>
 
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/gitfit.js"></script>
-	<script>
-	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/gitfit.js"></script>
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+					(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+				m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-48615248-1', 'git-fit.herokuapp.com');
-	  ga('send', 'pageview');
-	</script>
-</body>
+			ga('create', 'UA-48615248-1', 'git-fit.herokuapp.com');
+			ga('send', 'pageview');
+		</script>
+	</body>
 
 
 
