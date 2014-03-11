@@ -46,6 +46,8 @@ exports.view = function(req, res) {
                         returnList.push({
                             'buddy': buddy,
                             'score': score,
+                            'activityMultiplier': activityMultiplier,
+                            'availabilityMultiplier': availabilityMultiplier
                         });
                     }
             }
@@ -127,9 +129,17 @@ exports.customsearch = function(req, res) {
     var gym = req.body.gym;
     var activities = req.body.activity;
 
-    (function(activities) {
+    console.log(activities);
+
+    if (activities == undefined) {
+        console.log('undef...');
+        res.redirect('/findbuddy');
+    } else {
+        (function(activities) {
         User.find({gym: gym}).exec(sortUsers);
-    }(activities));
+        }(activities));
+    }
+
 
     function sortUsers(err, buddies) {
         var returnList = [];
@@ -166,6 +176,8 @@ exports.customsearch = function(req, res) {
                     returnList.push({
                         'buddy': buddy,
                         'score': score,
+                        'activityMultiplier': activityMultiplier,
+                        'availabilityMultiplier': availabilityMultiplier
                     });
                 }
         }

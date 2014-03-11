@@ -44,7 +44,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label>What exercises do you like to do?</label>
+                                <label>Exercises:</label>
                                 <div id = "checkbox">
                                     <label class="checkbox">
                                         <input type="checkbox" name="activity" id="basketball" value="basketball">
@@ -84,20 +84,23 @@
                 <a href="profile/{{buddy.username}}"><h3 id="name">{{buddy.name.full}}</h3></a>
                 <a href="profile/{{buddy.username}}">
                     <div class="img_wrapper">
-                        <img class="img" src={{buddy.imageURL}} id={{buddy.imageURL}}></img>
+                        <img class="img" src="{{buddy.imageURL}}" id="{{buddy.imageURL}}"></img>
                     </div>
                 </a>
-                <p><font color="ff6600"><b>Match Score:</b></font> {{score}}</font>.</p>
-                <p><font color="ff6600"><b>Age:</b></font> {{buddy.age}}</p>
-                <p><font color="ff6600"><b>Gym:</b></font> {{buddy.gym}}</p>
-                <p><font color="ff6600"><b>Activities:</b></font> {{buddy.activities}}</p>
-                <p><font color="ff6600"><b>About {{buddy.name.first}}:</b></font> {{buddy.about_me}}</p>
 
-                <div class="addButton" id="add{{buddy.username}}">
-                {{#unless isFriend}}
-                    <div class='buttonDiv'><a type="button" id="{{buddy.username}}" href="/findbuddy/add/{{buddy.username}}" data-toggle="modal" data-target="#myOptionsModal{{buddy.username}}" class="addBuddyBtn btn btn-custom">Add Buddy</a></div>
-				{{/unless}}
+                <div class="profile_info">
+                    <p><font color="ff6600"><b>Match Results:</b></font>You share {{activityMultiplier}} activities and {{availabilityMultiplier}} availability times with {{buddy.name.first}}!</p>
+                    <p><font color="ff6600"><b>Age:</b></font> {{buddy.age}}</p>
+                    <p><font color="ff6600"><b>Gym:</b></font> {{buddy.gym}}</p>
+                    <p><font color="ff6600"><b>Activities:</b></font> {{buddy.activities}}</p>
+                    <p><font color="ff6600"><b>About {{buddy.name.first}}:</b></font> {{buddy.about_me}}</p>
                 </div>
+
+                {{#unless isFriend}}
+                    <div class="addButton" id="add{{buddy.username}}">
+                        <div class='buttonDiv'><a type="button" id="{{buddy.username}}" href="/findbuddy/add/{{buddy.username}}" data-toggle="modal" data-target="#myOptionsModal{{buddy.username}}" class="addBuddyBtn btn btn-custom">Add Buddy</a></div>
+                    </div>
+                {{/unless}}
                 <hr width="100%"></hr>
             </div>
 
