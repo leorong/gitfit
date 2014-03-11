@@ -25,7 +25,7 @@ exports.view = function(req, res) {
                     var longer = buddyActivities;
                 } else {
                     var short = buddyActivities;
-                    var longer = buddyActivities;
+                    var longer = userActivities;
                 }
 
                 var activityMultiplier = 0;
@@ -123,37 +123,29 @@ exports.view = function(req, res) {
 };
 
 exports.customsearch = function(req, res) {
-    console.log('In controller');
-    console.log('Body: ', req.body);
-    var searchParams = req.body;
 
-    var gym = searchParams['gym'];
-    var activities = searchParams['activities'];
+    var gym = req.body.gym;
+    var activities = req.body.activity;
 
-    //res.send(200);
-    // var json = req.body;
-
-    // var gym = json['gym'];
-    // //var activities = json['activities'];
-
-    User.find({gym: gym}).exec(sortUsers);
+    (function(activities) {
+        User.find({gym: gym}).exec(sortUsers);
+    }(activities));
 
     function sortUsers(err, buddies) {
         var returnList = [];
         var user = req.user;
-        console.log(user.username);
         for(var i = 0; i < buddies.length; i++) {
             var score = 0;
             var buddy = buddies[i];
             var buddyActivities = buddy.activities;
-            var userActivities = user.activities;
+            var userActivities = activities;
 
             if(userActivities.length < buddyActivities) {
                 var short = userActivities;
                 var longer = buddyActivities;
             } else {
                 var short = buddyActivities;
-                var longer = buddyActivities;
+                var longer = userActivities;
             }
 
             var activityMultiplier = 0;
@@ -170,7 +162,7 @@ exports.customsearch = function(req, res) {
             score = activityMultiplier * availabilityMultiplier;
 
 
-                if(user.username != buddy.username) {
+                if(user.username != buddy.username && score > 0) {
                     returnList.push({
                         'buddy': buddy,
                         'score': score,
@@ -208,12 +200,12 @@ exports.customsearch = function(req, res) {
             returnList.sort(function (a,b) {
                 return(a.score < b.score) ? 1 : ((b.score < a.score) ? -1 : 0);
             });
-            console.log(returnList);
-            // res.render('findbuddy', {
-            //     'user': req.user ? JSON.stringify(req.user) : null,
-            //     'current_user': req.user ? req.user.username : null,
-            //     'buddies': []//returnList
-            // });
+            //console.log(returnList);
+            res.render('findbuddy', {
+                'user': req.user ? JSON.stringify(req.user) : null,
+                'current_user': req.user ? req.user.username : null,
+                'buddies': returnList
+            });
         });
     }
 

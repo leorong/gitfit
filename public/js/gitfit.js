@@ -5,6 +5,8 @@ $(document).ready(function () {
     initializePage();
 });
 
+
+
 function initializePage() {
     $('.addBuddyBtn').click(function(e) {
         var btnID = $(this).closest('.addBuddyBtn').attr('id');
@@ -355,44 +357,7 @@ function initializePage() {
         })
     });
 
-    /* Find Buddy page */
 
-    $('#searchBuddiesBtn').click(function (e) {
-        e.preventDefault();
-        var activities = [];
-
-        if ($('#basketball').is(':checked')) {
-            activities.push('basketball');
-        }
-        if ($('#weightlifting').is(':checked')) {
-            activities.push('weightlifting');
-        }
-        if ($('#running').is(':checked')) {
-            activities.push('running');
-        }
-        if ($('#swimming').is(':checked')) {
-            activities.push('swimming');
-        }
-        if ($('#climbing').is(':checked')) {
-            activities.push('climbing');
-        }
-
-        var json = {
-            'gym': $('#gym').val(),
-            'activities': activities
-        }
-        console.log('Json is');
-        console.log(json);
-
-        $.post('/customsearch',json);
-
-        // $.get('/customsearch',json);
-
-        // function newResults(info) {
-        //     console.log('in callback');
-        //     window.location.href = '/schedule';
-        // }
-    });
 
     $('#composeBtn').click(function (e) {
         var newNavBarHTML =
