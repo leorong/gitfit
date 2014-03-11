@@ -5,6 +5,7 @@ var mongoose = require('mongoose'),
 	User = mongoose.model('User'),
 	Friend = mongoose.model('Friend');
 
+/* Check if form entry is more than just whitespace */
 var isValid = function isValid(str) {
     var re = new RegExp("\\S+");
     var match = re.exec(str);
@@ -27,7 +28,7 @@ exports.signup = function(req, res) {
 /* Logout */
 exports.signout = function(req, res) {
     req.logout();
-    res.redirect('/'); //or Login?
+    res.redirect('/');
 };
 
 /* Create user */
@@ -71,62 +72,7 @@ exports.create = function(req, res, next) {
     
 };
 
-// exports.setup = function(req, res) {
-//     if (!req.user) {
-//         // console.log('Not logged in');
-//         res.redirect('/');
-//     } else if (req.user.activities.length != 0) {
-//         // console.log('Already set up profile');
-//         res.redirect('/');
-//     }
-
-//     res.render('profile_setup', {user: JSON.stringify(req.user)}); 
-// }
-
-// exports.addprofile = function(req, res, next) {
-//     if (!req.user) {
-//         // console.log('Not logged in');
-//         res.redirect('/');
-//     } else if (req.user.activities.length != 0) {
-//         // console.log('Already set up profile');
-//         res.redirect('/');
-//     }
-
-//     var userProfile = req.body;
-//     // console.log('User Profile to be entered:');
-//     // console.log(userProfile);
-
-//     var location = userProfile['city'] + ", " + userProfile['state'];
-
-//     var profile = {
-//         name: {
-//             first: userProfile['firstName'],
-//             last: userProfile['lastName'],
-//         },
-//         age: userProfile['age'],
-//         location: location,
-//         gym: userProfile['gym'],
-//         about_me: userProfile['about_me'],
-//         imageURL: userProfile['imageURL'],
-//         looking: userProfile['looking'],
-//         activities: userProfile['activities'],
-//         availability: userProfile['availability']
-//     }
-
-//     var query = {username: req.user.username};
-
-//     User.update(query, profile, function(err, numAffected, raw) {
-//         if (err) { 
-//             console.log(err);
-//             res.send(500);
-//         } else {
-//             console.log('The number of updated users was %d', numAffected);
-//             console.log('The raw response from Mongo was ', raw);
-//             res.send(200);
-//         }
-//     })
-// }
-
+/* Profile Setup - Basic Info */
 exports.basicinfo = function(req, res) {
     if (!req.user) {
         res.redirect('/');
@@ -135,49 +81,49 @@ exports.basicinfo = function(req, res) {
     res.render('profile_setup_basicinfo', {user: JSON.stringify(req.user)}); 
 }
 
+/* Add Basic Info to DB */
 exports.addbasicinfo = function(req, res, next) {
     if (!req.user) {
         res.redirect('/');
-    }
+    } else {
+        if (isValid(req.body.firstname) && isValid(req.body.lastname) && isValid(req.body.age) 
+           && isValid(req.body.city) && isValid(req.body.state)) {
+            var location = req.body.city + ", " + req.body.state;
 
-    //if (isValid(req.body.firstname) && isValid(req.body.lastname) && isValid(req.body.age) 
-    //    && isValid(req.body.city) && isValid(req.body.state)) {
+            var profile = {
+                name: {
+                    first: req.body.firstname,
+                    last: req.body.lastname
+                },
+                age: req.body.age,
+                location: location,
+                about_me: req.body.about_me,
+                imageURL: req.body.imageURL,
+                looking: true
+            }
 
-    var basicinfo = req.body;
+            var query = {username: req.user.username};
 
-    var location = basicinfo['city'] + ", " + basicinfo['state'];
-
-    var profile = {
-        name: {
-            first: basicinfo['firstName'],
-            last: basicinfo['lastName'],
-        },
-        age: basicinfo['age'],
-        location: location,
-        about_me: basicinfo['about_me'],
-        imageURL: basicinfo['imageURL'],
-        looking: basicinfo['looking']
-    }
-
-    var query = {username: req.user.username};
-
-    User.update(query, profile, function(err, numAffected, raw) {
-        if (err) { 
-            console.log(err);
-            res.send(500);
+            User.update(query, profile, function(err, numAffected, raw) {
+                if (err) { 
+                    console.log(err);
+                    res.send(500);
+                } else {
+                    console.log('The number of updated users was %d', numAffected);
+                    console.log('The raw response from Mongo was ', raw);
+                    res.redirect('/profile_setup_gymandactivities');
+                }
+            })
         } else {
-            console.log('The number of updated users was %d', numAffected);
-            console.log('The raw response from Mongo was ', raw);
-            res.send(200);
+            res.render('profile_setup_basicinfo', {message: 'Please fill in fields for name, age, city, and state.', 
+                firstname: req.body.firstname, lastname: req.body.lastname, age: req.body.age, 
+                city: req.body.city, state: req.body.state, about_me: req.body.about_me, 
+                imageURL: req.body.imageURL});
         }
-    })
-    // } else {
-    //     res.render('profile_setup_basicinfo', {user: JSON.stringify(req.user), 
-    //         message: 'Please fill in all fields.', firstname: req.body.firstname, 
-    //         lastname: req.body.lastname, age: req.body.age, city: req.body.city, state: req.body.state});
-    // }
+    }  
 }
 
+/* Profile Setup - Gym and Activities */
 exports.gymandactivities = function(req, res) {
     if (!req.user) {
         res.redirect('/');
@@ -186,32 +132,40 @@ exports.gymandactivities = function(req, res) {
     res.render('profile_setup_gymandactivities', {user: JSON.stringify(req.user)}); 
 }
 
+/* Add Gym and Activities to DB */
 exports.addgymandactivities = function(req, res, next) {
     if (!req.user) {
         res.redirect('/');
-    }
+    } else {
+        if (req.body.activity) {
 
-    var gymandactivities = req.body;
+            var profile = {
+                gym: req.body.gym,
+                activities: req.body.activity
+            }
 
-    var profile = {
-        gym: gymandactivities['gym'],
-        activities: gymandactivities['activities']
-    }
+            console.log(profile);
 
-    var query = {username: req.user.username};
+            var query = {username: req.user.username};
 
-    User.update(query, profile, function(err, numAffected, raw) {
-        if (err) { 
-            console.log(err);
-            res.send(500);
+            User.update(query, profile, function(err, numAffected, raw) {
+                if (err) { 
+                    console.log(err);
+                    res.send(500);
+                } else {
+                    console.log('The number of updated users was %d', numAffected);
+                    console.log('The raw response from Mongo was ', raw);
+                    res.redirect('/profile_setup_availability');
+                }
+            })
         } else {
-            console.log('The number of updated users was %d', numAffected);
-            console.log('The raw response from Mongo was ', raw);
-            res.send(200);
+            res.render('profile_setup_gymandactivities', {message: 'Please select some exercises.', 
+                gym: req.body.gym});
         }
-    })
+    }
 }
 
+/* Profile Setup - Availability */
 exports.availability = function(req, res) {
     if (!req.user) {
         res.redirect('/');
@@ -220,29 +174,30 @@ exports.availability = function(req, res) {
     res.render('profile_setup_availability', {user: JSON.stringify(req.user)}); 
 }
 
+/* Add Availability to DB */
 exports.addavailability = function(req, res, next) {
-     if (!req.user) {
+    if (!req.user) {
         res.redirect('/');
-    }
+    } else {
+        var availability = req.body;
 
-    var availability = req.body;
-
-    var profile = {
-        availability: availability['availability']
-    }
-
-    var query = {username: req.user.username};
-
-    User.update(query, profile, function(err, numAffected, raw) {
-        if (err) { 
-            console.log(err);
-            res.send(500);
-        } else {
-            console.log('The number of updated users was %d', numAffected);
-            console.log('The raw response from Mongo was ', raw);
-            res.send(200);
+        var profile = {
+            availability: availability['availability']
         }
-    })
+
+        var query = {username: req.user.username};
+
+        User.update(query, profile, function(err, numAffected, raw) {
+            if (err) { 
+                console.log(err);
+                res.send(500);
+            } else {
+                console.log('The number of updated users was %d', numAffected);
+                console.log('The raw response from Mongo was ', raw);
+                res.send(200);
+            }
+        })
+    }
 }
 
 /* View own profile */
@@ -250,7 +205,6 @@ exports.addavailability = function(req, res, next) {
 exports.view = function(req, res) {
 
     if (!req.user) {
-        // console.log('Not logged in');
         res.redirect('/');
     } 
 
@@ -261,7 +215,6 @@ exports.view = function(req, res) {
             console.log("error");
             res.redirect('/');
         } else {
-            // console.log(req.user);
             if (user) {
                 res.render('user', {
                     user: req.user ? JSON.stringify(req.user) : null,
@@ -309,7 +262,6 @@ exports.viewProfile = function(req, res) {
             console.log("error");
             res.redirect('/');
         } else {
-            // console.log(req.user);
 
             Friend.find({"friend1": req.user.username, "friend2": username}).exec(function (err, friends) {
 				if(err) {console.log(err); res.send(500);}
@@ -549,7 +501,6 @@ exports.schedule = function(req, res) {
 
 exports.addschedule = function(req, res, next) {
     if (!req.user) {
-        // console.log('Not logged in');
         res.redirect('/');
     }
 

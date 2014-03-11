@@ -6,6 +6,40 @@ var User = mongoose.model('User');
 //var Handlebars = require('express3-handlebars');
 
 
+/* Finds number of time slot overlaps between user and potential buddy */
+var getOverlap = function(userAvailability, buddyAvailability) {
+    var multiplier = 0;
+    //var dayOverlap = 0;
+    //var timeOverlap = 0;
+
+    if (userAvailability.monday.morning && buddyAvailability.monday.morning) {multiplier += 1;}
+    if (userAvailability.monday.afternoon && buddyAvailability.monday.afternoon) {multiplier += 1;}
+    if (userAvailability.monday.evening && buddyAvailability.monday.evening) {multiplier += 1;}
+
+    if (userAvailability.tuesday.morning && buddyAvailability.tuesday.morning) {multiplier += 1;}
+    if (userAvailability.tuesday.afternoon && buddyAvailability.tuesday.afternoon) {multiplier += 1;}
+    if (userAvailability.tuesday.evening && buddyAvailability.tuesday.evening) {multiplier += 1;}
+    if (userAvailability.wednesday.morning && buddyAvailability.wednesday.morning) {multiplier += 1;}
+    if (userAvailability.wednesday.afternoon && buddyAvailability.wednesday.afternoon) {multiplier += 1;}
+    if (userAvailability.wednesday.evening && buddyAvailability.wednesday.evening) {multiplier += 1;}
+    if (userAvailability.thursday.morning && buddyAvailability.thursday.morning) {multiplier += 1;}
+    if (userAvailability.thursday.afternoon && buddyAvailability.thursday.afternoon) {multiplier += 1;}
+    if (userAvailability.thursday.evening && buddyAvailability.thursday.evening) {multiplier += 1;}
+    if (userAvailability.friday.morning && buddyAvailability.friday.morning) {multiplier += 1;}
+    if (userAvailability.friday.afternoon && buddyAvailability.friday.afternoon) {multiplier += 1;}
+    if (userAvailability.friday.evening && buddyAvailability.friday.evening) {multiplier += 1;}
+    if (userAvailability.saturday.morning && buddyAvailability.saturday.morning) {multiplier += 1;}
+    if (userAvailability.saturday.afternoon && buddyAvailability.saturday.afternoon) {multiplier += 1;}
+    if (userAvailability.saturday.evening && buddyAvailability.saturday.evening) {multiplier += 1;}
+    if (userAvailability.sunday.morning && buddyAvailability.sunday.morning) {multiplier += 1;}
+    if (userAvailability.sunday.afternoon && buddyAvailability.sunday.afternoon) {multiplier += 1;}
+    if (userAvailability.sunday.evening && buddyAvailability.sunday.evening) {multiplier += 1;}
+
+    
+    return multiplier;
+}
+
+
 exports.view = function(req, res) {
     if(!req.user) {res.redirect('login');}
 
@@ -89,38 +123,6 @@ exports.view = function(req, res) {
                     'buddies': returnList
                 });
             });
-        }
-    
-        function getOverlap(userAvailability, buddyAvailability) {
-            var multiplier = 1;
-            //var dayOverlap = 0;
-            //        //var timeOverlap = 0;
-        
-            if (userAvailability.monday.morning && buddyAvailability.monday.morning) {multiplier += 1;}
-            if (userAvailability.monday.afternoon && buddyAvailability.monday.afternoon) {multiplier += 1;}
-            if (userAvailability.monday.evening && buddyAvailability.monday.evening) {multiplier += 1;}
-
-            if (userAvailability.tuesday.morning && buddyAvailability.tuesday.morning) {multiplier += 1;}
-            if (userAvailability.tuesday.afternoon && buddyAvailability.tuesday.afternoon) {multiplier += 1;}
-            if (userAvailability.tuesday.evening && buddyAvailability.tuesday.evening) {multiplier += 1;}
-            if (userAvailability.wednesday.morning && buddyAvailability.wednesday.morning) {multiplier += 1;}
-            if (userAvailability.wednesday.afternoon && buddyAvailability.wednesday.afternoon) {multiplier += 1;}
-            if (userAvailability.wednesday.evening && buddyAvailability.wednesday.evening) {multiplier += 1;}
-            if (userAvailability.thursday.morning && buddyAvailability.thursday.morning) {multiplier += 1;}
-            if (userAvailability.thursday.afternoon && buddyAvailability.thursday.afternoon) {multiplier += 1;}
-            if (userAvailability.thursday.evening && buddyAvailability.thursday.evening) {multiplier += 1;}
-            if (userAvailability.friday.morning && buddyAvailability.friday.morning) {multiplier += 1;}
-            if (userAvailability.friday.afternoon && buddyAvailability.friday.afternoon) {multiplier += 1;}
-            if (userAvailability.friday.evening && buddyAvailability.friday.evening) {multiplier += 1;}
-            if (userAvailability.saturday.morning && buddyAvailability.saturday.morning) {multiplier += 1;}
-            if (userAvailability.saturday.afternoon && buddyAvailability.saturday.afternoon) {multiplier += 1;}
-            if (userAvailability.saturday.evening && buddyAvailability.saturday.evening) {multiplier += 1;}
-            if (userAvailability.sunday.morning && buddyAvailability.sunday.morning) {multiplier += 1;}
-            if (userAvailability.sunday.afternoon && buddyAvailability.sunday.afternoon) {multiplier += 1;}
-            if (userAvailability.sunday.evening && buddyAvailability.sunday.evening) {multiplier += 1;}
-
-            
-            return multiplier;
         }
 };
 
@@ -209,45 +211,12 @@ exports.customsearch = function(req, res) {
             returnList.sort(function (a,b) {
                 return(a.score < b.score) ? 1 : ((b.score < a.score) ? -1 : 0);
             });
-            //console.log(returnList);
             res.render('findbuddy', {
                 'user': req.user ? JSON.stringify(req.user) : null,
                 'current_user': req.user ? req.user.username : null,
                 'buddies': returnList
             });
         });
-    }
-
-    function getOverlap(userAvailability, buddyAvailability) {
-        var multiplier = 1;
-        //var dayOverlap = 0;
-        //        //var timeOverlap = 0;
-    
-        if (userAvailability.monday.morning && buddyAvailability.monday.morning) {multiplier += 1;}
-        if (userAvailability.monday.afternoon && buddyAvailability.monday.afternoon) {multiplier += 1;}
-        if (userAvailability.monday.evening && buddyAvailability.monday.evening) {multiplier += 1;}
-
-        if (userAvailability.tuesday.morning && buddyAvailability.tuesday.morning) {multiplier += 1;}
-        if (userAvailability.tuesday.afternoon && buddyAvailability.tuesday.afternoon) {multiplier += 1;}
-        if (userAvailability.tuesday.evening && buddyAvailability.tuesday.evening) {multiplier += 1;}
-        if (userAvailability.wednesday.morning && buddyAvailability.wednesday.morning) {multiplier += 1;}
-        if (userAvailability.wednesday.afternoon && buddyAvailability.wednesday.afternoon) {multiplier += 1;}
-        if (userAvailability.wednesday.evening && buddyAvailability.wednesday.evening) {multiplier += 1;}
-        if (userAvailability.thursday.morning && buddyAvailability.thursday.morning) {multiplier += 1;}
-        if (userAvailability.thursday.afternoon && buddyAvailability.thursday.afternoon) {multiplier += 1;}
-        if (userAvailability.thursday.evening && buddyAvailability.thursday.evening) {multiplier += 1;}
-        if (userAvailability.friday.morning && buddyAvailability.friday.morning) {multiplier += 1;}
-        if (userAvailability.friday.afternoon && buddyAvailability.friday.afternoon) {multiplier += 1;}
-        if (userAvailability.friday.evening && buddyAvailability.friday.evening) {multiplier += 1;}
-        if (userAvailability.saturday.morning && buddyAvailability.saturday.morning) {multiplier += 1;}
-        if (userAvailability.saturday.afternoon && buddyAvailability.saturday.afternoon) {multiplier += 1;}
-        if (userAvailability.saturday.evening && buddyAvailability.saturday.evening) {multiplier += 1;}
-        if (userAvailability.sunday.morning && buddyAvailability.sunday.morning) {multiplier += 1;}
-        if (userAvailability.sunday.afternoon && buddyAvailability.sunday.afternoon) {multiplier += 1;}
-        if (userAvailability.sunday.evening && buddyAvailability.sunday.evening) {multiplier += 1;}
-
-        
-        return multiplier;
     }
 };
 

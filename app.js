@@ -50,10 +50,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 require('./config/passport')(passport);
 
 /* Routes */
-// var findbuddy = require('./routes/findbuddy');
-// var message = require('./routes/message');
-// var schedule = require('./routes/schedule');
-
 var users = require('./routes/users')(app, passport);
 var index = require('./routes/index')(app, passport);
 var findbuddy = require('./routes/findbuddy')(app, passport);
@@ -63,14 +59,6 @@ var message = require('./routes/message')(app, passport);
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
-
-// Add routes here
-
-// app.get('/findbuddy', findbuddy.view);
-// app.get('/message', message.view);
-// app.get('/schedule', schedule.view);
-
-
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

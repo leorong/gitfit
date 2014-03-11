@@ -17,6 +17,11 @@
 
 <body>
     <div class="container">
+        {{#if message}}
+            <div class="warning-message">
+                <p class="no-margin">{{message}}<p>
+            </div>
+        {{/if}}
         <form class="profile_setup" role="form">
             <h3>Profile - Availability</h3>
             <br>
@@ -131,7 +136,7 @@
                 </li>
             </div>
             <div class="form-group">
-                <button value="Submit" class="btn btn-custom" id="addavailability">Done</button>
+                <button value="Done" class="btn btn-custom" id="addavailability">Done</button>
             </div>
         </form>
 
