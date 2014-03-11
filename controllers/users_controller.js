@@ -5,6 +5,12 @@ var mongoose = require('mongoose'),
 	User = mongoose.model('User'),
 	Friend = mongoose.model('Friend');
 
+var isValid = function isValid(str) {
+    var re = new RegExp("\\S+");
+    var match = re.exec(str);
+    return match != null;
+}
+
 /* Login form */
 exports.login = function(req, res) {
     res.render('login', {user: req.user ? JSON.stringify(req.user) : null, 
@@ -26,7 +32,7 @@ exports.signout = function(req, res) {
 
 /* Create user */
 exports.create = function(req, res, next) {
-    if (isAlphaNumeric(req.body.username) && isAlphaNumeric(req.body.email) && isAlphaNumeric(req.body.password) && isAlphaNumeric(req.body.re_password)) {
+    if (isValid(req.body.username) && isValid(req.body.email) && isValid(req.body.password) && isValid(req.body.re_password)) {
         if (req.body.password !== req.body.re_password) {
         res.render('signup', {message: 'Password and confirmation do not match.', username: req.body.username, email: req.body.email});
         } else {
@@ -58,10 +64,6 @@ exports.create = function(req, res, next) {
     }
     
 
-    function isAlphaNumeric(str) {
-        return /\S+/.search(str) != -1;
-    }
-
     function afterSaving(err) {
         if (err) {console.log(err); res.send(500);}
         res.redirect('/profile_setup_basicinfo');
@@ -69,61 +71,61 @@ exports.create = function(req, res, next) {
     
 };
 
-exports.setup = function(req, res) {
-    if (!req.user) {
-        // console.log('Not logged in');
-        res.redirect('/');
-    } else if (req.user.activities.length != 0) {
-        // console.log('Already set up profile');
-        res.redirect('/');
-    }
+// exports.setup = function(req, res) {
+//     if (!req.user) {
+//         // console.log('Not logged in');
+//         res.redirect('/');
+//     } else if (req.user.activities.length != 0) {
+//         // console.log('Already set up profile');
+//         res.redirect('/');
+//     }
 
-    res.render('profile_setup', {user: JSON.stringify(req.user)}); 
-}
+//     res.render('profile_setup', {user: JSON.stringify(req.user)}); 
+// }
 
-exports.addprofile = function(req, res, next) {
-    if (!req.user) {
-        // console.log('Not logged in');
-        res.redirect('/');
-    } else if (req.user.activities.length != 0) {
-        // console.log('Already set up profile');
-        res.redirect('/');
-    }
+// exports.addprofile = function(req, res, next) {
+//     if (!req.user) {
+//         // console.log('Not logged in');
+//         res.redirect('/');
+//     } else if (req.user.activities.length != 0) {
+//         // console.log('Already set up profile');
+//         res.redirect('/');
+//     }
 
-    var userProfile = req.body;
-    // console.log('User Profile to be entered:');
-    // console.log(userProfile);
+//     var userProfile = req.body;
+//     // console.log('User Profile to be entered:');
+//     // console.log(userProfile);
 
-    var location = userProfile['city'] + ", " + userProfile['state'];
+//     var location = userProfile['city'] + ", " + userProfile['state'];
 
-    var profile = {
-        name: {
-            first: userProfile['firstName'],
-            last: userProfile['lastName'],
-        },
-        age: userProfile['age'],
-        location: location,
-        gym: userProfile['gym'],
-        about_me: userProfile['about_me'],
-        imageURL: userProfile['imageURL'],
-        looking: userProfile['looking'],
-        activities: userProfile['activities'],
-        availability: userProfile['availability']
-    }
+//     var profile = {
+//         name: {
+//             first: userProfile['firstName'],
+//             last: userProfile['lastName'],
+//         },
+//         age: userProfile['age'],
+//         location: location,
+//         gym: userProfile['gym'],
+//         about_me: userProfile['about_me'],
+//         imageURL: userProfile['imageURL'],
+//         looking: userProfile['looking'],
+//         activities: userProfile['activities'],
+//         availability: userProfile['availability']
+//     }
 
-    var query = {username: req.user.username};
+//     var query = {username: req.user.username};
 
-    User.update(query, profile, function(err, numAffected, raw) {
-        if (err) { 
-            console.log(err);
-            res.send(500);
-        } else {
-            console.log('The number of updated users was %d', numAffected);
-            console.log('The raw response from Mongo was ', raw);
-            res.send(200);
-        }
-    })
-}
+//     User.update(query, profile, function(err, numAffected, raw) {
+//         if (err) { 
+//             console.log(err);
+//             res.send(500);
+//         } else {
+//             console.log('The number of updated users was %d', numAffected);
+//             console.log('The raw response from Mongo was ', raw);
+//             res.send(200);
+//         }
+//     })
+// }
 
 exports.basicinfo = function(req, res) {
     if (!req.user) {
@@ -137,6 +139,9 @@ exports.addbasicinfo = function(req, res, next) {
     if (!req.user) {
         res.redirect('/');
     }
+
+    //if (isValid(req.body.firstname) && isValid(req.body.lastname) && isValid(req.body.age) 
+    //    && isValid(req.body.city) && isValid(req.body.state)) {
 
     var basicinfo = req.body;
 
@@ -166,6 +171,11 @@ exports.addbasicinfo = function(req, res, next) {
             res.send(200);
         }
     })
+    // } else {
+    //     res.render('profile_setup_basicinfo', {user: JSON.stringify(req.user), 
+    //         message: 'Please fill in all fields.', firstname: req.body.firstname, 
+    //         lastname: req.body.lastname, age: req.body.age, city: req.body.city, state: req.body.state});
+    // }
 }
 
 exports.gymandactivities = function(req, res) {
