@@ -26,10 +26,10 @@ exports.signout = function(req, res) {
 
 /* Create user */
 exports.create = function(req, res, next) {
-
-    if (req.body.password !== req.body.re_password) {
+    if (isAlphaNumeric(req.body.username) && isAlphaNumeric(req.body.email) && isAlphaNumeric(req.body.password) && isAlphaNumeric(req.body.re_password)) {
+        if (req.body.password !== req.body.re_password) {
         res.render('signup', {message: 'Password and confirmation do not match.', username: req.body.username, email: req.body.email});
-    } else {
+        } else {
 
 
 
@@ -52,7 +52,15 @@ exports.create = function(req, res, next) {
                     newUser.save(afterSaving);
                 }
             });
-    } 
+        }
+    } else {
+        res.render('signup', {message: 'Please fill in all fields.', username: req.body.username, email: req.body.email});
+    }
+    
+
+    function isAlphaNumeric(str) {
+        return /\S+/.search(str) != -1;
+    }
 
     function afterSaving(err) {
         if (err) {console.log(err); res.send(500);}

@@ -30,6 +30,16 @@ function initializePage() {
 		});
 	});
 
+    $('#registerForm').validate({
+        messages: {
+            username: 'Username is required.',
+            email: 'Email is required.',
+            password: 'Password is required.',
+            re_password: 'Password confirmation is required.'
+        },
+        focusInvalid: false
+    });
+
     // $('#signUpBtn').click(function (e) {
     //     e.preventDefault();
     //     console.log('clicked');
