@@ -15,19 +15,13 @@ function initializePage() {
         $('.addBuddyBtn').hide();
 
     });
-  /* 
-	$('.unfriendBtn').click(function(e) {
-		$('.unfriendBtn').hide();
-	});
-*/
 
 	$('.buddylistUnfriendBtn').click(function(e) {
 
 		$.get('/buddylist', function() {
 			window.location.href = '/buddylist';
 		});
-	});
-    
+	});    
 
     /* Sign Up Page */
 	$('.messageDeleteBtn').click(function(e) {
@@ -36,26 +30,26 @@ function initializePage() {
 		});
 	});
 
-    $('#signUpBtn').click(function (e) {
-        e.preventDefault();
-        console.log('clicked');
-        var username = $('#username').val();
-        var email = $('#email').val();
-        var password = $('#password').val();
-        var re_password = $('#re-password').val();
+    // $('#signUpBtn').click(function (e) {
+    //     e.preventDefault();
+    //     console.log('clicked');
+    //     var username = $('#username').val();
+    //     var email = $('#email').val();
+    //     var password = $('#password').val();
+    //     var re_password = $('#re-password').val();
         
-        if(password === re_password) {
-            var json = {
-                'username': username,
-                'password': password,
-                'email': email
-            };
-            console.log(json);
-            $.post('/create', json, function () {
-                window.location.href = '/profile_setup_basicinfo';
-            });
-        }
-    });
+    //     if(password === re_password) {
+    //         var json = {
+    //             'username': username,
+    //             'password': password,
+    //             'email': email
+    //         };
+    //         console.log(json);
+    //         $.post('/create', json, function () {
+    //             window.location.href = '/profile_setup_basicinfo';
+    //         });
+    //     }
+    // });
 
     /* Profile Setup Pages */
     $('#saveProfileBtn').click(function (e) {

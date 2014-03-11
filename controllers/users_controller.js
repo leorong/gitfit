@@ -26,31 +26,39 @@ exports.signout = function(req, res) {
 
 /* Create user */
 exports.create = function(req, res, next) {
-    var userData = req.body;
 
-    User.find({username: userData['username']})
-        .exec(function(err, user) {
-            if(err) console.log(err);
-            if (user) {
-                res.render('signup', {message: 'Username already exists.'});
-            }
-        });
+    if (req.body.password !== req.body.re_password) {
+        res.render('signup', {message: 'Password and confirmation do not match.', username: req.body.username, email: req.body.email});
+    } else {
 
-    var newUser = new User(userData);
-    newUser['username'] = userData['username'];
-    newUser['email'] = userData['email'];
-    newUser['password'] = userData['password'];
 
-    req.logIn(newUser, function(err) {
-        if (err) { console.log(err);}
-    });
 
-    newUser.save(afterSaving);
+        User.find({username: req.body.username})
+            .exec(function(err, user) {
+                if(err) {console.log(err); res.send(500);}
+
+                if (typeof user !== 'undefined' && user.length > 0) {
+                    res.render('signup', {message: 'Username already exists.', username: req.body.username, email: req.body.email});
+                } else {
+                    var newUser = new User();
+                    newUser['username'] = req.body.username;
+                    newUser['email'] = req.body.email;
+                    newUser['password'] = req.body.password;
+
+                    req.logIn(newUser, function(err) {
+                        if (err) { console.log(err);}
+                    });
+
+                    newUser.save(afterSaving);
+                }
+            });
+    } 
 
     function afterSaving(err) {
         if (err) {console.log(err); res.send(500);}
-        res.send(200);
+        res.redirect('/profile_setup_basicinfo');
     }
+    
 };
 
 exports.setup = function(req, res) {

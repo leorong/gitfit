@@ -10,12 +10,4 @@ module.exports = function(app, passport) {
 	//   res.redirect('/');
 	// });
 	app.get('/', index.view);
-    //app.get('/findbuddy', findbuddy.view);
-    //app.get('/schedule', schedule.view);
 };
-
-
-// exports.view = function(req, res){
-//   	console.log("test");
-// 	res.render('index');
-// };

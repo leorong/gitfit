@@ -129,10 +129,7 @@ exports.customsearch = function(req, res) {
     var gym = req.body.gym;
     var activities = req.body.activity;
 
-    console.log(activities);
-
     if (activities == undefined) {
-        console.log('undef...');
         res.redirect('/findbuddy');
     } else {
         (function(activities) {
