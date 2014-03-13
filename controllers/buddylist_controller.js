@@ -17,7 +17,8 @@ exports.view = function(req, res) {
 
         
         function getBuddyUserObjArr(friends) {
-            var userArr = [];
+            friends.sort();
+			var userArr = [];
 
             for(var i=0; i<friends.length; i++) {
                 User.find({"username": friends[i].friend2}).exec(
@@ -37,7 +38,8 @@ exports.view = function(req, res) {
         }
 
         var buddyUserObjArr = getBuddyUserObjArr(friends);
-        res.render('buddylist', {
+        
+		res.render('buddylist', {
             "friends": buddyUserObjArr,
             "current_user": req.user ? req.user.username : null,
             "user": req.user ? JSON.stringify(req.user): null

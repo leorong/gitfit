@@ -199,7 +199,7 @@ function initializePage() {
     });
 
 
-
+/*
     $('#composeBtn').click(function (e) {
         var newNavBarHTML =
             '<ul class="nav nav-tabs nav-justified">'+
@@ -229,7 +229,7 @@ function initializePage() {
                     '</form>'+
                 '</div>'+
             '</div>';
-            
+           
 		$('.messages').html(newBodyHTML);
 		$('.message_navbar').html(newNavBarHTML);
 
@@ -257,7 +257,7 @@ function initializePage() {
 		});
 
 	});
-
+*/
 
     $(".newMessageSubmitBtn").click(function (e) {
 		console.log('send button clicked');
@@ -287,9 +287,15 @@ function initializePage() {
 	});
 
 
-    /* Schedule Page */
+	$('#to').one(function(e) {
+		options = { serviceURL:'service/autocomplete.ashx' };
+		a = $('#to').autocomplete(options);
+	});
 
-    $('#start').timepicker('setTime', '8:00 AM');
+
+    /* Schedule Page */
+	
+	$('#start').timepicker('setTime', '8:00 AM');
     $('#end').timepicker('setTime', '10:45 AM');
     
     $("#addBtn").click(function (e) {
