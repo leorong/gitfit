@@ -13,7 +13,7 @@ exports.view = function(req, res) {
     // console.log("message user: " + user.username + "----");
     Message
         .find({$or:[{"to": user.username},{"from":user.username}]}) 
-        .sort({date: -1})
+        .sort({"date": -1})
         .exec(renderMessages);
 
     function renderMessages(err, messages) {
@@ -35,7 +35,7 @@ exports.view = function(req, res) {
 				});
 			}
 		}
-	
+
 		// console.log(returnList);
 
 		res.render('message', {
@@ -79,7 +79,8 @@ exports.addNewMessage = function(req, res) {
     if(!user) {res.render('/login');}
 
     var form_data = req.body;
-    var curDate = moment().zone("-08:00").format('MMM Do YYYY, h:mm:ss a');
+    var curDate = moment().format('MMM Do YYYY, h:mm:ss a');
+	//var curDate = moment().tz("America/Los_Angeles").format();
 
     // console.log(form_data);
 

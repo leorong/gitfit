@@ -96,10 +96,12 @@
                     <p><font color="ff6600"><b>About {{buddy.name.first}}:</b></font> {{buddy.about_me}}</p>
                 </div>
 
-                {{#unless isFriend}}
-                    <div class="addButton" id="add{{buddy.username}}">
-                        <div class='buttonDiv'><a type="button" id="{{buddy.username}}" href="/findbuddy/add/{{buddy.username}}" data-toggle="modal" data-target="#myOptionsModal{{buddy.username}}" class="addBuddyBtn btn btn-custom">Add Buddy</a></div>
-                    </div>
+				{{#unless isFriend}}
+					<div class="addButtonDiv">
+						<div class="addButton" id="add{{buddy.username}}">
+							<div class='buttonDiv'><a type="button" id="{{buddy.username}}" href="/findbuddy/add/{{buddy.username}}" data-toggle="modal" data-target="#myOptionsModal{{buddy.username}}" class="addBuddyBtn btn btn-custom">Add Buddy</a></div>
+						</div>
+					</div>
                 {{/unless}}
                 <hr width="100%"></hr>
             </div>
