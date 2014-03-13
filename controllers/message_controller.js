@@ -3,7 +3,7 @@
 
 var mongoose = require('mongoose'),
     Message = mongoose.model('Message');
-var moment = require('moment');
+var moment = require('moment-timezone');
 
 exports.view = function(req, res) {
     var user = req.user;
@@ -79,7 +79,7 @@ exports.addNewMessage = function(req, res) {
     if(!user) {res.render('/login');}
 
     var form_data = req.body;
-    var curDate = moment().zone("-08:00").format('MMM Do YYYY, h:mm:ss a');
+    var curDate = moment().tz("America/Los_Angeles").format('MMM Do YYYY, h:mm:ss a');
 
     // console.log(form_data);
 
