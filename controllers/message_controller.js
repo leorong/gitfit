@@ -2,11 +2,8 @@
 //var models = require('../models/message');
 
 var mongoose = require('mongoose'),
-    Message = mongoose.model('Message'),
-	Friend = mongoose.model('Friend'),
-	User = mongoose.model('User');
-
-var moment = require('moment-timezone');
+    Message = mongoose.model('Message');
+var moment = require('moment');
 
 exports.view = function(req, res) {
     var user = req.user;
@@ -23,7 +20,7 @@ exports.view = function(req, res) {
         if(err) {console.log(err); res.send(500);}
        
 		var returnList = [];
-	
+
 		for(var i = 0; i < messages.length; i++) {
 			var messageObj = messages[i];
 			if(user.username === messageObj.from) {
@@ -38,34 +35,15 @@ exports.view = function(req, res) {
 				});
 			}
 		}
-	
-		Friend.find({"friend1":user.username}).exec(addFriends);
 
-		function addFriends(err, friends) {
-			var friend2Arr = [];
-			for(var j = 0; j < friends.length; j++) {
-				friend2Arr.push(friends[j].friend2);
-			}
-			var realNamesArray = [];
-			for(var j = 0; j < friend2Arr.length; j++) {
-				User.find({"username" : friend2Arr[j]}, addUsers);
-			}
+		// console.log(returnList);
 
-			function addUsers(err, users) {
-				for(var j = 0; j < users.length; j++) {
-					var name = users[j].name.first + " " + users[j].name.last;
-					realNamesArray.push(name);
-				}
-
-				res.render('message', {
-					"realNames" : realNamesArray, 
-					"messages": returnList,
-					user: req.user ? JSON.stringify(req.user) : null,
-					'current_user': req.user.username
-				});
-			}
-		}    
-	}
+		res.render('message', {
+            "messages": returnList,
+            user: req.user ? JSON.stringify(req.user) : null,
+            'current_user': req.user.username
+        });
+    }
 }
 
 exports.reply = function(req, res) {
@@ -78,6 +56,8 @@ exports.reply = function(req, res) {
         'current_user': req.user.username,
         'to': req.params.username
     });
+
+
 }
 
 exports.deleteMessage = function(req, res) {
@@ -99,7 +79,7 @@ exports.addNewMessage = function(req, res) {
     if(!user) {res.render('/login');}
 
     var form_data = req.body;
-    var curDate = moment().tz("America/Los_Angeles").format('MMM Do YYYY, h:mm:ss a');
+    var curDate = moment().zone("-08:00").format('MMM Do YYYY, h:mm:ss a');
 
     // console.log(form_data);
 
