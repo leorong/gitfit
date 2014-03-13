@@ -17,11 +17,19 @@ exports.view = function(req, res) {
 
         
         function getBuddyUserObjArr(friends) {
-            friends.sort();
+            var friend2Arr = [];
+			for(var i = 0; i < friends.length; i++) {
+				friend2Arr.push(friends[i].friend2);
+			}
+
+			friend2Arr.sort();
+			for(var i = 0; i < friend2Arr.length; i++) {
+				console.log(friend2Arr[i]);
+			}
 			var userArr = [];
 
-            for(var i=0; i<friends.length; i++) {
-                User.find({"username": friends[i].friend2}).exec(
+            for(var i=0; i<friend2Arr.length; i++) {
+                User.find({"username": friend2Arr[i]}).exec(
                 function (err, user) {
                     var u = function returnUser(user) {
                         var u = user[0];

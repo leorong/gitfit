@@ -13,7 +13,7 @@ exports.view = function(req, res) {
     // console.log("message user: " + user.username + "----");
     Message
         .find({$or:[{"to": user.username},{"from":user.username}]}) 
-        .sort({date: -1})
+        .sort({"date": -1})
         .exec(renderMessages);
 
     function renderMessages(err, messages) {
