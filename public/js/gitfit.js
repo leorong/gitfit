@@ -286,13 +286,14 @@ function initializePage() {
 		$('.profile_setup .form-group #imageURL').val('/images/'+img);
 	});
 
+	/*
 
 	$('#to').one(function(e) {
 		options = { serviceURL:'service/autocomplete.ashx' };
 		a = $('#to').autocomplete(options);
 	});
 
-
+	*/
     /* Schedule Page */
 	
 	$('#start').timepicker('setTime', '8:00 AM');
