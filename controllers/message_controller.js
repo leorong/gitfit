@@ -79,7 +79,7 @@ exports.addNewMessage = function(req, res) {
     if(!user) {res.render('/login');}
 
     var form_data = req.body;
-    var curDate = moment().zone("-08:00").format('MMM Do YYYY, h:mm:ss a');
+    var curDate = moment().format('MMM Do YYYY, h:mm:ss a');
 	//var curDate = moment().tz("America/Los_Angeles").format();
 
     // console.log(form_data);
