@@ -12,7 +12,7 @@ function initializePage() {
         var btnID = $(this).closest('.addBuddyBtn').attr('id');
        
 		console.log('buddy added');
-        $('.addBuddyBtn').hide();
+        $('.addButtonDiv #add'+btnID).hide();
 
     });
 

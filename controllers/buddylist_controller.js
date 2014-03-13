@@ -22,7 +22,7 @@ exports.view = function(req, res) {
 				friend2Arr.push(friends[i].friend2);
 			}
 
-			friend2Arr.sort();
+			friend2Arr = friend2Arr.sort();
 			for(var i = 0; i < friend2Arr.length; i++) {
 				console.log(friend2Arr[i]);
 			}
@@ -47,6 +47,7 @@ exports.view = function(req, res) {
 
         var buddyUserObjArr = getBuddyUserObjArr(friends);
         
+		//buddyUserObjArr.sort(function(a, b) { return a.name.first - b.name.first });
 		res.render('buddylist', {
             "friends": buddyUserObjArr,
             "current_user": req.user ? req.user.username : null,
